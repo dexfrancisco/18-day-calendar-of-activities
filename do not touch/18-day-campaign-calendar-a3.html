@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18-Day Campaign to End Violence Against Women - Calendar of Activities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Satisfy&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-orange: #ea580c;
+    --primary-dark: #9a3412;
+    --orange-50: #fffaf5;
+    --orange-100: #ffedd5;
+    --orange-200: #fed7aa;
+    --orange-500: #f97316;
+    --orange-600: #ea580c;
+    --orange-700: #c2410c;
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: 420mm 297mm;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--slate-800);
+    background-color: #f1f5f9;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .calendar-canvas {
+    width: 4961px;
+    height: 3508px;
+    background: #ffffff;
+    padding: 40px 48px 36px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .canvas-border {
+    position: absolute;
+    inset: 16px;
+    border: 8px solid #ea580c;
+    border-radius: 36px;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: inset 0 0 0 4px #fed7aa;
+  }
+
+  /* HEADER SECTION */
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 16px;
+    z-index: 5;
+    padding: 0 40px;
+  }
+
+  .header-ribbon {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 175px;
+    height: 235px;
+    filter: drop-shadow(0 8px 16px rgba(234, 88, 12, 0.25));
+  }
+
+  .title-block {
+    text-align: center;
+  }
+
+  .main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .main-title .text-dark {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 106px;
+    font-weight: 900;
+    color: #0b3b2e;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  .main-title .orange-script {
+    font-family: 'Satisfy', cursive;
+    color: #ea580c;
+    font-size: 158px;
+    font-weight: 500;
+    text-shadow: 2px 3px 0px rgba(254, 215, 170, 0.6);
+  }
+
+  .sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    color: #0d4637;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .meta-location {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 31px;
+    font-weight: 800;
+    color: #334155;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .theme-banner {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 33px;
+    font-weight: 900;
+    font-style: italic;
+    color: #c2410c;
+    letter-spacing: 0.3px;
+  }
+
+  /* TOP PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.35fr 1.65fr 1.3fr;
+    gap: 18px;
+    margin-bottom: 18px;
+    z-index: 5;
+  }
+
+  .pillar-card {
+    background: #ffffff;
+    border: 3.5px solid #fed7aa;
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.06);
+  }
+
+  .pillar-icon-box {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 18px;
+    background: #ffedd5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pillar-icon-box svg {
+    width: 46px;
+    height: 46px;
+    fill: #ea580c;
+  }
+
+  .pillar-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #9a3412;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .pillar-content p {
+    font-size: 23.5px;
+    line-height: 1.35;
+    color: #334155;
+    font-weight: 600;
+  }
+
+  /* CALENDAR BODY */
+  .calendar-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 5;
+  }
+
+  .month-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .month-header-bar {
+    background: linear-gradient(90deg, #ea580c, #c2410c);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  }
+
+  .month-header-bar svg {
+    width: 34px;
+    height: 34px;
+    fill: #ffffff;
+  }
+
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    flex: 1;
+  }
+
+  /* CARD BASE STYLES */
+  .day-card {
+    background: #ffffff;
+    border: 3.5px solid #cbd5e1;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    height: 100%;
+    min-height: 640px;
+  }
+
+  .day-card.active-day {
+    border-color: #f97316;
+  }
+
+  .day-card.vacated-day {
+    background: #f8fafc;
+    border: 3.5px dashed #cbd5e1;
+  }
+
+  /* SPECIAL SLOT 1 TITLE CARD: Unified 1-Sentence Title */
+  .day-card.special-title-card {
+    background: linear-gradient(165deg, #ffffff 0%, #fffaf5 40%, #ffedd5 100%);
+    border: 3.5px solid #ea580c;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.14);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .special-sentence-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    width: 100%;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  /* CARD HEADER */
+  .card-top-bar {
+    background: #fff7ed;
+    border-bottom: 3px solid #fed7aa;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .vacated-day .card-top-bar {
+    background: #f1f5f9;
+    border-bottom: 3px solid #e2e8f0;
+  }
+
+  .day-pill {
+    background: #ea580c;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 6px 20px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+  }
+
+  .vacated-day .day-pill {
+    background: #64748b;
+    color: #ffffff;
+    box-shadow: none;
+  }
+
+  .date-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #1e293b;
+    text-transform: uppercase;
+  }
+
+  .vacated-day .date-text {
+    color: #475569;
+  }
+
+  .weekday-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    color: #ea580c;
+    text-transform: uppercase;
+  }
+
+  .vacated-day .weekday-text {
+    color: #64748b;
+  }
+
+  /* SINGLE ACTIVITY CARDS: Fully occupying and filling the space */
+  .card-body-single {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .single-lead-block {
+    background: linear-gradient(135deg, #fffaf5, #ffedd5);
+    border: 3px solid #fed7aa;
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lead-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #c2410c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .lead-tag-row svg {
+    width: 24px;
+    height: 24px;
+    fill: #ea580c;
+  }
+
+  .single-lead-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+  }
+
+  .single-act-block {
+    background: linear-gradient(180deg, #ffffff 0%, #fffcf8 100%);
+    border: 3.5px solid #fed7aa;
+    border-radius: 18px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    flex: 1;
+    box-shadow: inset 0 2px 6px rgba(234, 88, 12, 0.03);
+  }
+
+  .act-tag-badge {
+    align-self: flex-start;
+    background: #ea580c;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 5px 16px;
+    border-radius: 8px;
+  }
+
+  .single-act-desc {
+    font-size: 34px;
+    line-height: 1.48;
+    color: #1e293b;
+    font-weight: 600;
+  }
+
+  .single-act-desc.dense {
+    font-size: 30px;
+    line-height: 1.42;
+  }
+
+  .single-partner-box {
+    background: #fdf4ff;
+    border: 3px solid #f0abfc;
+    border-radius: 16px;
+    padding: 14px 18px;
+    font-size: 26px;
+    color: #701a75;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+
+  .single-partner-box strong {
+    font-family: 'Montserrat', sans-serif;
+    color: #86198f;
+    font-weight: 900;
+  }
+
+  /* MULTI ACTIVITY CARDS (Day 6, 9, 10, 16 - 2 activities) */
+  .card-body-multi {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .sub-act-item-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    background: #fffcf8;
+    border: 3px solid #fed7aa;
+    border-left: 10px solid #ea580c;
+    border-radius: 16px;
+    padding: 16px 18px;
+  }
+
+  .sub-act-header {
+    background: #ffedd5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: #9a3412;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .sub-lead-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+  }
+
+  .sub-act-desc {
+    font-size: 26px;
+    line-height: 1.4;
+    color: #334155;
+    font-weight: 600;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .sub-partner-box {
+    background: #fdf4ff;
+    border: 2px solid #f0abfc;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 23px;
+    color: #701a75;
+    font-weight: 700;
+    line-height: 1.28;
+  }
+
+  .sub-partner-box strong {
+    font-family: 'Montserrat', sans-serif;
+    color: #86198f;
+    font-weight: 900;
+  }
+
+  /* DAY 2 CARD (3 activities) */
+  .card-body-day2 {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .sub-act-item-3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    background: #fffcf8;
+    border: 2.5px solid #fed7aa;
+    border-left: 8px solid #ea580c;
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+
+  .sub-act-item-3 .sub-act-header {
+    padding: 4px 10px;
+    font-size: 20px;
+    border-radius: 6px;
+  }
+
+  .sub-act-item-3 .sub-lead-name {
+    font-size: 24px;
+  }
+
+  .sub-act-item-3 .sub-act-desc {
+    font-size: 22px;
+    line-height: 1.35;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .sub-act-item-3 .sub-partner-box {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  /* VACATED CARDS */
+  .card-body-vacated {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .vacated-icon-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 4px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vacated-icon-box svg {
+    width: 64px;
+    height: 64px;
+    fill: #64748b;
+  }
+
+  .vacated-badge {
+    background: #e2e8f0;
+    color: #334155;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 12px 28px;
+    border-radius: 999px;
+  }
+
+  .vacated-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.25;
+  }
+
+  .vacated-desc {
+    font-size: 26px;
+    line-height: 1.48;
+    color: #475569;
+    font-weight: 600;
+    max-width: 90%;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    margin-top: 14px;
+    padding: 18px 36px;
+    background: #fffaf5;
+    border: 3.5px solid #fed7aa;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(234, 88, 12, 0.08);
+    z-index: 5;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-ribbon {
+    width: 85px;
+    height: 115px;
+    filter: drop-shadow(0 4px 8px rgba(234, 88, 12, 0.25));
+  }
+
+  .footer-left-text h3 {
+    font-family: 'Satisfy', cursive;
+    font-size: 66px;
+    font-weight: 500;
+    color: #ea580c;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .footer-left-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: #0b3b2e;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .footer-targets {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .target-badge-label {
+    background: #0b3b2e;
+    color: #a7f3d0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    padding: 14px 26px;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-align: right;
+    border: 2px solid #10b981;
+  }
+
+  .target-stat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 2.5px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 12px 24px;
+  }
+
+  .stat-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(11, 59, 46, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-icon-circle svg {
+    width: 34px;
+    height: 34px;
+    fill: #0b3b2e;
+  }
+
+  .stat-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+  }
+
+  .target-stat.highlight {
+    background: #ffedd5;
+    border-color: #ea580c;
+  }
+
+  .target-stat.highlight .stat-icon-circle {
+    background: rgba(234, 88, 12, 0.15);
+  }
+
+  .target-stat.highlight .stat-icon-circle svg {
+    fill: #ea580c;
+  }
+
+  .target-stat.highlight .stat-label {
+    color: #9a3412;
+  }
+
+  .target-stat.highlight .stat-number {
+    color: #ea580c;
+  }
+
+  /* WEEKEND ADVOCACY CARDS (Days 5, 11, 12, 18) */
+  .day-card.weekend-advocacy-day {
+    background: linear-gradient(180deg, #ffffff 0%, #fffcf8 100%);
+    border: 3px solid #fed7aa;
+  }
+
+  .day-card.weekend-advocacy-day .card-top-bar {
+    background: #fff7ed;
+    border-bottom: 3px solid #fed7aa;
+  }
+
+  .weekend-advocacy-badge {
+    background: #ffedd5;
+    color: #c2410c;
+    border: 2px solid #fed7aa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 8px 24px;
+    border-radius: 999px;
+  }
+
+  .weekend-advocacy-icon-box {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background: #fff7ed;
+    border: 3.5px solid #fed7aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.08);
+  }
+
+  .weekend-advocacy-icon-box svg {
+    width: 54px;
+    height: 54px;
+    fill: #ea580c;
+  }
+
+  .weekend-advocacy-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.45;
+    text-align: center;
+    max-width: 90%;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="calendar-canvas">
+  <div class="canvas-border"></div>
+
+  <!-- HEADER -->
+  <header class="header-container">
+    <!-- Top Left Ribbon SVG -->
+    <svg class="header-ribbon" viewBox="0 0 100 150">
+      <defs>
+        <linearGradient id="ribbonOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fdba74" />
+          <stop offset="35%" stop-color="#ea580c" />
+          <stop offset="100%" stop-color="#9a3412" />
+        </linearGradient>
+      </defs>
+      <path d="M 50 12 C 34 12 22 26 22 46 C 22 62 34 82 50 100 C 66 82 78 62 78 46 C 78 26 66 12 50 12 Z" fill="none" stroke="url(#ribbonOrange)" stroke-width="16" stroke-linecap="round" />
+      <path d="M 31 75 L 12 142 L 35 130 L 49 98" fill="url(#ribbonOrange)" />
+      <path d="M 69 75 L 88 142 L 65 130 L 51 98" fill="url(#ribbonOrange)" />
+      <circle cx="50" cy="46" r="13" fill="#ffffff" />
+    </svg>
+
+    <div class="title-block">
+      <div class="main-title">
+        <span class="text-dark">18-DAY</span>
+        <span class="orange-script">Orange Campaign</span>
+      </div>
+      <h2 class="sub-title">18-DAY CAMPAIGN TO END VIOLENCE AGAINST WOMEN</h2>
+      <p class="meta-location">City Government of Cauayan, Isabela &nbsp;•&nbsp; November 25 – December 12, 2026</p>
+      <div class="theme-banner">Project S.U.N.S.H.I.N.E. for Safe, Inclusive and Technology-Responsive Communities</div>
+    </div>
+  </header>
+
+  <!-- TOP PILLARS -->
+  <section class="pillars-grid">
+    <!-- Pillar 1 -->
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+      </div>
+      <div class="pillar-content">
+        <h4>COVERAGE</h4>
+        <p>All LGU Cauayan Offices and 65 Barangays</p>
+      </div>
+    </div>
+    <!-- Pillar 2 -->
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 16 16"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/></svg>
+      </div>
+      <div class="pillar-content">
+        <h4>CONVERGENCE PARTNERS</h4>
+        <p>Province of Isabela, RGADC 2, NAPC, OPAPRU, PNP, DepEd, CSOs, POs, youth groups, and OGP partners</p>
+      </div>
+    </div>
+    <!-- Pillar 3 -->
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><circle cx="8" cy="8" r="1.5"/></svg>
+      </div>
+      <div class="pillar-content">
+        <h4>FOCUS AREAS</h4>
+        <p>VAWC prevention & response, TFGBV, cyber trafficking, online sexual exploitation, Safe Spaces, referral systems, survivor support, and community accountability</p>
+      </div>
+    </div>
+    <!-- Pillar 4 -->
+    <div class="pillar-card">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 16 16"><path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.619.647L.75 4.5v6l.029.708a.76.76 0 0 0 .619.647L1.5 11.9h13l.102-.045a.758.758 0 0 0 .619-.647l.029-.708V4.5l-.029-.708a.76.76 0 0 0-.619-.647L14.5 3.1h-13.1z"/></svg>
+      </div>
+      <div class="pillar-content">
+        <h4>INTEGRATED PLATFORMS</h4>
+        <p>Project S.U.N.S.H.I.N.E., iReport VAWC, Cauayan Safe Line, Cauayan CARES, and GERL/GAD KMS systems</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR BODY -->
+  <main class="calendar-main">
+    
+    <!-- NOVEMBER 2026 -->
+    <section class="month-section">
+      <div class="month-header-bar">
+        <svg viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+        <span>NOVEMBER 2026</span>
+      </div>
+      <div class="grid-6">
+        
+        <!-- SLOT 1: UNIFIED 1-SENTENCE TITLE -->
+        <article class="day-card special-title-card">
+          <div class="special-sentence-title">
+            Nov 16 – 20 Barangay Validation Outstanding GAD Champions Best Barangay Implementors
+          </div>
+        </article>
+
+        <!-- DAY 2 (3 activities) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 2</span>
+            <span class="date-text">NOV 26</span>
+            <span class="weekday-text">THU</span>
+          </div>
+          <div class="card-body-day2">
+            <!-- Sub 1 -->
+            <div class="sub-act-item-3">
+              <div class="sub-act-header">ACTIVITY 1 • LEGAL ORIENTATION</div>
+              <div class="sub-lead-name">📍 City Legal Office</div>
+              <div class="sub-act-desc">Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, PNP, DILG</div>
+            </div>
+            <!-- Sub 2 -->
+            <div class="sub-act-item-3">
+              <div class="sub-act-header">ACTIVITY 2 • DIGITAL SAFETY (FROM NOV 27)</div>
+              <div class="sub-lead-name">📍 CICTO / JCD Innovation Center</div>
+              <div class="sub-act-desc">Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> GAD Office, PNP, PLDT, Tech Partners</div>
+            </div>
+            <!-- Sub 3 -->
+            <div class="sub-act-item-3">
+              <div class="sub-act-header">ACTIVITY 3 • BARANGAY ACTION (FROM DEC 9)</div>
+              <div class="sub-lead-name">📍 Liga ng mga Barangay / VAW Desks</div>
+              <div class="sub-act-desc">Barangay action planning, desk strengthening, community watch, and referral readiness.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> DILG, Barangays, BSWDO</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 3 (Now Youth Forum moved from Nov 29) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 3</span>
+            <span class="date-text">NOV 27</span>
+            <span class="weekday-text">FRI</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">City Youth Development Office / Kalinga Kabataan Program</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc">Youth forum on online safety, consent, anti-bullying, anti-grooming, TFGBV and cyber trafficking prevention.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> DepEd, SK, Wn Office, Sangguniang Panlungsod, Youth Groups
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 4 -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 4</span>
+            <span class="date-text">NOV 28</span>
+            <span class="weekday-text">SAT</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">CSOs / POs / OGP Partners / Faith-based Groups</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc">Multi-stakeholder dialogues, citizen participation, social accountability, survivor advocacy, and community partnership building.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> All Community and Development Partners
+            </div>
+          </div>
+        </article>
+
+                <!-- DAY 5 (Weekend Advocacy) -->
+        <article class="day-card weekend-advocacy-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 5</span>
+            <span class="date-text">NOV 29</span>
+            <span class="weekday-text">SUN</span>
+          </div>
+          <div class="card-body-vacated">
+            <div class="weekend-advocacy-icon-box">
+              <svg viewBox="0 0 16 16"><path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 10.5a.5.5 0 0 0 .757.429l6-4a.5.5 0 0 0 0-.858l-6-4A.5.5 0 0 0 4 3.5v8z"/></svg>
+            </div>
+            <span class="weekend-advocacy-badge">ONLINE ADVOCACY</span>
+            <h3 class="weekend-advocacy-text">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</h3>
+          </div>
+        </article>
+
+        <!-- DAY 6 (2 activities) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 6</span>
+            <span class="date-text">NOV 30</span>
+            <span class="weekday-text">MON</span>
+          </div>
+          <div class="card-body-multi">
+            <!-- Sub 1 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1 • ECONOMIC EMPOWERMENT</div>
+              <div class="sub-lead-name">📍 PESO & CEDIPO</div>
+              <div class="sub-act-desc">Women's economic empowerment, safe employment, anti-trafficking and cyber recruitment scam awareness.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> DOLE, OWWA, DTI, Private Sector</div>
+            </div>
+            <!-- Sub 2 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2 • RURAL WOMEN & LIVELIHOOD (FROM DEC 5)</div>
+              <div class="sub-lead-name">📍 City Agriculture & Cooperative Office</div>
+              <div class="sub-act-desc">Rural women protection, livelihood, cooperative support, and community-based prevention.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> DA, Cooperatives, Barangays</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DECEMBER 2026 -->
+    <section class="month-section" style="flex: 2;">
+      <div class="month-header-bar">
+        <svg viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+        <span>DECEMBER 2026</span>
+      </div>
+      
+      <!-- ROW 1: DAYS 7-12 -->
+      <div class="grid-6" style="margin-bottom: 16px;">
+        
+        <!-- DAY 7 -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 7</span>
+            <span class="date-text">DEC 1</span>
+            <span class="weekday-text">TUE</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">CHRMO & CODI</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc">Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> HR Units, DILG, CSOs
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 8 (Duplicated from Day 7 as requested) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 8</span>
+            <span class="date-text">DEC 2</span>
+            <span class="weekday-text">WED</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">CHRMO & CODI</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc">Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> HR Units, DILG, CSOs
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 9 (2 activities) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 9</span>
+            <span class="date-text">DEC 3</span>
+            <span class="weekday-text">THU</span>
+          </div>
+          <div class="card-body-multi">
+            <!-- Sub 1 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1 • INCLUSIVE SUPPORT</div>
+              <div class="sub-lead-name">📍 PDAO & OSCA</div>
+              <div class="sub-act-desc">Protection of women with disabilities & senior women; inclusive referral and access to support.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> CSWDO, Health Office, PNP</div>
+            </div>
+            <!-- Sub 2 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2 • SURVIVOR CARE (FROM NOV 28)</div>
+              <div class="sub-lead-name">📍 CSWDO</div>
+              <div class="sub-act-desc">Survivor-centered care management, psychosocial first aid, women and children referral mapping.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> Health Office, PNP-WCPD, NGAs, CSOs</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 10 (2 activities) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 10</span>
+            <span class="date-text">DEC 4</span>
+            <span class="weekday-text">FRI</span>
+          </div>
+          <div class="card-body-multi">
+            <!-- Sub 1 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1 • MEN AS ALLIES</div>
+              <div class="sub-lead-name">📍 City Population Office & MOVE</div>
+              <div class="sub-act-desc">Men as allies forum, healthy masculinity, shared responsibility, and prevention of VAWC & online abuse.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> CSOs, Faith Groups, Youth Groups</div>
+            </div>
+            <!-- Sub 2 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2 • EMERGENCY RESPONSE (FROM DEC 8)</div>
+              <div class="sub-lead-name">📍 CDRRMO / Rescue 922 / Safe Line</div>
+              <div class="sub-act-desc">Emergency response simulation, hotline awareness, safety drill, and rapid coordination.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> PNP, BFP, MDRRMO, All Teams</div>
+            </div>
+          </div>
+        </article>
+
+                <!-- DAY 11 (Weekend Advocacy) -->
+        <article class="day-card weekend-advocacy-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 11</span>
+            <span class="date-text">DEC 5</span>
+            <span class="weekday-text">SAT</span>
+          </div>
+          <div class="card-body-vacated">
+            <div class="weekend-advocacy-icon-box">
+              <svg viewBox="0 0 16 16"><path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 10.5a.5.5 0 0 0 .757.429l6-4a.5.5 0 0 0 0-.858l-6-4A.5.5 0 0 0 4 3.5v8z"/></svg>
+            </div>
+            <span class="weekend-advocacy-badge">ONLINE ADVOCACY</span>
+            <h3 class="weekend-advocacy-text">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</h3>
+          </div>
+        </article>
+
+                <!-- DAY 12 (Weekend Advocacy) -->
+        <article class="day-card weekend-advocacy-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 12</span>
+            <span class="date-text">DEC 6</span>
+            <span class="weekday-text">SUN</span>
+          </div>
+          <div class="card-body-vacated">
+            <div class="weekend-advocacy-icon-box">
+              <svg viewBox="0 0 16 16"><path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 10.5a.5.5 0 0 0 .757.429l6-4a.5.5 0 0 0 0-.858l-6-4A.5.5 0 0 0 4 3.5v8z"/></svg>
+            </div>
+            <span class="weekend-advocacy-badge">ONLINE ADVOCACY</span>
+            <h3 class="weekend-advocacy-text">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</h3>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ROW 2: DAYS 13-18 -->
+      <div class="grid-6">
+        
+        <!-- DAY 13 -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 13</span>
+            <span class="date-text">DEC 7</span>
+            <span class="weekday-text">MON</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">City Health Office</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc">Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> Hospitals, RHUs, NGOs, Mental Health Partners
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 14 -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 14</span>
+            <span class="date-text">DEC 8</span>
+            <span class="weekday-text">TUE</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">City Tourism / Culture Office / PIO / GAD Office</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc dense">Orange Exhibit and Orange Bubble: spoken poetry, declamation, spoken word, creative expression, advocacy through culture, IEC exhibit, public information campaign, and online awareness content.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> Local Artists, Media, Content Creators
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 15 (Vacated) -->
+        <article class="day-card vacated-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 15</span>
+            <span class="date-text">DEC 9</span>
+            <span class="weekday-text">WED</span>
+          </div>
+          <div class="card-body-vacated">
+            <div class="vacated-icon-box">
+              <svg viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/></svg>
+            </div>
+            <span class="vacated-badge">INTEGRATED TO DAY 2</span>
+            <h3 class="vacated-title">Barangay Desk Follow-Through</h3>
+            <p class="vacated-desc">Barangay action planning & VAW desk strengthening integrated into Day 2 (Nov 26) Legal, Tech & VAW Desk Summit.</p>
+          </div>
+        </article>
+
+        <!-- DAY 16 (Now 2 activities: Case Documentation + Data-Driven Governance moved from Dec 2) -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 16</span>
+            <span class="date-text">DEC 10</span>
+            <span class="weekday-text">THU</span>
+          </div>
+          <div class="card-body-multi">
+            <!-- Sub 1 -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1 • CASE DOCUMENTATION & PROTECTION</div>
+              <div class="sub-lead-name">📍 PNP-WCPD / LCAT-VAWC / Justice Sector</div>
+              <div class="sub-act-desc">Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, DILG, PNP, PAO</div>
+            </div>
+            <!-- Sub 2 (Moved from Dec 2) -->
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2 • DATA-DRIVEN GOVERNANCE (FROM DEC 2)</div>
+              <div class="sub-lead-name">📍 CPDO / GAD KMS Team</div>
+              <div class="sub-act-desc">Data-driven governance, sex-disaggregated data, monitoring dashboards, GERL and accountability tools.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> IT Office, Planning Office, All Offices</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- DAY 17 -->
+        <article class="day-card active-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 17</span>
+            <span class="date-text">DEC 11</span>
+            <span class="weekday-text">FRI</span>
+          </div>
+          <div class="card-body-single">
+            <div class="single-lead-block">
+              <span class="lead-tag-row">
+                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                LEAD OFFICE
+              </span>
+              <span class="single-lead-name">Culminating Activity led by LGU Cauayan</span>
+            </div>
+            <div class="single-act-block">
+              <span class="act-tag-badge">MAIN ACTIVITY</span>
+              <p class="single-act-desc dense">Awarding of all barangays and offices, recognition of partners, presentation of commitments, and ceremonial signing of Memorandum of Partnership with NAPC and OPAPRU.</p>
+            </div>
+            <div class="single-partner-box">
+              <strong>Partners:</strong> NAPC, OPAPRU, PCW, All Offices, All Partners
+            </div>
+          </div>
+        </article>
+
+                <!-- DAY 18 (Weekend Advocacy) -->
+        <article class="day-card weekend-advocacy-day">
+          <div class="card-top-bar">
+            <span class="day-pill">DAY 18</span>
+            <span class="date-text">DEC 12</span>
+            <span class="weekday-text">SAT</span>
+          </div>
+          <div class="card-body-vacated">
+            <div class="weekend-advocacy-icon-box">
+              <svg viewBox="0 0 16 16"><path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 10.5a.5.5 0 0 0 .757.429l6-4a.5.5 0 0 0 0-.858l-6-4A.5.5 0 0 0 4 3.5v8z"/></svg>
+            </div>
+            <span class="weekend-advocacy-badge">ONLINE ADVOCACY</span>
+            <h3 class="weekend-advocacy-text">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</h3>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-container">
+    <div class="footer-left">
+      <!-- Ribbon SVG -->
+      <svg class="footer-ribbon" viewBox="0 0 100 150">
+        <defs>
+          <linearGradient id="ribbonFooterOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fdba74" />
+            <stop offset="35%" stop-color="#ea580c" />
+            <stop offset="100%" stop-color="#9a3412" />
+          </linearGradient>
+        </defs>
+        <path d="M 50 12 C 34 12 22 26 22 46 C 22 62 34 82 50 100 C 66 82 78 62 78 46 C 78 26 66 12 50 12 Z" fill="none" stroke="url(#ribbonFooterOrange)" stroke-width="16" stroke-linecap="round" />
+        <path d="M 31 75 L 12 142 L 35 130 L 49 98" fill="url(#ribbonFooterOrange)" />
+        <path d="M 69 75 L 88 142 L 65 130 L 51 98" fill="url(#ribbonFooterOrange)" />
+        <circle cx="50" cy="46" r="13" fill="#ffffff" />
+      </svg>
+      <div class="footer-left-text">
+        <h3>End Violence Against Women and Children</h3>
+        <p>18-DAY ACTIVITY MATRIX • CITY GOVERNMENT OF CAUAYAN, ISABELA</p>
+      </div>
+    </div>
+
+    <div class="footer-targets">
+      <div class="target-badge-label">
+        PARTICIPATION<br>TARGETS
+      </div>
+      <div class="target-stat">
+        <div class="stat-icon-circle">
+          <svg viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/></svg>
+        </div>
+        <div class="stat-content">
+          <span class="stat-label">MALE</span>
+          <span class="stat-number">975</span>
+        </div>
+      </div>
+      <div class="target-stat">
+        <div class="stat-icon-circle">
+          <svg viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/></svg>
+        </div>
+        <div class="stat-content">
+          <span class="stat-label">FEMALE</span>
+          <span class="stat-number">1,215</span>
+        </div>
+      </div>
+      <div class="target-stat highlight">
+        <div class="stat-icon-circle">
+          <svg viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+        </div>
+        <div class="stat-content">
+          <span class="stat-label">TOTAL</span>
+          <span class="stat-number">2,190</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
