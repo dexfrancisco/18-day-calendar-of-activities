@@ -54,7 +54,7 @@
     width: 2480px;
     height: 3508px;
     background: #ffffff;
-    padding: 48px 52px 42px 52px;
+    padding: 48px 52px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -239,14 +239,14 @@
   /* PORTRAIT GRIDS FOR PAGE 2 */
   .p2-grid-row1 {
     display: grid;
-    grid-template-columns: 1.35fr 0.82fr 0.82fr 2.15fr;
+    grid-template-columns: 2.45fr 0.79fr 0.72fr 1.18fr;
     gap: 8px;
     flex: 1.3;
   }
 
   .p2-grid-row2 {
     display: grid;
-    grid-template-columns: 1.15fr 1.15fr 1.15fr 0.85fr 0.85fr;
+    grid-template-columns: 1.22fr 1.26fr 1.16fr 0.75fr 0.75fr;
     gap: 8px;
     flex: 1;
   }
@@ -277,37 +277,45 @@
   .card-top-bar {
     background: #fff7ed;
     border-bottom: 2px solid #fed7aa;
-    padding: 8px 12px;
+    padding: 8px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4px;
+    white-space: nowrap;
   }
 
   .day-pill {
     background: #ea580c;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    font-size: 25.5px;
+    font-size: 24px;
     font-weight: 900;
-    padding: 4px 13px;
+    padding: 4px 10px;
     border-radius: 999px;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .date-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 33.5px;
+    font-size: 30px;
     font-weight: 900;
     color: #0f172a;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .weekday-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 25.5px;
+    font-size: 24px;
     font-weight: 800;
     color: #ea580c;
     text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* SINGLE ACTIVITY CARDS */
@@ -479,9 +487,9 @@
     font-size: 24.5px;
   }
 
-  /* 5 ACTIVITIES CARD (Day 13) */
+  /* 5 ACTIVITIES CARD (Day 10) */
   .card-body-5act {
-    padding: 6px 8px;
+    padding: 6px 9px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -499,37 +507,37 @@
     border: 1.5px solid #fed7aa;
     border-left: 5px solid #ea580c;
     border-radius: 8px;
-    padding: 4px 9px;
+    padding: 4px 10px;
   }
 
   .sub-act-item-5 .sub-act-header {
     padding: 2px 9px;
-    font-size: 21px;
+    font-size: 22px;
     border-radius: 4px;
     align-self: flex-start;
   }
 
   .sub-act-item-5 .sub-lead-name {
-    font-size: 24.5px;
+    font-size: 25.5px;
     line-height: 1.13;
   }
 
   .sub-act-item-5 .sub-act-desc {
-    font-size: 22.5px;
-    line-height: 1.16;
+    font-size: 23.5px;
+    line-height: 1.17;
     color: #334155;
     font-weight: 600;
   }
 
   .sub-act-item-5 .sub-partner-box {
-    font-size: 22px;
-    padding: 3px 8px;
+    font-size: 23px;
+    padding: 3px 9px;
     border-radius: 5px;
-    line-height: 1.14;
+    line-height: 1.15;
   }
 
   .sub-act-item-5 .sub-partner-box strong {
-    font-size: 22.5px;
+    font-size: 23.5px;
   }
 
   /* VENUE BOX */
@@ -813,25 +821,43 @@
       <!-- ROW 1 (4 Cards): Day 10, Day 11, Day 12, Day 13 (5 Activities) -->
       <div class="p2-grid-row1" style="flex: 1.15;">
         
-        <!-- DAY 10 (2 Activities) -->
+        <!-- DAY 10 (5 ACTIVITIES) -->
         <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 10</span>
             <span class="date-text">DEC 4</span>
             <span class="weekday-text">FRI</span>
           </div>
-          <div class="card-body-multi">
-            <div class="sub-act-item-2">
+          <div class="card-body-5act">
+            <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 1</div>
-              <div class="sub-lead-name">📍 City Population Office & MOVE</div>
-              <div class="sub-act-desc">Men as allies forum, healthy masculinity, shared responsibility & prevention of VAWC.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> CSOs, Faith Groups, Youth</div>
+              <div class="sub-lead-name">📍 City Health Office</div>
+              <div class="sub-act-desc">Health response, mental health, reproductive health, medico-legal awareness, support services.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> Hospitals, RHUs, NGOs, Mental Health Partners, BJMP</div>
             </div>
-            <div class="sub-act-item-2">
+            <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 2</div>
-              <div class="sub-lead-name">📍 CDRRMO / Rescue 922 / Safe Line</div>
-              <div class="sub-act-desc">Emergency response simulation, hotline awareness, safety drill, and rapid coordination.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> PNP, BFP, MDRRMO, Teams</div>
+              <div class="sub-lead-name">📍 City Legal Office</div>
+              <div class="sub-act-desc">Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, PNP, DILG, BJMP</div>
+            </div>
+            <div class="sub-act-item-5">
+              <div class="sub-act-header">ACTIVITY 3</div>
+              <div class="sub-lead-name">📍 PNP-WCPD / LCAT-VAWC / Justice Sector</div>
+              <div class="sub-act-desc">Case documentation, law enforcement coordination, protection procedures, anti-online exploitation.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, DILG, PNP, PAO, BJMP</div>
+            </div>
+            <div class="sub-act-item-5">
+              <div class="sub-act-header">ACTIVITY 4</div>
+              <div class="sub-lead-name">📍 Liga ng mga Barangay / VAW Desks</div>
+              <div class="sub-act-desc">Barangay action planning, desk strengthening, community watch, and referral readiness.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> DILG, Barangays, BSWDO, BJMP</div>
+            </div>
+            <div class="sub-act-item-5">
+              <div class="sub-act-header">ACTIVITY 5</div>
+              <div class="sub-lead-name">📍 CICTO / JCD Innovation Center</div>
+              <div class="sub-act-desc">Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, cyber safety awareness.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> GAD Office, PNP, PLDT, Tech Partners, BJMP</div>
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -872,47 +898,29 @@
           </div>
         </article>
 
-        <!-- DAY 13 (5 ACTIVITIES) -->
+        <!-- DAY 13 (2 Activities) -->
         <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 13</span>
             <span class="date-text">DEC 7</span>
             <span class="weekday-text">MON</span>
           </div>
-          <div class="card-body-5act">
-            <div class="sub-act-item-5">
+          <div class="card-body-multi">
+            <div class="sub-act-item-2">
               <div class="sub-act-header">ACTIVITY 1</div>
-              <div class="sub-lead-name">📍 City Health Office</div>
-              <div class="sub-act-desc">Health response, mental health, reproductive health, medico-legal awareness, support services.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> Hospitals, RHUs, NGOs, Mental Health Partners</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">Seminar on Gender Functionality Assessment Tool (GFAST) & Gender Responsiveness LGU (GERL) Assessment.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> PCW, Province of Isabela GFPS, Cauayan GFPS</div>
             </div>
-            <div class="sub-act-item-5">
+            <div class="sub-act-item-2">
               <div class="sub-act-header">ACTIVITY 2</div>
-              <div class="sub-lead-name">📍 City Legal Office</div>
-              <div class="sub-act-desc">Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, PNP, DILG</div>
-            </div>
-            <div class="sub-act-item-5">
-              <div class="sub-act-header">ACTIVITY 3</div>
-              <div class="sub-lead-name">📍 PNP-WCPD / LCAT-VAWC / Justice Sector</div>
-              <div class="sub-act-desc">Case documentation, law enforcement coordination, protection procedures, anti-online exploitation.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, DILG, PNP, PAO</div>
-            </div>
-            <div class="sub-act-item-5">
-              <div class="sub-act-header">ACTIVITY 4</div>
-              <div class="sub-lead-name">📍 Liga ng mga Barangay / VAW Desks</div>
-              <div class="sub-act-desc">Barangay action planning, desk strengthening, community watch, and referral readiness.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> DILG, Barangays, BSWDO</div>
-            </div>
-            <div class="sub-act-item-5">
-              <div class="sub-act-header">ACTIVITY 5</div>
-              <div class="sub-lead-name">📍 CICTO / JCD Innovation Center</div>
-              <div class="sub-act-desc">Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, cyber safety awareness.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> GAD Office, PNP, PLDT, Tech Partners</div>
+              <div class="sub-lead-name">📍 CPDO / GAD KMS Team</div>
+              <div class="sub-act-desc">Data-driven governance, sex-disaggregated data, monitoring dashboards, GERL tools.</div>
+              <div class="sub-partner-box"><strong>Partners:</strong> IT Office, Planning Office, All Offices</div>
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
-              <span><strong>Venue:</strong> F. L. Dy Colliseum, District III, Cauayan City, Isabela</span>
+              <span><strong>Venue:</strong> Isabela Convention Center, San Fermin, Cauayan City</span>
             </div>
           </div>
         </article>
@@ -1046,41 +1054,6 @@
     </section>
 
   </main>
-
-  <!-- FOOTER SECTION -->
-  <footer class="footer-section">
-    <div class="footer-tagline-area">
-      <div class="footer-text-group">
-        <h3>End Violence Against Women and Children</h3>
-        <p>18-DAY ACTIVITY MATRIX &bull; CITY GOVERNMENT OF CAUAYAN, ISABELA</p>
-      </div>
-    </div>
-
-    <div class="targets-block">
-      <div class="targets-label-pill">PARTICIPATION<br>TARGETS</div>
-      <div class="stat-pill">
-        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        <div>
-          <div class="stat-label">MALE</div>
-          <div class="stat-val">975</div>
-        </div>
-      </div>
-      <div class="stat-pill">
-        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        <div>
-          <div class="stat-label">FEMALE</div>
-          <div class="stat-val">1,215</div>
-        </div>
-      </div>
-      <div class="stat-pill total">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-        <div>
-          <div class="stat-label">TOTAL</div>
-          <div class="stat-val">2,190</div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 </div>
 

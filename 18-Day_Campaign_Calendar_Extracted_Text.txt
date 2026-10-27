@@ -140,29 +140,14 @@ Venue:
 DAY 9 | DECEMBER 3, 2026 | THURSDAY
 --------------------------------------------------------------------------------
 Activity 1:
-  Lead Office: City Health Office
-  Description: Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors.
-  Partners: Hospitals, RHUs, NGOs, Mental Health Partners
+  Lead Office: GAD Office & MOVE
+  Description: Men as allies forum, healthy masculinity, shared responsibility, and prevention of VAWC & online abuse.
+  Partners: CSOs, Faith Groups, Youth Groups, JCI, PNP, Academe, DepEd
 
 Activity 2:
-  Lead Office: City Legal Office
-  Description: Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways.
-  Partners: City Prosecutor's Office, PNP, DILG
-
-Activity 3:
-  Lead Office: PNP-WCPD / LCAT-VAWC / Justice Sector
-  Description: Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response.
-  Partners: City Prosecutor's Office, DILG, PNP, PAO
-
-Activity 4:
-  Lead Office: Liga ng mga Barangay / VAW Desks
-  Description: Barangay action planning, desk strengthening, community watch, and referral readiness.
-  Partners: DILG, Barangays, BSWDO
-
-Activity 5:
-  Lead Office: CICTO / JCD Innovation Center
-  Description: Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.
-  Partners: GAD Office, PNP, PLDT, Tech Partners
+  Lead Office: CDRRMO / Rescue 922 / Safe Line
+  Description: Emergency response simulation, hotline awareness, safety drill, and rapid coordination.
+  Partners: PNP, BFP, MDRRMO, All Teams, JCI, Academe, DepEd
 
 Venue:
   F. L. Dy Colliseum, District III, Cauayan City, Isabela
@@ -171,14 +156,29 @@ Venue:
 DAY 10 | DECEMBER 4, 2026 | FRIDAY
 --------------------------------------------------------------------------------
 Activity 1:
-  Lead Office: City Population Office & MOVE
-  Description: Men as allies forum, healthy masculinity, shared responsibility, and prevention of VAWC & online abuse.
-  Partners: CSOs, Faith Groups, Youth Groups
+  Lead Office: City Health Office
+  Description: Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors.
+  Partners: Hospitals, RHUs, NGOs, Mental Health Partners, BJMP
 
 Activity 2:
-  Lead Office: CDRRMO / Rescue 922 / Safe Line
-  Description: Emergency response simulation, hotline awareness, safety drill, and rapid coordination.
-  Partners: PNP, BFP, MDRRMO, All Teams
+  Lead Office: City Legal Office
+  Description: Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways.
+  Partners: City Prosecutor's Office, PNP, DILG, BJMP
+
+Activity 3:
+  Lead Office: PNP-WCPD / LCAT-VAWC / Justice Sector
+  Description: Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response.
+  Partners: City Prosecutor's Office, DILG, PNP, PAO, BJMP
+
+Activity 4:
+  Lead Office: Liga ng mga Barangay / VAW Desks
+  Description: Barangay action planning, desk strengthening, community watch, and referral readiness.
+  Partners: DILG, Barangays, BSWDO, BJMP
+
+Activity 5:
+  Lead Office: CICTO / JCD Innovation Center
+  Description: Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.
+  Partners: GAD Office, PNP, PLDT, Tech Partners, BJMP
 
 Venue:
   F. L. Dy Colliseum, District III, Cauayan City, Isabela
@@ -282,14 +282,8 @@ Online Activity:
   Description: Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters
 
 ================================================================================
-PARTICIPATION TARGETS & FOOTER
+PARTICIPATION TARGETS & FOOTER: [REMOVED PER REVISION]
 ================================================================================
-PARTICIPATION TARGETS:
-  - Male:   975
-  - Female: 1,215
-  - Total:  2,190
+(Footer section removed from layout to maximize calendar grid area)
+================================================================================
 
-FOOTER TAGLINE:
-  End Violence Against Women and Children
-  18-DAY ACTIVITY MATRIX • CITY GOVERNMENT OF CAUAYAN, ISABELA
-================================================================================
