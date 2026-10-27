@@ -62,6 +62,12 @@ Activity 2:
 Venue:
   Isabela Convention Center, San Fermin, Cauayan City, Isabela
 
+Activity 3:
+  Dates: November 26 – 30, 2026
+  Lead Office: City Accounting Office
+  Main Activity: GAD Employee Development, Recognition and Organizational Strengthening Program
+  Partners: COA, Barangays
+
 --------------------------------------------------------------------------------
 DAY 3 | NOVEMBER 27, 2026 | FRIDAY
 --------------------------------------------------------------------------------
@@ -291,6 +297,7 @@ REVISION HISTORY & LOG OF UPDATES (OCTOBER 27, 2026)
 ================================================================================
 1. DAY 2 (November 26, 2026 - Thursday):
    - Lead Office updated for Activity 1 from "PESO & CEDIPO" to "PESO / COOP / CEDIPO".
+   - Added Activity 3 (Dates: November 26 – 30, 2026): "GAD Employee Development, Recognition and Organizational Strengthening Program" (Lead: City Accounting Office; Partners: COA, Barangays; placed under Day 2 venue).
 
 2. DAY 9 (December 3, 2026 - Thursday):
    - Realigned to host Men as Allies & Emergency Response drills:
