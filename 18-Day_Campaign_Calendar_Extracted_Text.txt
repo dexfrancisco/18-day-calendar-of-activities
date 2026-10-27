@@ -50,7 +50,7 @@ Venue:
 DAY 2 | NOVEMBER 26, 2026 | THURSDAY
 --------------------------------------------------------------------------------
 Activity 1:
-  Lead Office: PESO & CEDIPO
+  Lead Office: PESO / COOP / CEDIPO
   Description: Women's economic empowerment, safe employment, anti-trafficking and cyber recruitment scam awareness.
   Partners: DOLE, OWWA, DTI, Private Sector
 
@@ -166,9 +166,9 @@ Activity 2:
   Partners: City Prosecutor's Office, PNP, DILG, BJMP
 
 Activity 3:
-  Lead Office: PNP-WCPD / LCAT-VAWC / Justice Sector
+  Lead Office: PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector
   Description: Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response.
-  Partners: City Prosecutor's Office, DILG, PNP, PAO, BJMP
+  Partners: City Prosecutor's Office, DILG, PNP, PAO
 
 Activity 4:
   Lead Office: Liga ng mga Barangay / VAW Desks
@@ -176,7 +176,7 @@ Activity 4:
   Partners: DILG, Barangays, BSWDO, BJMP
 
 Activity 5:
-  Lead Office: CICTO / JCD Innovation Center
+  Lead Office: JCD GAD CONNECT and CDRRMO
   Description: Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.
   Partners: GAD Office, PNP, PLDT, Tech Partners, BJMP
 
