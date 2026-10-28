@@ -1,0 +1,2 @@
+# Audit-Ready Feature Workflow
+1. Identify actor. 2. Identify resources. 3. Identify CRUD/security/file/export/report events. 4. Identify useful activity. 5. UPDATE = field/old/new. 6. Redact sensitive fields. 7. Enforce authorization. 8. Server-side authoritative audit. 9. Audit UI where appropriate. 10. Test success and denial.

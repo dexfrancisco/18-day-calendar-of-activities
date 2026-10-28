@@ -1,0 +1,2 @@
+# Project Handoff Workflow
+1. Update current state. 2. Update progress. 3. Record completed/remaining work. 4. Record blockers. 5. Record decisions. 6. Record DB changes. 7. Record environment/deployment changes. 8. Record verification. 9. Write next-session instructions.

@@ -1,0 +1,25 @@
+{
+  "name": "Antigravity V5 Project Files \u2014 Global Skills Integrated",
+  "version": "5.14.0-project-local",
+  "basedOn": "Antigravity AI Engineering System V5 project template",
+  "notBasedOn": "V6",
+  "packageType": "direct-project-files",
+  "purpose": "Project-local instructions, memory, workflows, and state that activate installed global skills and require verified memory maintenance",
+  "globalSkillsCopied": false,
+  "designSkillPriorityWhenInstalled": [
+    "design-taste-frontend",
+    "ui-ux-pro-max"
+  ],
+  "memoryPolicy": "Evaluate after every meaningful task; update only affected files; verify persistence and report exact changes",
+  "copySafety": "For new projects or projects not previously seeded with old V5 project files; do not overwrite or migrate existing V5-seeded projects",
+  "sections": [
+    ".ai/memory",
+    ".ai/state",
+    ".ai/planning",
+    ".ai/rules",
+    ".ai/workflows",
+    ".ai/sessions",
+    ".ai/templates",
+    "docs"
+  ]
+}

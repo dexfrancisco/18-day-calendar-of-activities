@@ -1,0 +1,2 @@
+# New Feature Workflow
+1. Read relevant context/state. 2. Analyze affected modules. 3. Reuse components/services. 4. Plan DB/API/UI/security/audit. 5. Implement incrementally. 6. Test. 7. Verify. 8. Update durable memory/state.

@@ -1,0 +1,2 @@
+# Refactor Workflow
+1. Understand behavior. 2. Identify reason. 3. Define invariants. 4. Plan small changes. 5. Refactor. 6. Test/lint/type-check/build. 7. Review regressions. 8. Update architecture memory.
