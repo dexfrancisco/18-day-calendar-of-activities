@@ -23,6 +23,64 @@
 **Reason:** Reflects the latest official LGU Cauayan GAD Office campaign schedule adjustments.
 **Alternatives:** Keeping original single-activity Day 1 and 2-activity Day 3 schedule.
 **Impact:** Root HTML and PNG files reflect these updates; `Final Copy/` still holds the pre-`b342179` snapshot unless explicitly synced.
+**Status:** Superseded by 2026-10-28 Partner Expansions and Day 3 Dual-Venue Architecture.
+
+## 2026-10-28 — Partner Expansions & Day 3 Dual-Venue 4-Activity Architecture
+**Decision:**
+1. **Pre-Campaign (Nov 16–20):** Updated partners to `DILG, LGU Offices, Liga ng mga Barangay, CCGLO`.
+2. **Day 1 (Nov 25):** In Activity 2, replaced trailing generic `Partners` with `PNP, BFP, BJMP, Academe, CSOs` (total partner list: `All City Offices, Barangays, PNP, BFP, BJMP, Academe, CSOs`).
+3. **Day 2 (Nov 26):** In Activity 2, added `MSMES` after `Cooperatives` and `CSOs` after `Barangays` (total partner list: `DA, Cooperatives, MSMES, Barangays, CSOs`).
+4. **Day 3 (Nov 27):**
+   - Added `ISAC` to Activity 3 partners (`Health Office, PNP-WCPD, NGAs, CSOs, ISAC`).
+   - Added Activity 4 under Venue 1 with its own Venue 2:
+     - Lead Office: `City Population Office`
+     - Main Activity: `KABATAAN PRO-TECT (Teen Empowerment and Care Team): Peer Helping Training on Safe Spaces, Mental Health, and ASRH`
+     - Partners: `City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School`
+     - Venue 2: `Cauayan City Stand Alone Senior High School`
+   - Added `.card-body-4act` and `.sub-act-item-4` CSS styling, adjusted typography (19px/21px), and widened column 4 (`1.30fr` on A3 landscape, `1.38fr` on A4 portrait) to ensure zero clipping.
+**Reason:** Official program expansion by LGU Cauayan GAD Office, integrating adolescent sexual and reproductive health / teen empowerment training at Cauayan City Stand Alone Senior High School.
+**Alternatives:** Stacking Activity 4 inside Venue 1 or moving to a separate day.
+**Impact:** Synchronized across all 4 HTML layouts (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4.html`, `18-day-campaign-calendar-a4-page1.html`), text extractions, and 300 DPI PNG renders (`18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`, and `Final Copy/`).
+**Status:** Active
+
+## 2026-10-28 — Partner and Leadership Refinements (Days 6, 7, 8, 9, 10, 13)
+**Decision:**
+1. **Day 6 (Nov 30):**
+   - Lead Office expanded to: `City Youth Development Office, SK Federation of Cauayan City / Kalinga Kabataan Program`.
+   - Partners updated to: `DepEd, SK, VM Office, Sangguniang Panlungsod, Youth Groups, Faith Groups, PNP, Legal Office`.
+2. **Days 7 & 8 (Dec 1–2):**
+   - Replaced `HR Units` with `HR Office` and added `GAD Office` immediately after: `HR Office, GAD Office, DILG, CSOs`.
+3. **Day 9 (Dec 3):**
+   - In Activity 1 partners: removed `CSOs`, added `JCI, PNP, BJMP, CDRRMO, BFP` in front of `Faith Groups`, and appended `MASON, ROTARY Club of Cauayan` after `DepEd`:
+     `JCI, PNP, BJMP, CDRRMO, BFP, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan`.
+4. **Day 10 (Dec 4):**
+   - Activity 1 partners: added `Barangay Officials` (`Hospitals, RHUs, NGOs, Mental Health Partners, BJMP, Barangay Officials`).
+   - Activity 2 partners: added `Barangay` (`City Prosecutor's Office, PNP, DILG, BJMP, Barangay`).
+   - Activity 5 partners: removed `PLDT`, added `JCI, Barangay Officials` (`GAD Office, PNP, Tech Partners, BJMP, JCI, Barangay Officials`).
+5. **Day 13 (Dec 7):**
+   - Activity 1 partners: added `DILG` in front of `PCW` (`DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS`).
+**Reason:** Official agency and partner alignment by LGU Cauayan GAD Office.
+**Alternatives:** Retaining previous generic groupings.
+**Impact:** Synchronized across all 4 HTML templates, root and `Final Copy/` text extractions, and 300 DPI PNG exports (`18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`).
+**Status:** Active
+
+## 2026-10-28 — Program Revisions for Culminating & Regional Activities (Days 14, 15, 16, 17)
+**Decision:**
+1. **Day 14 (Dec 8):**
+   - In Lead Office, removed `City Tourism / Culture Office` and added after `GAD Office`: `DepEd, ISU-Cauayan, Tourism Office, ISAC, CSOs`.
+   - Full Lead Office line: `PIO, GAD Office, DepEd, ISU-Cauayan, Tourism Office, ISAC, CSOs`.
+2. **Day 15 (Dec 9):**
+   - Added `DILG` before `NAPC` and `Barangay, CSOs` after `All Partners`:
+     `DILG, NAPC, OPAPRU, PCW, All Offices, All Partners, Barangay, CSOs`.
+3. **Day 16 (Dec 10):**
+   - Reordered partners to move `DEPED RO2` to the left of `SDO Cauayan City`, and appended `CSOs`:
+     `DEPED RO2, SDO Cauayan City, CSOs`.
+4. **Day 17 (Dec 11):**
+   - Updated Main Activity to `Regional Educational Research Conference`.
+   - On A4 Page 2, upgraded Day 17 card to active format displaying this in-person conference, venue, and partners, while balancing row proportions.
+**Reason:** Official LGU Cauayan GAD Office program updates for the culminating week and regional research partnerships.
+**Alternatives:** Retaining preliminary activity titles and partner sets.
+**Impact:** Synchronized across all 4 HTML templates, root and `Final Copy/` text extractions, and 300 DPI PNG exports.
 **Status:** Active
 
 ## 2026-10-28 — V5 Project-Local AI Context Onboarding

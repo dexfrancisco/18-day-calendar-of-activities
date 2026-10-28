@@ -4,104 +4,135 @@ import html
 with open('18-day-campaign-calendar-a3.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
-def clean(text):
+def clean_text(text):
+    if not text:
+        return ""
     text = re.sub(r'<[^>]+>', ' ', text)
     text = html.unescape(text)
     return ' '.join(text.split())
 
-# Parse articles using regex pattern
+lines = []
+lines.append("=" * 80)
+lines.append("18-DAY ORANGE CAMPAIGN: CALENDAR OF ACTIVITIES")
+lines.append("18-DAY CAMPAIGN TO END VIOLENCE AGAINST WOMEN AND THEIR CHILDREN")
+lines.append("City Government of Cauayan, Isabela • November 25 – December 12, 2026")
+lines.append('"Project S.U.N.S.H.I.N.E. for Safe, Inclusive and Technology-Responsive Communities"')
+lines.append("=" * 80)
+lines.append("")
+
+# Core Pillars
+lines.append("-" * 80)
+lines.append("CORE PILLARS & CONVERGENCE FRAMEWORK")
+lines.append("-" * 80)
+
+pillars = re.findall(r'<div class="pillar-card">.*?<h4>(.*?)</h4>.*?<p>(.*?)</p>', content, re.DOTALL)
+for idx, (p_title, p_desc) in enumerate(pillars, 1):
+    lines.append(f"{idx}. {clean_text(p_title)}:")
+    lines.append(f"   {clean_text(p_desc)}")
+    lines.append("")
+
+lines.append("=" * 80)
+lines.append("18-DAY ACTIVITY MATRIX (INCLUDING PRE-CAMPAIGN VALIDATION)")
+lines.append("=" * 80)
+
+# Pre-campaign card
+pre_card = re.search(r'<article class="day-card special-title-card">(.*?)</article>', content, re.DOTALL)
+if pre_card:
+    c = pre_card.group(1)
+    date_m = re.search(r'<div class="special-title-date">(.*?)</div>', c, re.DOTALL)
+    title_m = re.search(r'<div class="special-main-title">(.*?)</div>', c, re.DOTALL)
+    sub_m = re.search(r'<div class="special-sub-implementors">(.*?)</div>', c, re.DOTALL)
+    lead_m = re.search(r'<span class="special-lead-val">(.*?)</span>', c, re.DOTALL)
+    part_m = re.search(r'<div class="special-partner-row">(.*?)</div>', c, re.DOTALL)
+    venue_m = re.search(r'<div class="special-title-venue">.*?<span>(.*?)</span>', c, re.DOTALL)
+    
+    lines.append("-" * 80)
+    lines.append("PRE-CAMPAIGN INDEPENDENT VALIDATION")
+    lines.append("-" * 80)
+    if date_m: lines.append(f"Dates: {clean_text(date_m.group(1))}")
+    if title_m: lines.append(f"Title: {clean_text(title_m.group(1))}")
+    if sub_m: lines.append(f"Subtitle: {clean_text(sub_m.group(1))}")
+    if lead_m: lines.append(f"Lead Office: {clean_text(lead_m.group(1))}")
+    if part_m: lines.append(clean_text(part_m.group(1)))
+    if venue_m: lines.append(clean_text(venue_m.group(1)))
+    lines.append("")
+
+# Regular day cards
 articles = re.findall(r'<article class="day-card\s+([^"]*)">(.*?)</article>', content, re.DOTALL)
-print(f"Total articles found: {len(articles)}")
 
 for cls, body in articles:
+    if "special-title-card" in cls:
+        continue
+    
     day_pill = re.search(r'<span class="day-pill">([^<]+)</span>', body)
     date_text = re.search(r'<span class="date-text">([^<]+)</span>', body)
     weekday_text = re.search(r'<span class="weekday-text">([^<]+)</span>', body)
     
-    if not day_pill:
-        if "special-title-card" in cls:
-            print("\n[SPECIAL PRE-CAMPAIGN CARD]")
-            print("  Title:", clean(re.search(r'<div class="special-main-title">([^<]+)</div>', body).group(1)))
-        continue
-        
-    dp = clean(day_pill.group(1))
-    dt = clean(date_text.group(1))
-    wt = clean(weekday_text.group(1))
-    print(f"\n{'='*20} {dp} | {dt} | {wt} {'='*20}")
+    dp = clean_text(day_pill.group(1)) if day_pill else ""
+    dt = clean_text(date_text.group(1)) if date_text else ""
+    wt = clean_text(weekday_text.group(1)) if weekday_text else ""
     
-    venue_m = re.search(r'<div class="card-venue-box">.*?<span>(.*?)</span>', body, re.DOTALL)
-    venue = clean(venue_m.group(1)) if venue_m else ""
+    lines.append("-" * 80)
+    lines.append(f"{dp} | {dt}, 2026 | {wt}")
+    lines.append("-" * 80)
     
-    if "card-body-single" in body:
-        lead_m = re.search(r'<span class="single-lead-name">(.*?)</span>', body, re.DOTALL)
-        lead = clean(lead_m.group(1)) if lead_m else ""
-        desc_m = re.search(r'<p class="single-act-desc[^"]*">(.*?)</p>', body, re.DOTALL)
-        desc = clean(desc_m.group(1)) if desc_m else ""
-        part_m = re.search(r'<div class="single-partner-box">(.*?)</div>', body, re.DOTALL)
-        part = clean(part_m.group(1)) if part_m else ""
+    venue_m = re.search(r'<div class="card-venue-box[^>]*>.*?<span>(.*?)</span>', body, re.DOTALL)
+    venue = clean_text(venue_m.group(1)) if venue_m else ""
+    
+    if "weekend-badge" in body and ("single-lead-block" in body or "single-lead-name" in body):
+        lines.append("In-Person Activity:")
+        lead_m = re.search(r'<span class="single-lead-name"[^>]*>(.*?)</span>', body, re.DOTALL)
+        act_m = re.search(r'<p class="single-act-desc[^"]*"[^>]*>(.*?)</p>', body, re.DOTALL)
+        part_m = re.search(r'<div class="single-partner-box"[^>]*>(.*?)</div>', body, re.DOTALL)
         
-        # Check special event inside single act (e.g. Day 14)
-        sp_event_m = re.search(r'<div class="special-event-badge">(.*?)</div>', body, re.DOTALL)
-        sp_event = clean(sp_event_m.group(1)) if sp_event_m else ""
+        if lead_m: lines.append(f"  Lead Office: {clean_text(lead_m.group(1))}")
+        if act_m: lines.append(f"  Main Activity: {clean_text(act_m.group(1))}")
+        if part_m: lines.append(f"  {clean_text(part_m.group(1))}")
+        if venue: lines.append(f"  {venue}")
         
-        print(f"  Lead Office: {lead}")
-        print(f"  Main Activity: {desc}")
-        if sp_event:
-            print(f"  Special Event: {sp_event}")
-        print(f"  Partners: {part}")
-        if venue:
-            print(f"  Venue: {venue}")
+        lines.append("Online Activity:")
+        lines.append("  Advocacy Track: ONLINE ADVOCACY")
+        adv_text_m = re.search(r'<div class="weekend-advocacy-text"[^>]*>(.*?)</div>', body, re.DOTALL)
+        if adv_text_m:
+            lines.append(f"  Description: {clean_text(adv_text_m.group(1))}")
             
-    elif "weekend-advocacy-day" in cls or "advocacy-content" in body:
-        # Check if in-person + online (Day 11, 17, 18) or purely online (Day 5, 12)
-        # Check if there is an in-person block
-        in_person_lead = re.search(r'<div class="weekend-lead-title">\s*<span>(.*?)</span>', body, re.DOTALL)
-        in_person_act = re.search(r'<div class="weekend-act-title">\s*<span>(.*?)</span>', body, re.DOTALL)
-        in_person_venue = re.search(r'<div class="weekend-venue-box">.*?<span>(.*?)</span>', body, re.DOTALL)
-        in_person_part = re.search(r'<div class="weekend-partner-box">(.*?)</div>', body, re.DOTALL)
+    elif "card-body-single" in body:
+        lead_m = re.search(r'<span class="single-lead-name"[^>]*>(.*?)</span>', body, re.DOTALL)
+        act_m = re.search(r'<p class="single-act-desc[^"]*"[^>]*>(.*?)</p>', body, re.DOTALL)
+        part_m = re.search(r'<div class="single-partner-box"[^>]*>(.*?)</div>', body, re.DOTALL)
+        badge_m = re.search(r'<div style="[^"]*background: #ffedd5;[^"]*">(.*?)</div>', body, re.DOTALL)
         
-        if in_person_lead or in_person_act:
-            print("  In-Person Activity:")
-            if in_person_lead:
-                print(f"    Lead Office: {clean(in_person_lead.group(1))}")
-            if in_person_act:
-                print(f"    Main Activity: {clean(in_person_act.group(1))}")
-            if in_person_part:
-                print(f"    Partners: {clean(in_person_part.group(1))}")
-            if in_person_venue:
-                print(f"    Venue: {clean(in_person_venue.group(1))}")
-            print("  Online Activity:")
+        if lead_m: lines.append(f"Lead Office: {clean_text(lead_m.group(1))}")
+        if act_m: lines.append(f"Main Activity: {clean_text(act_m.group(1))}")
+        if badge_m: lines.append(f"Special Badge / Event: {clean_text(badge_m.group(1))}")
+        if part_m: lines.append(clean_text(part_m.group(1)))
+        if venue: lines.append(venue)
         
-        adv_badge = re.search(r'<div class="advocacy-badge">([^<]+)</div>', body)
-        adv = clean(adv_badge.group(1)) if adv_badge else "ONLINE ADVOCACY"
-        adv_desc = re.search(r'<div class="advocacy-desc">(.*?)</div>', body, re.DOTALL)
-        desc = clean(adv_desc.group(1)) if adv_desc else ""
-        print(f"    Advocacy Track: {adv}")
-        print(f"    Description: {desc}")
-        
+    elif "card-body-weekend" in body:
+        lines.append("Advocacy Track: ONLINE ADVOCACY")
+        adv_text_m = re.search(r'<div class="weekend-advocacy-text"[^>]*>(.*?)</div>', body, re.DOTALL)
+        if adv_text_m:
+            lines.append(f"Description: {clean_text(adv_text_m.group(1))}")
+            
     else:
-        # Multi activity cards
-        items = re.findall(r'<div class="(?:sub-act-item-\d+|sub-act-item)">(.*?)</div>\s*(?=(?:<div class="(?:sub-act-item|\bcard-venue-box\b)|$))', body, re.DOTALL)
-        for idx, it in enumerate(items, 1):
-            hdr_m = re.search(r'<div class="sub-act-header">([^<]+)</div>', it)
-            hdr = clean(hdr_m.group(1)) if hdr_m else f"Activity {idx}"
-            date_pill = re.search(r'<span class="act3-date-pill">([^<]+)</span>', it)
-            dp_str = f" (Dates: {clean(date_pill.group(1))})" if date_pill else ""
-            lead_m = re.search(r'<div class="sub-lead-name">([^<]+)</div>', it)
-            lead = clean(lead_m.group(1)).replace("📍", "").strip() if lead_m else ""
-            desc_m = re.search(r'<div class="sub-act-desc">([^<]+)</div>', it)
-            desc = clean(desc_m.group(1)) if desc_m else ""
-            part_m = re.search(r'<div class="sub-partner-box">(.*?)</div>', it, re.DOTALL)
-            part = clean(part_m.group(1)) if part_m else ""
+        sub_items = re.findall(r'<div class="(?:sub-act-item-\d+|sub-act-item)">.*?<div class="sub-act-header">(.*?)</div>(.*?)(?=<div class="(?:sub-act-item|card-venue-box)|$)', body, re.DOTALL)
+        for idx, (header, sub_content) in enumerate(sub_items, 1):
+            date_pill = re.search(r'<span class="act3-date-pill">(.*?)</span>', sub_content, re.DOTALL)
+            dp_str = f" ({clean_text(date_pill.group(1))})" if date_pill else ""
+            lead_m = re.search(r'<div class="sub-lead-name">(.*?)</div>', sub_content, re.DOTALL)
+            desc_m = re.search(r'<div class="sub-act-desc">(.*?)</div>', sub_content, re.DOTALL)
+            part_m = re.search(r'<div class="sub-partner-box">(.*?)</div>', sub_content, re.DOTALL)
+            spec_init = re.search(r'<div style="[^"]*background: #ffedd5;[^"]*">(.*?)</div>', sub_content, re.DOTALL)
             
-            # Special initiative like Day 3 Project SUNSHINE M&E
-            sp_init = re.search(r'Project S\.U\.N\.S\.H\.I\.N\.E\. Monitoring and Evaluation', it)
-            
-            print(f"  Activity {idx}{dp_str}:")
-            print(f"    Lead Office: {lead}")
-            print(f"    Description: {desc}")
-            if sp_init:
-                print("    Special Initiative: Project S.U.N.S.H.I.N.E. Monitoring and Evaluation")
-            print(f"    Partners: {part}")
+            lines.append(f"Activity {idx}{dp_str}:")
+            if lead_m: lines.append(f"  Lead Office: {clean_text(lead_m.group(1)).replace('📍', '').strip()}")
+            if desc_m: lines.append(f"  Description: {clean_text(desc_m.group(1))}")
+            if spec_init: lines.append(f"  Special Initiative: {clean_text(spec_init.group(1))}")
+            if part_m: lines.append(f"  {clean_text(part_m.group(1))}")
         if venue:
-            print(f"  Venue: {venue}")
+            lines.append(venue)
+            
+    lines.append("")
+
+output_text = "\n".join(lines)
+print(output_text)
