@@ -37,14 +37,18 @@ Venue: Per Regions
 --------------------------------------------------------------------------------
 DAY 1 | NOVEMBER 25, 2026 | WEDNESDAY
 --------------------------------------------------------------------------------
-Lead Office:
-  GAD Office & Office of the City Mayor
-Main Activity:
-  Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch for VAWC, TFGBV, cyber trafficking, and online protection.
-Partners:
-  All City Offices, Barangays, Partners
+Activity 1:
+  Lead Office: GAD Office
+  Main Activity: Wellness and Essential Care Distribution for Project S.U.N.S.H.I.N.E Beneficiaries
+  Partners: BJMP, PNP, CSWD
+
+Activity 2:
+  Lead Office: GAD Office & Office of the City Mayor
+  Main Activity: Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch for VAWC, TFGBV, cyber trafficking, and online protection.
+  Partners: All City Offices, Barangays, Partners
+
 Venue:
-  [None / City-wide Parade & Launch]
+  City Sports Complex, Tagaran
 
 --------------------------------------------------------------------------------
 DAY 2 | NOVEMBER 26, 2026 | THURSDAY
@@ -77,6 +81,11 @@ Activity 1:
   Partners: CSWDO, Health Office, PNP
 
 Activity 2:
+  Lead Office: GAD Office
+  Main Activity: Namnama (PWD Film Viewing)
+  Partners: Isabela Artist Club (ISAC), Women with Disabilities Group
+
+Activity 3:
   Lead Office: CSWDO
   Description: Survivor-centered care management, psychosocial first aid, women and children referral mapping.
   Special Initiative: Project S.U.N.S.H.I.N.E. Monitoring and Evaluation
@@ -231,7 +240,7 @@ DAY 14 | DECEMBER 8, 2026 | TUESDAY
 Lead Office:
   City Tourism / Culture Office / PIO / GAD Office
 Main Activity:
-  Orange Exhibit and Orange Bubble: spoken poetry, declamation, spoken word, creative expression, advocacy through culture, IEC exhibit, public information campaign, and online awareness content.
+  Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing
 Special Event:
   Awarding of Winners
 Partners:
