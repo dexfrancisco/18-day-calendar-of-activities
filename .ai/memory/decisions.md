@@ -1,5 +1,51 @@
 # Durable Decisions
 
+## 2026-10-28 — Removal of 4 Top Pillars & Canvas Readability Expansion
+**Decision:**
+1. **Removal of Top Pillars Grid:** Removed `<section class="pillars-grid">` (Coverage, Convergence Partners, Focus Areas, Integrated Platforms) from the header across all calendar layouts (A3 Landscape and A4 Portrait Pages 1 & 2).
+2. **Reallocation of Vertical Space:** Reallocated ~130–150px of freed-up vertical space to `.calendar-main` and individual day cards, substantially increasing typography size, element padding, and item spacing across all cards.
+3. **Restoration of Dual Activities on Day 18:** Explicitly formatted Day 18 to include BOTH in-person GAD Office activities:
+   - Activity 1: `Display of Orange Exhibits`
+   - Activity 2: `Posting of Accomplishment Reports for the 18-day Campaign`
+   Plus the `ONLINE ADVOCACY` track.
+4. **Enhanced Typography & Spacing:**
+   - Day 3 (4 activities + 2 venues): Lead office increased to 28px (A3) / 22.5px (A4), descriptions to 25px (A3) / 20px (A4), venue and partner boxes enlarged with increased breathing room.
+   - Day 10 (5 activities + venue): Lead office increased to 31px (A3) / 23px (A4), descriptions to 28.5px (A3) / 21px (A4).
+   - Single cards: Lead names increased to 36px (A3) / 27px (A4), descriptions to 33px (A3) / 25px (A4).
+   - Month headers: Expanded to 32px font size with 28px icons and wider letter-spacing.
+**Reason:** User requested removal of the 4 pillar boxes to free up vertical canvas space and readjust card heights and text sizes for optimal readability.
+**Alternatives:** Retaining the pillar cards at reduced height or footer placement.
+**Impact:** Synchronized across all 4 HTML templates, text extracts in root and `Final Copy/`, and freshly re-rendered 300 DPI exports.
+**Status:** Active
+
+## 2026-10-28 — Multi-Activity Card Consolidated Partner Architecture & Universal DILG Priority
+**Decision:**
+1. **Consolidated Card Partner Box Above Venue:**
+   - In all multi-activity cards, sub-activity partner boxes (.sub-partner-box) were removed from individual items.
+   - All partners across the activities under that venue are consolidated into a single, shared partner box (.card-partner-box) placed directly above the venue box (.card-venue-box).
+   - Duplicate partners across activities within each card are deduplicated.
+2. **Universal DILG First Position Rule:**
+   - In any partner list where DILG is present, DILG must always be listed first:
+     - **Pre-Campaign:** DILG, LGU Offices, Liga ng mga Barangay, CCGLO
+     - **Day 7 & Day 8:** DILG, HR Office, GAD Office, CSOs
+     - **Day 10 (Consolidated):** DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI
+     - **Day 13 (Consolidated):** DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS, IT Office, Planning Office, All Offices
+     - **Day 15:** DILG, NAPC, OPAPRU, PCW, All Offices, All Partners, Barangay, CSOs
+3. **Dual-Venue Scope (Day 3):**
+   - For activities under Venue 1 (Activities 1, 2, 3), their partners are consolidated into .card-partner-box directly above Venue 1:
+     CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group
+   - For Activity 4 under Venue 2, its partners go directly above Venue 2:
+     City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School
+4. **Other Consolidated Multi-Activity Cards:**
+   - **Day 1:** All City Offices, Barangays, PNP, BFP, BJMP, CSWD, Academe, CSOs
+   - **Day 2:** DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+   - **Day 9:** PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan
+   - **Day 16:** DEPED RO2, SDO Cauayan City, CSOs
+**Reason:** Eliminates redundant partner rows across sub-activities in multi-activity cards, dramatically improves card vertical hierarchy and legibility, prevents text clipping, and standardizes governance prominence by placing DILG first across all collaborative matrices.
+**Alternatives:** Retaining individual sub-partner tags on every activity item, which crowded Day 10 and Day 3.
+**Impact:** Synchronized across all 4 HTML layouts (18-day-campaign-calendar-a3.html, 18-day-campaign-calendar.html, 18-day-campaign-calendar-a4-page1.html, 18-day-campaign-calendar-a4-page2.html, 18-day-campaign-calendar-a4.html, and Final Copy/), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
 ## 2026-10-22 — Dual Print Format Architecture (A3 Landscape + 2-Page A4 Portrait)
 **Decision:** Maintain the 18-Day Campaign Calendar in two fixed-resolution 300 DPI HTML/CSS canvas formats: a single-page A3 Landscape poster (`4961x3508` px / `420mm x 297mm`) and a two-page A4 Portrait document (`2480x3508` px / `210mm x 297mm` per page, split into `page1` and `page2` files for headless Chrome PNG export).
 **Reason:** Supports both large-format wall poster printing (A3) and standard office/handout printing (A4) while using deterministic headless Chrome rasterization.
@@ -80,6 +126,17 @@
    - On A4 Page 2, upgraded Day 17 card to active format displaying this in-person conference, venue, and partners, while balancing row proportions.
 **Reason:** Official LGU Cauayan GAD Office program updates for the culminating week and regional research partnerships.
 **Alternatives:** Retaining preliminary activity titles and partner sets.
+**Impact:** Synchronized across all 4 HTML templates, root and `Final Copy/` text extractions, and 300 DPI PNG exports.
+**Status:** Superseded by 2026-10-28 Rescheduling & Realignment.
+
+## 2026-10-28 — Activity Rescheduling & Realignment (Days 13, 16, 17, 18)
+**Decision:**
+1. **Day 13 (Dec 7):** Added Activity 3 — Lead Office: `GAD Office`, Main Activity: `Display of Orange Exhibits` (card upgraded to `.card-body-3act` / `.sub-act-item-3` with 3 activities).
+2. **Day 16 (Dec 10):** Copied the in-person conference from Day 17 (`Regional Educational Research Conference`, Partners: `SDO Cauayan City, DEPED RO2`) as Activity 2 alongside Activity 1 (`GAD in Action`). Card converted to a 2-activity layout (`.card-body-multi` / `.sub-act-item-2`).
+3. **Day 17 (Dec 11):** Retained `Regional Educational Research Conference` alongside `ONLINE ADVOCACY` (2-day conference across both Days 16 and 17).
+4. **Day 18 (Dec 12):** Replaced `Display of Orange Exhibits` with: Lead Office: `GAD Office`, Main Activity: `Posting of Accomplishment Reports for the 18-day Campaign` (alongside `ONLINE ADVOCACY`).
+**Reason:** Clarified user requirement confirming that `Regional Educational Research Conference` is copied onto Day 16 while remaining active on Day 17 (multi-day regional educational research program).
+**Alternatives:** Moving the activity and stripping Day 17 to pure online advocacy.
 **Impact:** Synchronized across all 4 HTML templates, root and `Final Copy/` text extractions, and 300 DPI PNG exports.
 **Status:** Active
 

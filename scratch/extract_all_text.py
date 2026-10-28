@@ -22,17 +22,6 @@ def extract_calendar():
     lines.append("=" * 80)
     lines.append("")
 
-    # Core Pillars
-    lines.append("-" * 80)
-    lines.append("CORE PILLARS & CONVERGENCE FRAMEWORK")
-    lines.append("-" * 80)
-
-    pillars = re.findall(r'<div class="pillar-card">.*?<h4>(.*?)</h4>.*?<p>(.*?)</p>', content, re.DOTALL)
-    for idx, (p_title, p_desc) in enumerate(pillars, 1):
-        lines.append(f"{idx}. {clean_text(p_title)}:")
-        lines.append(f"   {clean_text(p_desc)}")
-        lines.append("")
-
     lines.append("=" * 80)
     lines.append("18-DAY ACTIVITY MATRIX (INCLUDING PRE-CAMPAIGN VALIDATION)")
     lines.append("=" * 80)
@@ -79,16 +68,25 @@ def extract_calendar():
         lines.append("-" * 80)
         
         venues = [clean_text(v) for v in re.findall(r'<div class="card-venue-box[^>]*>.*?<span>(.*?)</span>', body, re.DOTALL)]
+        card_partners = [clean_text(p) for p in re.findall(r'<div class="card-partner-box[^>]*>(.*?)</div>', body, re.DOTALL)]
         
         # Check if Day 11, 17, 18 hybrid split (has both in-person and online advocacy)
         if "weekend-badge" in body and ("single-lead-block" in body or "single-lead-name" in body):
             lines.append("In-Person Activity:")
             lead_m = re.search(r'<span class="single-lead-name"[^>]*>(.*?)</span>', body, re.DOTALL)
-            act_m = re.search(r'<p class="single-act-desc[^"]*"[^>]*>(.*?)</p>', body, re.DOTALL)
             part_m = re.search(r'<div class="single-partner-box"[^>]*>(.*?)</div>', body, re.DOTALL)
             
             if lead_m: lines.append(f"  Lead Office: {clean_text(lead_m.group(1))}")
-            if act_m: lines.append(f"  Main Activity: {clean_text(act_m.group(1))}")
+            
+            acts = re.findall(r'<p class="single-act-desc[^"]*"[^>]*>(.*?)</p>', body, re.DOTALL)
+            badges = re.findall(r'<span class="act-tag-badge"[^>]*>(.*?)</span>', body, re.DOTALL)
+            if len(acts) > 1:
+                for a_idx, act_text in enumerate(acts, 1):
+                    lbl = clean_text(badges[a_idx-1]) if a_idx-1 < len(badges) else f"Activity {a_idx}"
+                    lines.append(f"  {lbl}: {clean_text(act_text)}")
+            elif len(acts) == 1:
+                lines.append(f"  Main Activity: {clean_text(acts[0])}")
+
             if part_m: lines.append(f"  {clean_text(part_m.group(1))}")
             for v in venues: lines.append(f"  {v}")
             
@@ -116,43 +114,47 @@ def extract_calendar():
             if adv_text_m:
                 lines.append(f"Description: {clean_text(adv_text_m.group(1))}")
                 
-        elif "card-body-4act" in body or (dp == "DAY 3"):
-            # Day 3 specifically with 4 activities and 2 venues
-            # Match elements in sequential order: either sub-act-item or card-venue-box
+        elif dp == "DAY 3":
+            # Day 3 specifically with 4 activities and 2 venues & 2 partner boxes
             for act_num in range(1, 5):
-                act_block_m = re.search(rf'<div class="sub-act-item-4">.*?ACTIVITY {act_num}</div>(.*?)</div>\s*(?=<div class="(?:sub-act-item-4|card-venue-box)|</div>\s*</article>)', body, re.DOTALL)
+                act_block_m = re.search(rf'<div class="sub-act-item-4">.*?ACTIVITY {act_num}</div>(.*?)</div>\s*(?=<div class="(?:sub-act-item-4|card-partner-box|card-venue-box)|</div>\s*</article>)', body, re.DOTALL)
                 if act_block_m:
                     sub_content = act_block_m.group(1)
                     lead_m = re.search(r'<div class="sub-lead-name">(.*?)</div>', sub_content, re.DOTALL)
                     desc_m = re.search(r'<div class="sub-act-desc">(.*?)</div>', sub_content, re.DOTALL)
-                    part_m = re.search(r'<div class="sub-partner-box">(.*?)</div>', sub_content, re.DOTALL)
                     
                     lines.append(f"Activity {act_num}:")
                     if lead_m: lines.append(f"  Lead Office: {clean_text(lead_m.group(1)).replace('📍', '').strip()}")
                     if desc_m: lines.append(f"  Description: {clean_text(desc_m.group(1))}")
-                    if part_m: lines.append(f"  {clean_text(part_m.group(1))}")
                 
-                # Check venue after act 3 and act 4
-                if act_num == 3 and len(venues) >= 1:
-                    lines.append(f"Venue (Activities 1, 2, 3): {venues[0].replace('Venue:', '').strip()}")
-                elif act_num == 4 and len(venues) >= 2:
-                    lines.append(f"Venue (Activity 4): {venues[1].replace('Venue:', '').strip()}")
+                # Check partners & venue after act 3 and act 4
+                if act_num == 3:
+                    if len(card_partners) >= 1:
+                        lines.append(f"Partners (Activities 1, 2, 3): {card_partners[0].replace('Partners:', '').strip()}")
+                    if len(venues) >= 1:
+                        lines.append(f"Venue (Activities 1, 2, 3): {venues[0].replace('Venue:', '').strip()}")
+                elif act_num == 4:
+                    if len(card_partners) >= 2:
+                        lines.append(f"Partners (Activity 4): {card_partners[1].replace('Partners:', '').strip()}")
+                    if len(venues) >= 2:
+                        lines.append(f"Venue (Activity 4): {venues[1].replace('Venue:', '').strip()}")
         else:
-            # Multi-activity cards (Day 1, 2, 9, 10, 13)
-            sub_items = re.findall(r'<div class="(?:sub-act-item-\d+|sub-act-item)">.*?<div class="sub-act-header">(.*?)</div>(.*?)(?=<div class="(?:sub-act-item|\bcard-venue-box\b)|$)', body, re.DOTALL)
+            # Multi-activity cards (Day 1, 2, 9, 10, 13, 16)
+            sub_items = re.findall(r'<div class="(?:sub-act-item-\d+|sub-act-item)">.*?<div class="sub-act-header">(.*?)</div>(.*?)(?=<div class="(?:sub-act-item|\bcard-partner-box\b|\bcard-venue-box\b)|$)', body, re.DOTALL)
             for idx, (header, sub_content) in enumerate(sub_items, 1):
                 date_pill = re.search(r'<span class="act3-date-pill">(.*?)</span>', sub_content, re.DOTALL)
                 dp_str = f" ({clean_text(date_pill.group(1))})" if date_pill else ""
                 lead_m = re.search(r'<div class="sub-lead-name">(.*?)</div>', sub_content, re.DOTALL)
                 desc_m = re.search(r'<div class="sub-act-desc">(.*?)</div>', sub_content, re.DOTALL)
-                part_m = re.search(r'<div class="sub-partner-box">(.*?)</div>', sub_content, re.DOTALL)
                 spec_init = re.search(r'<div style="[^"]*background: #ffedd5;[^"]*">(.*?)</div>', sub_content, re.DOTALL)
                 
                 lines.append(f"Activity {idx}{dp_str}:")
                 if lead_m: lines.append(f"  Lead Office: {clean_text(lead_m.group(1)).replace('📍', '').strip()}")
                 if desc_m: lines.append(f"  Description: {clean_text(desc_m.group(1))}")
                 if spec_init: lines.append(f"  Special Initiative: {clean_text(spec_init.group(1))}")
-                if part_m: lines.append(f"  {clean_text(part_m.group(1))}")
+            
+            for p in card_partners:
+                lines.append(p)
             for v in venues:
                 lines.append(v)
                 

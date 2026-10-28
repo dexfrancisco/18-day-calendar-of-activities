@@ -94,7 +94,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     z-index: 5;
     padding: 0 20px;
   }
@@ -162,7 +162,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     z-index: 5;
   }
 
@@ -215,7 +215,7 @@
   .calendar-main {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
     flex: 1;
     z-index: 5;
     justify-content: space-between;
@@ -284,14 +284,14 @@
 
   .p2-grid-row1 {
     display: grid;
-    grid-template-columns: 2.45fr 0.79fr 0.72fr 1.18fr;
+    grid-template-columns: 2.35fr 0.72fr 0.68fr 1.39fr;
     gap: 8px;
     flex: 1.3;
   }
 
   .p2-grid-row2 {
     display: grid;
-    grid-template-columns: 1.18fr 1.22fr 1.12fr 1.12fr 0.80fr;
+    grid-template-columns: 1.12fr 1.15fr 1.30fr 1.12fr 1.05fr;
     gap: 8px;
     flex: 1;
   }
@@ -819,6 +819,37 @@
     gap: 5px;
   }
 
+  /* SHARED MULTI-ACTIVITY PARTNER BOX (Top of Venue) */
+  .card-partner-box {
+    background: #fdf4ff;
+    border: 1.8px solid #f0abfc;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 21.5px;
+    color: #701a75;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .card-partner-box strong {
+    color: #86198f;
+    font-weight: 900;
+  }
+
+  .card-body-5act .card-partner-box {
+    font-size: 19px;
+    padding: 4px 8px;
+    line-height: 1.15;
+    border-radius: 6px;
+  }
+
+  .card-body-4act .card-partner-box {
+    font-size: 17.5px;
+    padding: 3px 7px;
+    line-height: 1.15;
+    border-radius: 6px;
+  }
+
   /* VENUE BOX */
   .card-venue-box {
     background: #f0fdf4;
@@ -1150,50 +1181,7 @@
     </div>
   </header>
 
-  <!-- TOP 4 PILLARS -->
-  <section class="pillars-grid">
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>COVERAGE</h4>
-        <p>All LGU Cauayan Offices and 65 Barangays</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>CONVERGENCE PARTNERS</h4>
-        <p>Province of Isabela, RGADC 2, NAPC, OPAPRU, PNP, DepEd, CSOs, POs, youth groups, and OGP partners</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>FOCUS AREAS</h4>
-        <p>VAWC prevention & response, TFGBV, cyber trafficking, online sexual exploitation, Safe Spaces, referral systems, survivor support, and community accountability</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16v10H4zM20 4H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h6v2H8v2h8v-2h-2v-2h6c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>INTEGRATED PLATFORMS</h4>
-        <p>Project S.U.N.S.H.I.N.E., iReport VAWC, Cauayan Safe Line, Cauayan CARES, and GERL/GAD KMS systems</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALENDAR MAIN -->
+<!-- CALENDAR MAIN -->
   <main class="calendar-main">
     
     <!-- === NOVEMBER 2026 === -->
@@ -1241,13 +1229,14 @@
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 GAD Office</div>
               <div class="sub-act-desc">Wellness and Essential Care Distribution for Project S.U.N.S.H.I.N.E Beneficiaries.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> BJMP, PNP, CSWD</div>
             </div>
             <div class="sub-act-item-2">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 GAD Office & Mayor</div>
               <div class="sub-act-desc">Opening Program, Orange Campaign Kickoff, Orange Run, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> All City Offices, Barangays, PNP, BFP, BJMP, Academe, CSOs</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> All City Offices, Barangays, PNP, BFP, BJMP, CSWD, Academe, CSOs
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1268,17 +1257,11 @@
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 PESO / COOP / CEDIPO</div>
               <div class="sub-act-desc">Women's economic empowerment, safe employment, anti-trafficking & cyber recruitment scam awareness.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> DOLE, OWWA, DTI, Private Sector</div>
             </div>
             <div class="sub-act-item-3">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 City Agriculture & Cooperative</div>
               <div class="sub-act-desc">Rural women protection, livelihood, cooperative support & community prevention.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> DA, Cooperatives, MSMES, Barangays, CSOs</div>
-            </div>
-            <div class="card-venue-box">
-              <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
-              <span><strong>Venue:</strong> Isabela Convention Center (ICON)</span>
             </div>
             <!-- Sub 3 (Nov 26–30, 2026) -->
             <div class="sub-act-item-3">
@@ -1288,7 +1271,13 @@
               </div>
               <div class="sub-lead-name">📍 City Accounting Office</div>
               <div class="sub-act-desc">GAD Employee Development, Recognition and Organizational Strengthening Program.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> COA, Barangays</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+            </div>
+            <div class="card-venue-box">
+              <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+              <span><strong>Venue:</strong> Isabela Convention Center (ICON)</span>
             </div>
           </div>
         </article>
@@ -1305,19 +1294,19 @@
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 PDAO & OSCA</div>
               <div class="sub-act-desc">Protection of women with disabilities & senior women; inclusive referral and support.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> CSWDO, Health Office, PNP</div>
             </div>
             <div class="sub-act-item-4">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 GAD Office</div>
               <div class="sub-act-desc">Namnama (PWD Film Viewing)</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> Isabela Artist Club (ISAC), Women with Disabilities Group</div>
             </div>
             <div class="sub-act-item-4">
               <div class="sub-act-header">ACTIVITY 3</div>
               <div class="sub-lead-name">📍 CSWDO</div>
               <div class="sub-act-desc">Survivor-centered care management, psychosocial first aid, referral mapping. <strong>Project S.U.N.S.H.I.N.E. M&E</strong></div>
-              <div class="sub-partner-box"><strong>Partners:</strong> Health Office, PNP-WCPD, NGAs, CSOs, ISAC</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1327,7 +1316,9 @@
               <div class="sub-act-header">ACTIVITY 4</div>
               <div class="sub-lead-name">📍 City Population Office</div>
               <div class="sub-act-desc">KABATAAN PRO-TECT (Teen Empowerment and Care Team): Peer Helping Training on Safe Spaces, Mental Health, and ASRH</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1448,7 +1439,7 @@
               <p class="single-act-desc">Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.</p>
             </div>
             <div class="single-partner-box">
-              <strong>Partners:</strong> HR Office, GAD Office, DILG, CSOs
+              <strong>Partners:</strong> DILG, HR Office, GAD Office, CSOs
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1477,7 +1468,7 @@
               <p class="single-act-desc">Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.</p>
             </div>
             <div class="single-partner-box">
-              <strong>Partners:</strong> HR Office, GAD Office, DILG, CSOs
+              <strong>Partners:</strong> DILG, HR Office, GAD Office, CSOs
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1498,13 +1489,14 @@
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 GAD Office & MOVE</div>
               <div class="sub-act-desc">Men as allies forum, healthy masculinity, shared responsibility & prevention of VAWC.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> JCI, PNP, BJMP, CDRRMO, BFP, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan</div>
             </div>
             <div class="sub-act-item-2">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 CDRRMO / Rescue 922 / Safe Line</div>
               <div class="sub-act-desc">Emergency response simulation, hotline awareness, safety drill, and rapid coordination.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> PNP, BFP, MDRRMO, Teams, JCI, Academe, DepEd</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1541,50 +1533,7 @@
     </div>
   </header>
 
-  <!-- TOP 4 PILLARS -->
-  <section class="pillars-grid">
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>COVERAGE</h4>
-        <p>All LGU Cauayan Offices and 65 Barangays</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>CONVERGENCE PARTNERS</h4>
-        <p>Province of Isabela, RGADC 2, NAPC, OPAPRU, PNP, DepEd, CSOs, POs, youth groups, and OGP partners</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>FOCUS AREAS</h4>
-        <p>VAWC prevention & response, TFGBV, cyber trafficking, online sexual exploitation, Safe Spaces, referral systems, survivor support, and community accountability</p>
-      </div>
-    </div>
-
-    <div class="pillar-card">
-      <div class="pillar-icon-box">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16v10H4zM20 4H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h6v2H8v2h8v-2h-2v-2h6c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
-      </div>
-      <div class="pillar-content">
-        <h4>INTEGRATED PLATFORMS</h4>
-        <p>Project S.U.N.S.H.I.N.E., iReport VAWC, Cauayan Safe Line, Cauayan CARES, and GERL/GAD KMS systems</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALENDAR MAIN -->
+<!-- CALENDAR MAIN -->
   <main class="calendar-main">
     
     <!-- === DECEMBER 2026 (DAYS 10-18) === -->
@@ -1609,31 +1558,29 @@
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 City Health Office</div>
               <div class="sub-act-desc">Health response, mental health, reproductive health, medico-legal awareness, support services.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> Hospitals, RHUs, NGOs, Mental Health Partners, BJMP, Barangay Officials</div>
             </div>
             <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 City Legal Office</div>
               <div class="sub-act-desc">Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, PNP, DILG, BJMP, Barangay</div>
             </div>
             <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 3</div>
               <div class="sub-lead-name">📍 PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector</div>
               <div class="sub-act-desc">Case documentation, law enforcement coordination, protection procedures, anti-online exploitation.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> City Prosecutor's Office, DILG, PNP, PAO</div>
             </div>
             <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 4</div>
               <div class="sub-lead-name">📍 Liga ng mga Barangay / VAW Desks</div>
               <div class="sub-act-desc">Barangay action planning, desk strengthening, community watch, and referral readiness.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> DILG, Barangays, BSWDO, BJMP</div>
             </div>
             <div class="sub-act-item-5">
               <div class="sub-act-header">ACTIVITY 5</div>
               <div class="sub-lead-name">📍 JCD GAD CONNECT and CDRRMO</div>
               <div class="sub-act-desc">Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, cyber safety awareness.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> GAD Office, PNP, Tech Partners, BJMP, JCI, Barangay Officials</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -1674,29 +1621,35 @@
           </div>
         </article>
 
-        <!-- DAY 13 (2 Activities) -->
+        <!-- DAY 13 (3 Activities) -->
         <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 13</span>
             <span class="date-text">DEC 7</span>
             <span class="weekday-text">MON</span>
           </div>
-          <div class="card-body-multi">
-            <div class="sub-act-item-2">
+          <div class="card-body-3act">
+            <div class="sub-act-item-3">
               <div class="sub-act-header">ACTIVITY 1</div>
               <div class="sub-lead-name">📍 GAD Office</div>
-              <div class="sub-act-desc">Seminar on Gender Functionality Assessment Tool (GFAST) & Gender Responsiveness LGU (GERL) Assessment.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> DILG, PCW, Province of Isabela GFPS, Cauayan GFPS</div>
+              <div class="sub-act-desc">Seminar on GFAST & GERL Assessment.</div>
             </div>
-            <div class="sub-act-item-2">
+            <div class="sub-act-item-3">
               <div class="sub-act-header">ACTIVITY 2</div>
               <div class="sub-lead-name">📍 CPDO / GAD KMS Team</div>
               <div class="sub-act-desc">Data-driven governance, sex-disaggregated data, monitoring dashboards, GERL tools.</div>
-              <div class="sub-partner-box"><strong>Partners:</strong> IT Office, Planning Office, All Offices</div>
+            </div>
+            <div class="sub-act-item-3">
+              <div class="sub-act-header">ACTIVITY 3</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">Display of Orange Exhibits</div>
+            </div>
+            <div class="card-partner-box">
+              <strong>Partners:</strong> DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS, IT Office, Planning Office, All Offices
             </div>
             <div class="card-venue-box">
               <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
-              <span><strong>Venue:</strong> Isabela Convention Center, San Fermin, Cauayan City</span>
+              <span><strong>Venue:</strong> Isabela Convention Center, San Fermin</span>
             </div>
           </div>
         </article>
@@ -1765,26 +1718,25 @@
           </div>
         </article>
 
-        <!-- DAY 16 (GAD Office) -->
+        <!-- DAY 16 (2 Activities) -->
         <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 16</span>
             <span class="date-text">DEC 10</span>
             <span class="weekday-text">THU</span>
           </div>
-          <div class="card-body-single">
-            <div class="single-lead-block">
-              <span class="lead-tag-row">
-                <svg viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
-                LEAD OFFICE
-              </span>
-              <span class="single-lead-name">GAD Office</span>
+          <div class="card-body-multi">
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">GAD in Action: Enhancing Gender-Responsive Management and Leadership</div>
             </div>
-            <div class="single-act-block">
-              <span class="act-tag-badge">MAIN ACTIVITY</span>
-              <p class="single-act-desc">GAD in Action: Enhancing Gender-Responsive Management and Leadership</p>
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">Regional Educational Research Conference</div>
             </div>
-            <div class="single-partner-box">
+            <div class="card-partner-box">
               <strong>Partners:</strong> DEPED RO2, SDO Cauayan City, CSOs
             </div>
             <div class="card-venue-box">
@@ -1794,7 +1746,7 @@
           </div>
         </article>
 
-        <!-- DAY 17 (Active Day: Regional Educational Research Conference) -->
+        <!-- DAY 17 (Copied Activity: Regional Educational Research Conference) -->
         <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 17</span>
@@ -1824,18 +1776,27 @@
         </article>
 
         <!-- DAY 18 -->
-        <article class="day-card weekend-advocacy-day">
+        <article class="day-card active-day">
           <div class="card-top-bar">
             <span class="day-pill">DAY 18</span>
             <span class="date-text">DEC 12</span>
             <span class="weekday-text">SAT</span>
           </div>
-          <div class="card-body-weekend">
-            <div class="weekend-icon-box">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          <div class="card-body-multi">
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 1</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">Display of Orange Exhibits</div>
             </div>
-            <div class="weekend-badge">ONLINE ADVOCACY</div>
-            <div class="weekend-advocacy-text">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</div>
+            <div class="sub-act-item-2">
+              <div class="sub-act-header">ACTIVITY 2</div>
+              <div class="sub-lead-name">📍 GAD Office</div>
+              <div class="sub-act-desc">Posting of Accomplishment Reports for the 18-day Campaign</div>
+            </div>
+            <div class="card-venue-box" style="background: #fffaf5; border: 1.5px solid #fed7aa; color: #ea580c;">
+              <svg viewBox="0 0 24 24" style="fill: #ea580c; width: 17px; height: 17px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              <span><strong>Online:</strong> Social Media & Portals</span>
+            </div>
           </div>
         </article>
 

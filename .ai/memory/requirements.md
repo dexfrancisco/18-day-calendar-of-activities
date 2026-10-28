@@ -15,7 +15,7 @@ Produce accurate, high-visibility, print-ready graphic calendar layouts (A3 sing
 
 ## Functional requirements
 1. **Header & Campaign Identity:** Display the "18-DAY Orange Campaign" title, official subtitle ("18-DAY CAMPAIGN TO END VIOLENCE AGAINST WOMEN AND THEIR CHILDREN"), location & date line ("City Government of Cauayan, Isabela • November 25 – December 12, 2026"), and theme (*"Project S.U.N.S.H.I.N.E. for Safe, Inclusive and Technology-Responsive Communities"*).
-2. **4 Core Pillars Banner:** Display Coverage, Convergence Partners, Focus Areas, and Integrated Platforms at the top of the calendar.
+2. **Header Layout (Pillars Removed):** The top 4 pillar boxes (Coverage, Convergence Partners, Focus Areas, Integrated Platforms) are removed from the canvas header to maximize vertical space and card legibility.
 3. **Complete Schedule Matrix (Pre-Campaign + Days 1–18):**
    - **Pre-Campaign (Nov 16–20, 2026):** Barangay Validation of Outstanding GAD Champions (OGAD Champions) — Best Barangay GAD Implementors (Lead: GAD Office; Partners: DILG, LGU Offices, Liga ng mga Barangay, CCGLO; Venue: Per Regions).
    - **Day 1 (Nov 25, Wed):** 2 Activities — (1) GAD Office: Wellness and Essential Care Distribution for Project S.U.N.S.H.I.N.E Beneficiaries (Partners: BJMP, PNP, CSWD); (2) GAD Office & Office of the City Mayor: Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch (Partners: All City Offices, Barangays, PNP, BFP, BJMP, Academe, CSOs). Venue: City Sports Complex, Tagaran.
@@ -35,13 +35,17 @@ Produce accurate, high-visibility, print-ready graphic calendar layouts (A3 sing
    - **Day 10 (Dec 4, Fri):** 5 Activities — (1) City Health Office (Partners: Hospitals, RHUs, NGOs, Mental Health Partners, BJMP, Barangay Officials); (2) City Legal Office (Partners: City Prosecutor's Office, PNP, DILG, BJMP, Barangay); (3) PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector (Partners: City Prosecutor's Office, DILG, PNP, PAO); (4) Liga ng mga Barangay / VAW Desks (Partners: DILG, Barangays, BSWDO, BJMP); (5) JCD GAD CONNECT and CDRRMO: Digital Safety Day (Partners: GAD Office, PNP, Tech Partners, BJMP, JCI, Barangay Officials; Venue: F. L. Dy Colliseum).
    - **Day 11 (Dec 5, Sat):** Hybrid — In-Person: GAD Office (Campaign Learning and Service Readiness Day at Bamboo Hall, City Hall) + Online Advocacy.
    - **Day 12 (Dec 6, Sun):** Online Advocacy.
-   - **Day 13 (Dec 7, Mon):** 2 Activities — (1) GAD Office: Seminar on GFAST and GERL Assessment Tool (Partners: DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS); (2) CPDO / GAD KMS Team: Data-driven governance (Partners: IT Office, Planning Office, All Offices; Venue: Isabela Convention Center).
+   - **Day 13 (Dec 7, Mon):** 3 Activities — (1) GAD Office: Seminar on GFAST and GERL Assessment Tool (Partners: DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS); (2) CPDO / GAD KMS Team: Data-driven governance (Partners: IT Office, Planning Office, All Offices); (3) GAD Office: Display of Orange Exhibits (Venue: Isabela Convention Center).
    - **Day 14 (Dec 8, Tue):** PIO, GAD Office, DepEd, ISU-Cauayan, Tourism Office, ISAC, CSOs — Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing + Awarding of Winners (Partners: Local Artists, Media, Content Creators; Venue: F. L. Dy Colliseum).
    - **Day 15 (Dec 9, Wed):** Culminating Activity led by LGU Cauayan — Awarding of all barangays and offices, recognition of partners, presentation of commitments, and ceremonial signing of Memorandum of Partnership with NAPC and OPAPRU (Partners: DILG, NAPC, OPAPRU, PCW, All Offices, All Partners, Barangay, CSOs; Venue: F. L. Dy Colliseum).
-   - **Day 16 (Dec 10, Thu):** GAD Office — GAD in Action: Enhancing Gender-Responsive Management and Leadership (Partners: DEPED RO2, SDO Cauayan City, CSOs; Venue: F. L. Dy Colliseum).
-   - **Day 17 (Dec 11, Fri):** Hybrid — In-Person: GAD Office — Regional Educational Research Conference (Partners: SDO Cauayan City, DEPED RO2; Venue: F. L. Dy Colliseum) + Online Advocacy.
-   - **Day 18 (Dec 12, Sat):** Hybrid — In-Person: GAD Office (Display of Orange Exhibits) + Online Advocacy.
-4. **Multi-Format Support:** Provide both A3 single-sheet landscape (`4961x3508` px) and A4 two-page portrait (`2480x3508` px per page) HTML and PNG versions.
+   - **Day 16 (Dec 10, Thu):** 2 Activities — (1) GAD Office: GAD in Action: Enhancing Gender-Responsive Management and Leadership (Partners: DEPED RO2, SDO Cauayan City, CSOs); (2) GAD Office: Regional Educational Research Conference (Partners: SDO Cauayan City, DEPED RO2; Venue: F. L. Dy Colliseum).
+   - **Day 17 (Dec 11, Fri):** Hybrid — In-Person: GAD Office — Regional Educational Research Conference (Partners: SDO Cauayan City, DEPED RO2; Venue: F. L. Dy Colliseum) + Online Advocacy (Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters).
+   - **Day 18 (Dec 12, Sat):** Hybrid — In-Person: GAD Office (Posting of Accomplishment Reports for the 18-day Campaign) + Online Advocacy.
+4. **Partner Architecture & Priority Rules:**
+   - **Consolidated Partner Box Above Venue:** In all multi-activity cards (Days 1, 2, 9, 10, 13, 16), individual sub-activity partner tags are omitted. All partners across the activities under that venue are consolidated into a single .card-partner-box directly above the .card-venue-box, with duplicates removed.
+   - **Universal DILG First Position:** In every card or activity where DILG is present among the partners (Pre-Campaign, Days 7, 8, 10, 13, 15), DILG must strictly be listed as the very first partner.
+   - **Dual-Venue Scope (Day 3):** Day 3 features two distinct venue groups: activities under Venue 1 (Activities 1, 2, 3) consolidate their partners directly above Venue 1; Activity 4 under Venue 2 places its partners directly above Venue 2.
+5. **Multi-Format Support:** Provide both A3 single-sheet landscape (`4961x3508` px) and A4 two-page portrait (`2480x3508` px per page) HTML and PNG versions.
 
 ## Non-functional requirements
 - **Print Resolution & Fidelity:** 300 DPI pixel dimensions (`4961x3508` for A3, `2480x3508` for A4) with `-webkit-print-color-adjust: exact; print-color-adjust: exact;`.
