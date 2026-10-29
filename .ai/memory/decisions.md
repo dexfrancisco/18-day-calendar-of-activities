@@ -1,5 +1,23 @@
 # Durable Decisions
 
+## 2026-10-29 — Venue Realignment (Days 1, 2, 10) & Day 8 World AIDS Day Expansion
+**Decision:**
+1. **Day 1 (Nov 25) Venue Updated to CITYWIDE:**
+   - Changed venue from `City Sports Complex, Tagaran` to `CITYWIDE`.
+2. **Day 2 (Nov 26) Venue Updated to F. L. Dy Coliseum:**
+   - Changed venue from `Isabela Convention Center (ICON)` to `F. L. Dy Colliseum, District III, Cauayan City, Isabela` (A3) / `F. L. Dy Colliseum, District III` (A4).
+3. **Day 8 (Dec 2) Expanded to 2 Activities:**
+   - Added Activity 2 — Lead Office: `City Health Office (CHO)`, Main Activity: `World Aids Day Celebrations 2026 : "Ending Aids Starts with Access"`.
+   - Card converted from single-activity to 2-activity multi layout (`.card-body-multi` / `.sub-act-item-2`).
+   - Consolidated partners (`DILG, HR Office, GAD Office, CSOs`) placed directly above venue box with DILG first.
+   - On A4 Page 1, balanced Row 3 column proportions (`0.82fr 1.25fr 1.35fr`).
+4. **Day 10 (Dec 4) Venue Updated to Isabela Convention Center (ICON):**
+   - Changed venue from `F. L. Dy Colliseum` to `Isabela Convention Center, San Fermin, Cauayan City, Isabela` (A3) / `Isabela Convention Center (ICON)` (A4).
+**Reason:** Official venue scheduling swaps and integration of the 2026 World AIDS Day commemoration under the City Health Office on Day 8.
+**Alternatives:** Retaining preliminary venue assignments.
+**Impact:** Synchronized across all 5 HTML templates (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, `18-day-campaign-calendar-a4.html`, and `Final Copy/`), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
 ## 2026-10-28 — Removal of 4 Top Pillars & Canvas Readability Expansion
 **Decision:**
 1. **Removal of Top Pillars Grid:** Removed `<section class="pillars-grid">` (Coverage, Convergence Partners, Focus Areas, Integrated Platforms) from the header across all calendar layouts (A3 Landscape and A4 Portrait Pages 1 & 2).

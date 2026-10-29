@@ -28,7 +28,7 @@ Activity 2:
   Lead Office: GAD Office & Office of the City Mayor
   Description: Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch.
 Partners: All City Offices, Barangays, PNP, BFP, BJMP, CSWD, Academe, CSOs
-Venue: City Sports Complex, Tagaran
+Venue: CITYWIDE
 
 --------------------------------------------------------------------------------
 DAY 2 | NOV 26, 2026 | THU
@@ -43,7 +43,7 @@ Activity 3 (NOV 26–30, 2026):
   Lead Office: City Accounting Office
   Description: GAD Employee Development, Recognition and Organizational Strengthening Program.
 Partners: DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
-Venue: Isabela Convention Center, San Fermin, Cauayan City, Isabela
+Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
 
 --------------------------------------------------------------------------------
 DAY 3 | NOV 27, 2026 | FRI
@@ -98,8 +98,12 @@ Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
 --------------------------------------------------------------------------------
 DAY 8 | DEC 2, 2026 | WED
 --------------------------------------------------------------------------------
-Lead Office: CHRMO & CODI
-Main Activity: Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.
+Activity 1:
+  Lead Office: CHRMO & CODI
+  Description: Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.
+Activity 2:
+  Lead Office: City Health Office (CHO)
+  Description: World Aids Day Celebrations 2026 : “Ending Aids Starts with Access”
 Partners: DILG, HR Office, GAD Office, CSOs
 Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
 
@@ -134,7 +138,7 @@ Activity 5:
   Lead Office: JCD GAD CONNECT and CDRRMO
   Description: Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.
 Partners: DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI
-Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
+Venue: Isabela Convention Center, San Fermin, Cauayan City, Isabela
 
 --------------------------------------------------------------------------------
 DAY 11 | DEC 5, 2026 | SAT
