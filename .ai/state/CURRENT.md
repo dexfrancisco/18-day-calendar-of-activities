@@ -1,10 +1,10 @@
 # Current State
 
 ## Current feature
-Venue Realignments (Days 1, 2, 10) & Day 8 World AIDS Day Activity
+Day 15 Expansion: PROJECT ORANGE RISE
 
 ## Current task
-Updated Day 1 venue to CITYWIDE, Day 2 venue to F. L. Dy Coliseum, Day 10 venue to Isabela Convention Center (ICON), and expanded Day 8 to 2 activities (adding CHO World AIDS Day Celebrations 2026) across all A3 and A4 HTML templates, re-extracted text, re-rendered 300 DPI PNG deliverables, and synchronized `Final Copy/`.
+Expanded Day 15 on December 9 to a 2-activity card adding PROJECT ORANGE RISE under the GAD Office alongside the Culminating Activity, consolidated partners with DILG first, adjusted grid column proportions on A3 and A4 Page 2, re-extracted text, re-rendered 300 DPI PNG deliverables, and synchronized `Final Copy/`.
 
 ## Status
 Completed
@@ -16,15 +16,14 @@ Completed
 None
 
 ## Last meaningful change
-- **Day 1 (Nov 25):** Venue changed to `CITYWIDE`.
-- **Day 2 (Nov 26):** Venue changed to `F. L. Dy Colliseum, District III, Cauayan City, Isabela` (A3) / `F. L. Dy Colliseum, District III` (A4).
-- **Day 8 (Dec 2):** Converted to 2-activity layout (`.card-body-multi`):
-  - Activity 1: `CHRMO & CODI` — Safe workplace, anti-sexual harassment, internal reporting and protection mechanisms.
-  - Activity 2: `City Health Office (CHO)` — World Aids Day Celebrations 2026 : "Ending Aids Starts with Access".
-  - Partners: `DILG, HR Office, GAD Office, CSOs` placed directly above venue box.
+- **Day 15 (Dec 9):** Converted to 2-activity layout (`.card-body-multi`):
+  - Activity 1: `Culminating Activity led by LGU Cauayan` — Awarding of all barangays & offices, recognition of partners, presentation of commitments, and ceremonial signing of Memorandum of Partnership with NAPC and OPAPRU.
+  - Activity 2: `GAD Office` — PROJECT ORANGE RISE: Empowering 12 Women in Economic Enterprise through the Proceeds of Orange Run.
+  - Consolidated Partners (DILG first): `DILG, NAPC, OPAPRU, PCW, CEDIPO, CSWDO, City Budget Office, City Accounting Office, GSO, DTI, TESDA, Cooperatives, Barangay Local Government Units, All Offices, All Partners, CSOs`.
   - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela`.
-  - Balanced A4 Page 1 Row 3 grid proportions to `0.82fr 1.25fr 1.35fr`.
-- **Day 10 (Dec 4):** Venue changed to `Isabela Convention Center, San Fermin, Cauayan City, Isabela` (A3) / `Isabela Convention Center (ICON)` (A4).
+- **Grid Optimization:**
+  - A3 Row 3: Adjusted grid to `1.20fr 1.05fr 1.35fr 1.15fr 0.92fr 0.68fr`.
+  - A4 Page 2 Row 2: Adjusted grid to `1.05fr 1.05fr 1.48fr 1.12fr 1.04fr`.
 - **Synchronized Deliverables:**
   - `18-day-campaign-calendar-a3.html` & `18-day-campaign-calendar.html` (verified byte-identical)
   - `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, and `18-day-campaign-calendar-a4.html`
@@ -34,7 +33,7 @@ None
 ## Last verification
 - Rendered 300 DPI screenshots via `render_a3_png.py` and `render_a4_png.py`.
 - Verified bottom borders at y=3493 (A3) and y=3481 (A4) with zero clipping or overflow.
-- Verified extracted text via `extract_all_text.py` confirming Day 1 CITYWIDE, Day 2 FLDY Coliseum, Day 8 dual activities, and Day 10 ICON.
+- Verified extracted text via `extract_all_text.py` confirming Day 15 dual activities and consolidated partners.
 - Verified byte-identity between `18-day-campaign-calendar-a3.html` and `18-day-campaign-calendar.html`.
 
 ## Next-session context

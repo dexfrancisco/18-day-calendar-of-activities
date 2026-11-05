@@ -1,5 +1,22 @@
 # Durable Decisions
 
+## 2026-11-05 — Day 15 Expansion: PROJECT ORANGE RISE
+**Decision:**
+1. **Day 15 (Dec 9) Expanded to 2 Activities:**
+   - Converted card from single-activity layout (`.card-body-single`) to 2-activity multi layout (`.card-body-multi` / `.sub-act-item-2`):
+     - **Activity 1:** Lead Office: `Culminating Activity led by LGU Cauayan` — Main Activity: `Awarding of all barangays & offices, recognition of partners, presentation of commitments, and ceremonial signing of Memorandum of Partnership with NAPC and OPAPRU.`
+     - **Activity 2:** Lead Office: `GAD Office` — Main Activity: `PROJECT ORANGE RISE: Empowering 12 Women in Economic Enterprise through the Proceeds of Orange Run`
+2. **Consolidated Partners with DILG Priority:**
+   - Unified all Day 15 partner agencies into the top-of-venue partner box, keeping DILG strictly first:
+     `DILG, NAPC, OPAPRU, PCW, CEDIPO, CSWDO, City Budget Office, City Accounting Office, GSO, DTI, TESDA, Cooperatives, Barangay Local Government Units, All Offices, All Partners, CSOs`
+3. **Proportional Grid Realignment:**
+   - A3 Landscape Row 3 (`.grid-6.row-3`): Realigned grid fractions to `1.20fr 1.05fr 1.35fr 1.15fr 0.92fr 0.68fr` to give Day 15 (Column 3) optimal width for two distinct activity blocks.
+   - A4 Portrait Page 2 Row 2 (`.p2-grid-row2`): Realigned column widths to `1.05fr 1.05fr 1.48fr 1.12fr 1.04fr` for balanced card density.
+**Reason:** Official LGU Cauayan GAD Office program update integrating the economic enterprise empowerment initiative (PROJECT ORANGE RISE) into the Day 15 Culminating Program.
+**Alternatives:** Adding PROJECT ORANGE RISE to another date or keeping Day 15 single-activity.
+**Impact:** Synchronized across all 5 HTML templates (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, `18-day-campaign-calendar-a4.html`, and `Final Copy/`), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
 ## 2026-10-29 — Venue Realignment (Days 1, 2, 10) & Day 8 World AIDS Day Expansion
 **Decision:**
 1. **Day 1 (Nov 25) Venue Updated to CITYWIDE:**
