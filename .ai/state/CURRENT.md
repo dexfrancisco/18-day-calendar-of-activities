@@ -1,10 +1,10 @@
 # Current State
 
 ## Current feature
-Day 15 Expansion: PROJECT ORANGE RISE
+Day 3 Activity 1 Description Update (Sign Language Orientation)
 
 ## Current task
-Expanded Day 15 on December 9 to a 2-activity card adding PROJECT ORANGE RISE under the GAD Office alongside the Culminating Activity, consolidated partners with DILG first, adjusted grid column proportions on A3 and A4 Page 2, re-extracted text, re-rendered 300 DPI PNG deliverables, and synchronized `Final Copy/`.
+Appended ", and Sign Language Orientation" to Activity 1 of Day 3 (Nov 27) under PDAO & OSCA across all A3 and A4 HTML templates, verified zero clipping, re-extracted text, re-rendered 300 DPI PNG deliverables, and synchronized `Final Copy/`.
 
 ## Status
 Completed
@@ -16,14 +16,16 @@ Completed
 None
 
 ## Last meaningful change
-- **Day 15 (Dec 9):** Converted to 2-activity layout (`.card-body-multi`):
-  - Activity 1: `Culminating Activity led by LGU Cauayan` — Awarding of all barangays & offices, recognition of partners, presentation of commitments, and ceremonial signing of Memorandum of Partnership with NAPC and OPAPRU.
-  - Activity 2: `GAD Office` — PROJECT ORANGE RISE: Empowering 12 Women in Economic Enterprise through the Proceeds of Orange Run.
-  - Consolidated Partners (DILG first): `DILG, NAPC, OPAPRU, PCW, CEDIPO, CSWDO, City Budget Office, City Accounting Office, GSO, DTI, TESDA, Cooperatives, Barangay Local Government Units, All Offices, All Partners, CSOs`.
-  - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela`.
-- **Grid Optimization:**
-  - A3 Row 3: Adjusted grid to `1.20fr 1.05fr 1.35fr 1.15fr 0.92fr 0.68fr`.
-  - A4 Page 2 Row 2: Adjusted grid to `1.05fr 1.05fr 1.48fr 1.12fr 1.04fr`.
+- **Day 3 (Nov 27):**
+  - Updated Activity 1 Description: `Protection of women with disabilities & senior women; inclusive referral and access to support, and Sign Language Orientation.` (A3) / `Protection of women with disabilities & senior women; inclusive referral, support, and Sign Language Orientation.` (A4).
+  - Lead Office: `PDAO & OSCA`.
+  - Activity 2: `Namnama (PWD Film Viewing)` (Lead: `GAD Office`).
+  - Activity 3: `Survivor-centered care management, psychosocial first aid, women and children referral mapping` + `Project S.U.N.S.H.I.N.E. M&E` (Lead: `CSWDO`).
+  - Consolidated Venue 1 Partners: `CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group`.
+  - Venue 1: `F. L. Dy Colliseum, District III, Cauayan City, Isabela` (A3) / `F. L. Dy Colliseum, District III` (A4).
+  - Activity 4: `KABATAAN PRO-TECT (Teen Empowerment and Care Team): Peer Helping Training on Safe Spaces, Mental Health, and ASRH` (Lead: `City Population Office`).
+  - Venue 2 Partners: `City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School`.
+  - Venue 2: `Cauayan City Stand Alone Senior High School`.
 - **Synchronized Deliverables:**
   - `18-day-campaign-calendar-a3.html` & `18-day-campaign-calendar.html` (verified byte-identical)
   - `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, and `18-day-campaign-calendar-a4.html`
@@ -33,7 +35,7 @@ None
 ## Last verification
 - Rendered 300 DPI screenshots via `render_a3_png.py` and `render_a4_png.py`.
 - Verified bottom borders at y=3493 (A3) and y=3481 (A4) with zero clipping or overflow.
-- Verified extracted text via `extract_all_text.py` confirming Day 15 dual activities and consolidated partners.
+- Verified extracted text via `extract_all_text.py` confirming Day 3 Activity 1 update.
 - Verified byte-identity between `18-day-campaign-calendar-a3.html` and `18-day-campaign-calendar.html`.
 
 ## Next-session context

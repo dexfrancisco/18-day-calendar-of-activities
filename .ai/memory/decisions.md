@@ -1,5 +1,30 @@
 # Durable Decisions
 
+## 2026-11-09 — Day 3 Activity 1 Description Update (Sign Language Orientation)
+**Decision:**
+1. **Day 3 (Nov 27) Activity 1 Updated:**
+   - Appended `, and Sign Language Orientation` to Activity 1:
+     - **A3:** `Protection of women with disabilities & senior women; inclusive referral and access to support, and Sign Language Orientation.`
+     - **A4:** `Protection of women with disabilities & senior women; inclusive referral, support, and Sign Language Orientation.`
+   - Maintained zero clipping and proper spacing within `.card-body-4act` and `.sub-act-item-4`.
+**Reason:** Official LGU Cauayan PDAO & OSCA activity update integrating Sign Language Orientation into the inclusive support session.
+**Alternatives:** Adding as a separate 5th sub-activity (which would overcrowd the Day 3 card).
+**Impact:** Synchronized across all 5 HTML templates (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, `18-day-campaign-calendar-a4.html`, and `Final Copy/`), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
+## 2026-11-09 — Day 14 Activity Title Expansion
+**Decision:**
+1. **Day 14 (Dec 8) Activity Name Updated:**
+   - Changed Main Activity title to: `Orange Exhibit and Orange Bubble Culture Arts and Public Advocacy: Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing`.
+   - Maintained `Awarding of Winners` badge cleanly aligned under the main description.
+2. **Typography & Layout Adjustments:**
+   - Reduced `.single-act-desc.dense` font size to 27.5px / 1.25 line-height (A3) and 20px / 1.20 line-height (A4) to accommodate the comprehensive activity title with zero vertical clipping.
+   - Rebalanced December Row 3 column proportions on A3 (`1.16fr 1.14fr 1.30fr 1.14fr 0.90fr 0.68fr`) and Row 2 on A4 Page 2 (`1.02fr 1.14fr 1.42fr 1.12fr 1.02fr`) to allocate optimal horizontal breathing room for Day 14.
+**Reason:** Official LGU Cauayan campaign alignment expanding the Day 14 activity to formally include the Orange Exhibit and Orange Bubble Culture Arts advocacy program.
+**Alternatives:** Truncating or omitting parts of the full event title.
+**Impact:** Synchronized across all 5 HTML templates (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, `18-day-campaign-calendar-a4.html`, and `Final Copy/`), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
 ## 2026-11-05 — Day 15 Expansion: PROJECT ORANGE RISE
 **Decision:**
 1. **Day 15 (Dec 9) Expanded to 2 Activities:**
