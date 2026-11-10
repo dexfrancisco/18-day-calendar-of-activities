@@ -1,0 +1,411 @@
+[
+  {
+    "id": "00",
+    "day_number": 0,
+    "filename": "00-pre-campaign.png",
+    "icon_filename": "PRE-CAMPAIGN.png",
+    "badge": "PRE-CAMPAIGN",
+    "date_str": "NOVEMBER 16 - 20, 2026",
+    "layout_type": "pre_campaign",
+    "title": "Barangay Validation of Outstanding GAD Champions (OGAD Champions)",
+    "subtitle": "Best Barangay GAD Implementors",
+    "lead_office": "GAD Office",
+    "partners": "DILG, LGU Offices, Liga ng mga Barangay, CCGLO",
+    "venue": "Per Regions"
+  },
+  {
+    "id": "01",
+    "day_number": 1,
+    "filename": "01-day-01.png",
+    "icon_filename": "DAY 1.png",
+    "badge": "DAY 1",
+    "date_str": "NOVEMBER 25, 2026 | WEDNESDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "GAD Office",
+        "description": "Wellness and Essential Care Distribution for Project S.U.N.S.H.I.N.E Beneficiaries."
+      },
+      {
+        "num": 2,
+        "lead_office": "GAD Office & Office of the City Mayor",
+        "description": "Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch."
+      }
+    ],
+    "partners": "All City Offices, Barangays, PNP, BFP, BJMP, CSWD, Academe, CSOs",
+    "venue": "CITYWIDE"
+  },
+  {
+    "id": "02",
+    "day_number": 2,
+    "filename": "02-day-02.png",
+    "icon_filename": "DAY 2.png",
+    "badge": "DAY 2",
+    "date_str": "NOVEMBER 26, 2026 | THURSDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "PESO / COOP / CEDIPO",
+        "description": "Economic Empowerment for Women Safe Employment and Anti Trafficking Forum"
+      },
+      {
+        "num": 2,
+        "lead_office": "City Agriculture & Cooperative Office",
+        "description": "Rural Women Protection, Livelihood and Cooperative Support Forum"
+      },
+      {
+        "num": 3,
+        "lead_office": "City Accounting Office",
+        "description": "GAD Employee Development, Recognition and Organizational Strengthening Program.",
+        "date_range": "NOV 26–30, 2026"
+      }
+    ],
+    "partners": "DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "03",
+    "day_number": 3,
+    "filename": "03-day-03.png",
+    "icon_filename": "DAY 3.png",
+    "badge": "DAY 3",
+    "date_str": "NOVEMBER 27, 2026 | FRIDAY",
+    "layout_type": "day3_dual_group",
+    "group1": {
+      "activities": [
+        {
+          "num": 1,
+          "lead_office": "PDAO & OSCA",
+          "description": "Inclusive Protection, Accessible Services, and Sign Language Orientation for Women with Disabilities and Senior Women"
+        },
+        {
+          "num": 2,
+          "lead_office": "GAD Office",
+          "description": "Namnama (PWD Film Viewing)"
+        },
+        {
+          "num": 3,
+          "lead_office": "CSWDO",
+          "description": "Project SUNSHINE Survivor – Centered Case Management and Referral Review"
+        }
+      ],
+      "partners": "CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group",
+      "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+    },
+    "group2": {
+      "activity": {
+        "num": 4,
+        "lead_office": "City Population Office",
+        "description": "KABATAAN PRO-TECT (Teen Empowerment and Care Team): Peer Helping Training on Safe Spaces, Mental Health, and ASRH"
+      },
+      "partners": "City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School",
+      "venue": "Cauayan City Stand Alone Senior High School"
+    }
+  },
+  {
+    "id": "04",
+    "day_number": 4,
+    "filename": "04-day-04.png",
+    "icon_filename": "DAY 4.png",
+    "badge": "DAY 4",
+    "date_str": "NOVEMBER 28, 2026 | SATURDAY",
+    "layout_type": "single_activity",
+    "lead_office": "Cooperative Office CSOs / POs / OGP Partners / Faith-based Groups",
+    "main_activity": "Multi-Stakeholder Dialogue on Accountability to Survivors and Community Partnership",
+    "partners": "All Community and Development Partners",
+    "venue": "Isabela Convention Center, San Fermin, Cauayan City, Isabela"
+  },
+  {
+    "id": "05",
+    "day_number": 5,
+    "filename": "05-day-05.png",
+    "icon_filename": "DAY 5.png",
+    "badge": "DAY 5",
+    "date_str": "NOVEMBER 29, 2026 | SUNDAY",
+    "layout_type": "online_only",
+    "advocacy_track": "ONLINE ADVOCACY",
+    "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+  },
+  {
+    "id": "06",
+    "day_number": 6,
+    "filename": "06-day-06.png",
+    "icon_filename": "DAY 6.png",
+    "badge": "DAY 6",
+    "date_str": "NOVEMBER 30, 2026 | MONDAY",
+    "layout_type": "single_activity",
+    "lead_office": "City Youth Development Office, SK Federation of Cauayan City / Kalinga Kabataan Program",
+    "main_activity": "Youth forum on online safety, consent, anti-bullying, anti-grooming, TFGBV and cyber trafficking prevention.",
+    "partners": "DepEd, SK, VM Office, Sangguniang Panlungsod, Youth Groups, Faith Groups, PNP, Legal Office",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "07",
+    "day_number": 7,
+    "filename": "07-day-07.png",
+    "icon_filename": "DAY 7.png",
+    "badge": "DAY 7",
+    "date_str": "DECEMBER 1, 2026 | TUESDAY",
+    "layout_type": "single_activity",
+    "lead_office": "CHRMO & CODI",
+    "main_activity": "Gender Sensitivity Training for LGU Employees and LDC Members",
+    "partners": "DILG, HR Office, GAD Office, CSOs",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "08",
+    "day_number": 8,
+    "filename": "08-day-08.png",
+    "icon_filename": "DAY 8.png",
+    "badge": "DAY 8",
+    "date_str": "DECEMBER 2, 2026 | WEDNESDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "CHRMO & CODI",
+        "description": "Safe Workplace Compliance and Anti-Sexual Harassment Orientation"
+      },
+      {
+        "num": 2,
+        "lead_office": "City Health Office (CHO)",
+        "description": "World Aids Day Celebrations 2026 : “Ending Aids Starts with Access”"
+      }
+    ],
+    "partners": "DILG, HR Office, GAD Office, CSOs",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "09",
+    "day_number": 9,
+    "filename": "09-day-09.png",
+    "icon_filename": "DAY 9.png",
+    "badge": "DAY 9",
+    "date_str": "DECEMBER 3, 2026 | THURSDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "GAD Office & MOVE",
+        "description": "Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility"
+      },
+      {
+        "num": 2,
+        "lead_office": "CDRRMO / Rescue 922 / Safe Line",
+        "description": "Safeline 922 Emergency Response Simulation and Referral Drill"
+      }
+    ],
+    "partners": "PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "10",
+    "day_number": 10,
+    "filename": "10-day-10.png",
+    "icon_filename": "DAY 10.png",
+    "badge": "DAY 10",
+    "date_str": "DECEMBER 4, 2026 | FRIDAY",
+    "layout_type": "single_activity",
+    "main_activity": "End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations",
+    "lead_office": "City Health Office, City Legal Office, PNP-WCPD, Liga ng mga Barangay, JCD GAD CONNECT & CDRRMO",
+    "partners": "DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI",
+    "venue": "Isabela Convention Center, San Fermin, Cauayan City, Isabela",
+    "activities_detailed": [
+      {
+        "num": 1,
+        "lead_office": "City Health Office",
+        "description": "Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors."
+      },
+      {
+        "num": 2,
+        "lead_office": "City Legal Office",
+        "description": "Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways."
+      },
+      {
+        "num": 3,
+        "lead_office": "PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector",
+        "description": "Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response."
+      },
+      {
+        "num": 4,
+        "lead_office": "Liga ng mga Barangay / VAW Desks",
+        "description": "Barangay action planning, desk strengthening, community watch, and referral readiness."
+      },
+      {
+        "num": 5,
+        "lead_office": "JCD GAD CONNECT and CDRRMO",
+        "description": "Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness."
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "day_number": 11,
+    "filename": "11-day-11.png",
+    "icon_filename": "DAY 11.png",
+    "badge": "DAY 11",
+    "date_str": "DECEMBER 5, 2026 | SATURDAY",
+    "layout_type": "hybrid_inperson_online",
+    "in_person": {
+      "lead_office": "GAD Office",
+      "main_activity": "Campaign Learning and Service Readiness Day",
+      "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
+    },
+    "online": {
+      "advocacy_track": "ONLINE ADVOCACY",
+      "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+    },
+    "partners": "",
+    "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
+  },
+  {
+    "id": "12",
+    "day_number": 12,
+    "filename": "12-day-12.png",
+    "icon_filename": "DAY 12.png",
+    "badge": "DAY 12",
+    "date_str": "DECEMBER 6, 2026 | SUNDAY",
+    "layout_type": "online_only",
+    "advocacy_track": "ONLINE ADVOCACY",
+    "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+  },
+  {
+    "id": "13",
+    "day_number": 13,
+    "filename": "13-day-13.png",
+    "icon_filename": "DAY 13.png",
+    "badge": "DAY 13",
+    "date_str": "DECEMBER 7, 2026 | MONDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "GAD Office",
+        "description": "Deepening Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition"
+      },
+      {
+        "num": 2,
+        "lead_office": "CPDO / GAD KMS Team",
+        "description": "Data-driven governance, sex-disaggregated data, monitoring dashboards, GERL and accountability tools."
+      },
+      {
+        "num": 3,
+        "lead_office": "GAD Office",
+        "description": "Display of Orange Exhibits"
+      }
+    ],
+    "partners": "DILG, PCW, Province of Isabela GFPS, Cauayan City GFPS, IT Office, Planning Office, All Offices",
+    "venue": "Isabela Convention Center, San Fermin, Cauayan City, Isabela"
+  },
+  {
+    "id": "14",
+    "day_number": 14,
+    "filename": "14-day-14.png",
+    "icon_filename": "DAY 14.png",
+    "badge": "DAY 14",
+    "date_str": "DECEMBER 8, 2026 | TUESDAY",
+    "layout_type": "single_activity",
+    "lead_office": "PIO, GAD Office, DepEd, ISU-Cauayan, Tourism Office, ISAC, CSOs",
+    "main_activity": "Orange Exhibit and Orange Bubble Culture Arts and Public Advocacy: Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing",
+    "special_badge": "Awarding of Winners",
+    "partners": "Local Artists, Media, Content Creators",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "15",
+    "day_number": 15,
+    "filename": "15-day-15.png",
+    "icon_filename": "DAY 15.png",
+    "badge": "DAY 15",
+    "date_str": "DECEMBER 9, 2026 | WEDNESDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "Culminating Activity led by LGU Cauayan",
+        "description": "Culminating and Awarding Ceremony: 2026 18-Day Campaign to End VAW"
+      },
+      {
+        "num": 2,
+        "lead_office": "GAD Office",
+        "description": "PROJECT ORANGE RISE: Empowering 12 Women in Economic Enterprise through the Proceeds of Orange Run"
+      }
+    ],
+    "partners": "DILG, NAPC, OPAPRU, PCW, CEDIPO, CSWDO, City Budget Office, City Accounting Office, GSO, DTI, TESDA, Cooperatives, Barangay Local Government Units, All Offices, All Partners, CSOs",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "16",
+    "day_number": 16,
+    "filename": "16-day-16.png",
+    "icon_filename": "DAY 16.png",
+    "badge": "DAY 16",
+    "date_str": "DECEMBER 10, 2026 | THURSDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "GAD Office",
+        "description": "GAD in Action: Enhancing Gender-Responsive Management and Leadership"
+      },
+      {
+        "num": 2,
+        "lead_office": "GAD Office",
+        "description": "Regional Educational Research Conference"
+      }
+    ],
+    "partners": "DEPED RO2, SDO Cauayan City, CSOs",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "17",
+    "day_number": 17,
+    "filename": "17-day-17.png",
+    "icon_filename": "DAY 17.png",
+    "badge": "DAY 17",
+    "date_str": "DECEMBER 11, 2026 | FRIDAY",
+    "layout_type": "hybrid_inperson_online",
+    "in_person": {
+      "lead_office": "GAD Office",
+      "main_activity": "Regional Educational Research Conference",
+      "partners": "SDO Cauayan City, DEPED RO2",
+      "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+    },
+    "online": {
+      "advocacy_track": "ONLINE ADVOCACY",
+      "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+    },
+    "partners": "SDO Cauayan City, DEPED RO2",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+  },
+  {
+    "id": "18",
+    "day_number": 18,
+    "filename": "18-day-18.png",
+    "icon_filename": "DAY 18.png",
+    "badge": "DAY 18",
+    "date_str": "DECEMBER 12, 2026 | SATURDAY",
+    "layout_type": "day18_hybrid",
+    "in_person": {
+      "lead_office": "GAD Office",
+      "activities": [
+        {
+          "num": 1,
+          "description": "Display of Orange Exhibits"
+        },
+        {
+          "num": 2,
+          "description": "Posting of Accomplishment Reports for the 18-day Campaign"
+        }
+      ]
+    },
+    "online": {
+      "advocacy_track": "ONLINE ADVOCACY",
+      "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+    },
+    "partners": "GAD Office, City Information Office, Partner Agencies",
+    "venue": "F. L. Dy Colliseum & Cauayan City Hall Grounds"
+  }
+]

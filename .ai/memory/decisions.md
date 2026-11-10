@@ -1,5 +1,49 @@
 # Durable Decisions
 
+## 2026-11-10 — Revised Activity Titles & Day 10 Combined Forum for Posters (Tarp)
+**Decision:**
+1. **Activity Title Updates across Master Calendars & Daily Posters:**
+   - **Day 2 (Nov 26):**
+     - A1: `Economic Empowerment for Women Safe Employment and Anti Trafficking Forum`
+     - A2: `Rural Women Protection, Livelihood and Cooperative Support Forum`
+     - A3: Retained (`GAD Employee Development, Recognition and Organizational Strengthening Program.`)
+   - **Day 3 (Nov 27):**
+     - A1: `Inclusive Protection, Accessible Services, and Sign Language Orientation for Women with Disabilities and Senior Women`
+     - A2: Retained (`Namnama (PWD Film Viewing)`)
+     - A3: `Project SUNSHINE Survivor – Centered Case Management and Referral Review`
+     - A4: Retained (`KABATAAN PRO-TECT...`)
+   - **Day 4 (Nov 28):**
+     - Activity: `Multi-Stakeholder Dialogue on Accountability to Survivors and Community Partnership`
+   - **Day 8 (Dec 2):**
+     - A1: `Safe Workplace Compliance and Anti-Sexual Harassment Orientation`
+     - A2: Retained (`World Aids Day Celebrations 2026 : “Ending Aids Starts with Access”`)
+   - **Day 9 (Dec 3):**
+     - A1: `Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility`
+     - A2: `Safeline 922 Emergency Response Simulation and Referral Drill`
+   - **Day 10 (Dec 4):**
+     - **Master Calendar (A3 / A4):** Detailed breakdown of A1 through A5 retained.
+     - **Daily Posters (Tarp System):** A1–A5 combined into a single prominent title: `End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations`. Rendered under `single_activity` layout with 580px icon, 78px title, and full lead office / partners list, achieving `y = 2566` (+384px buffer to jeepney).
+   - **Day 13 (Dec 7):**
+     - A1: `Deepening Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition`
+     - A2 & A3: Retained.
+   - **Day 15 (Dec 9):**
+     - A1: `Culminating and Awarding Ceremony: 2026 18-Day Campaign to End VAW`
+     - A2: Retained (`PROJECT ORANGE RISE...`).
+   - **Days 16–18:** Retained all.
+2. **Master Calendar Deliverables Synchronized & Rendered:**
+   - `18-Day_Campaign_Calendar_A3.png` (4961 × 3508 px, root and `Final Copy/`)
+   - `18-Day_Campaign_Calendar_A4_Page1.png` (2480 × 3508 px)
+   - `18-Day_Campaign_Calendar_A4_Page2.png` (2480 × 3508 px)
+   - `18-Day_Campaign_Calendar_Extracted_Text.txt` (root and `Final Copy/`)
+3. **Daily Poster Suite Synchronized & Rendered:**
+   - `FABMAT/`: 19 posters (`00-pre-campaign.png` through `18-day-18.png`), 2480 × 3508 px, 300 DPI.
+   - `output/1x/`: 19 native posters (2480 × 3508 px, 300 DPI).
+   - `output/2x/`: 19 double-density posters (4960 × 7016 px).
+   - `output/18-day-campaign-posters.pdf`: Combined 19-page PDF.
+   - Automated clearance audit: $100\%$ of posters verified safe and clear of the jeepney and road.
+**Reason:** User revision request for updated activity titles and special Day 10 combined forum title for the posters/tarp.
+**Status:** Completed & Active
+
 ## 2026-11-10 — Expanded Typography & Bottom Canvas Clearance Calibration across All 19 Posters
 **Decision:**
 1. **Scaled-Up Typography across All Day Types:**

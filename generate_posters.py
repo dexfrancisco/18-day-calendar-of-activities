@@ -279,7 +279,15 @@ def render_day_html(day):
         special_html = f'<div class="stroke-subtitle" style="font-size:62px; margin-top:4px;">★ {special_badge} ★</div>' if special_badge else ''
         
         # Sizing calibrated for text length
-        if len(title) > 130:
+        if day_num == 10:
+            icon_sz = 580
+            title_font_size = 78
+            safe_gap = 20
+            mid_gap = 10
+            bottom_gap = 10
+            bot_lbl_sz = 44
+            bot_val_sz = 46
+        elif len(title) > 130:
             icon_sz = 660
             title_font_size = 86
             safe_gap = 28

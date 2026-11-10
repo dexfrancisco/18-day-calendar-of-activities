@@ -1,0 +1,256 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('/Gotham-font-family/Gotham/Gotham-Black.otf') format('opentype');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('/Gotham-font-family/Gotham/Gotham-Ultra.otf') format('opentype');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('/Gotham-font-family/Gotham/Gotham-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Gotham Medium';
+    src: url('/Gotham-font-family/Gotham/Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('/Gotham-font-family/Gotham/Gotham-Book.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Gotham Medium Italic';
+    src: url('/Gotham-font-family/Gotham/Gotham-MediumItalic.otf') format('opentype');
+    font-style: italic;
+    font-weight: 500;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    width: 2480px;
+    height: 3508px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('/FABMAT/fabmat_template.png') no-repeat top left;
+    background-size: 2480px 3508px;
+    font-family: 'Gotham Bold', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hero-icon {
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    width: 100%;
+}
+
+.day-date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stroke-day {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 3px;
+    line-height: 1.05;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 18px #FF6D00;
+}
+
+.stroke-date {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-title {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    line-height: 1.16;
+    letter-spacing: -0.5px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 16px #FF6D00;
+}
+
+.stroke-subtitle {
+    color: #FFFFFF;
+    font-family: 'Gotham Medium Italic', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-tag {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 10px #FF6D00;
+}
+
+.stroke-num {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    line-height: 1.1;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 14px #FF6D00;
+}
+
+.stroke-act-desc {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-label {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 11px #FF6D00;
+}
+
+.stroke-val {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    line-height: 1.25;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 11px #FF6D00;
+}
+
+.detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+        .safe-zone {
+            position: absolute;
+            top: 1310px;
+            left: 190px;
+            width: 2100px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .hero-icon { width: 720px; height: 720px; }
+        .stroke-day { font-size: 146px; }
+        .stroke-date { font-size: 68px; }
+        .acts-block {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+        }
+        .act-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .act-header-row {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+        }
+        .act-num {
+            font-size: 76px;
+            flex-shrink: 0;
+            width: 80px;
+        }
+        .act-desc {
+            font-size: 74px;
+            line-height: 1.16;
+            flex: 1;
+        }
+        .act-lead-row {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            margin-left: 98px;
+        }
+        .act-lead-lbl {
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+        .act-lead-val {
+            font-size: 52px;
+            flex: 1;
+        }
+        .bottom-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+        .detail-label-col { width: 420px; flex-shrink: 0; font-size: 54px; }
+        .detail-val-col { flex: 1; font-size: 58px; }
+        </style></head><body>
+        <div class="safe-zone">
+            <div class="top-row">
+                <img class="hero-icon" src="/icons/DAY 1.png">
+                <div class="day-date-group">
+                    <div class="stroke-day">DAY 1</div>
+                    <div class="stroke-date">NOVEMBER 25, 2026 | WEDNESDAY</div>
+                </div>
+            </div>
+            <div class="acts-block">
+                
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">1.</div>
+                    <div class="stroke-act-desc act-desc">Wellness and Essential Care Distribution for Project S.U.N.S.H.I.N.E Beneficiaries.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">GAD Office</span>
+                </div>
+            </div>
+            
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">2.</div>
+                    <div class="stroke-act-desc act-desc">Opening Program, Orange Campaign Kickoff, Parade around the City, Policy Call to Action, Project S.U.N.S.H.I.N.E. public launch.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">GAD Office & Office of the City Mayor</span>
+                </div>
+            </div>
+            
+            </div>
+            <div class="bottom-block">
+                <div class="detail-row">
+                    <div class="detail-label-col stroke-label">PARTNERS:</div>
+                    <div class="detail-val-col stroke-val">All City Offices, Barangays, PNP, BFP, BJMP, CSWD, Academe, CSOs</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label-col stroke-label">VENUE:</div>
+                    <div class="detail-val-col stroke-val">CITYWIDE</div>
+                </div>
+            </div>
+        </div>
+        </body></html>

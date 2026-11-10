@@ -1,0 +1,226 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('/Gotham-font-family/Gotham/Gotham-Black.otf') format('opentype');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Gotham Ultra';
+    src: url('/Gotham-font-family/Gotham/Gotham-Ultra.otf') format('opentype');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('/Gotham-font-family/Gotham/Gotham-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Gotham Medium';
+    src: url('/Gotham-font-family/Gotham/Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('/Gotham-font-family/Gotham/Gotham-Book.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Gotham Medium Italic';
+    src: url('/Gotham-font-family/Gotham/Gotham-MediumItalic.otf') format('opentype');
+    font-style: italic;
+    font-weight: 500;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    width: 2480px;
+    height: 3508px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('/FABMAT/fabmat_template.png') no-repeat top left;
+    background-size: 2480px 3508px;
+    font-family: 'Gotham Bold', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hero-icon {
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    width: 100%;
+}
+
+.day-date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stroke-day {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 3px;
+    line-height: 1.05;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 18px #FF6D00;
+}
+
+.stroke-date {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-title {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    line-height: 1.16;
+    letter-spacing: -0.5px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 16px #FF6D00;
+}
+
+.stroke-subtitle {
+    color: #FFFFFF;
+    font-family: 'Gotham Medium Italic', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-tag {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 10px #FF6D00;
+}
+
+.stroke-num {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    line-height: 1.1;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 14px #FF6D00;
+}
+
+.stroke-act-desc {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 12px #FF6D00;
+}
+
+.stroke-label {
+    color: #FFFFFF;
+    font-family: 'Gotham Ultra', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 11px #FF6D00;
+}
+
+.stroke-val {
+    color: #FFFFFF;
+    font-family: 'Gotham Bold', sans-serif;
+    line-height: 1.25;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 11px #FF6D00;
+}
+
+.detail-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+        .safe-zone {
+            position: absolute;
+            top: 1310px;
+            left: 190px;
+            width: 2100px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .hero-icon { width: 680px; height: 680px; }
+        .stroke-day { font-size: 146px; }
+        .stroke-date { font-size: 66px; }
+        .hybrid-container {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            width: 100%;
+        }
+        .track-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .track-tag {
+            font-size: 46px;
+            align-self: flex-start;
+        }
+        .bottom-block {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+        }
+        .detail-label-col { width: 400px; flex-shrink: 0; font-size: 50px; }
+        .detail-val-col { flex: 1; font-size: 54px; }
+        </style></head><body>
+        <div class="safe-zone">
+            <div class="top-row">
+                <img class="hero-icon" src="/icons/DAY 17.png">
+                <div class="day-date-group">
+                    <div class="stroke-day">DAY 17</div>
+                    <div class="stroke-date">DECEMBER 11, 2026 | FRIDAY</div>
+                </div>
+            </div>
+            <div class="hybrid-container">
+                <div class="track-block">
+                    <div class="stroke-tag track-tag">IN-PERSON ACTIVITY</div>
+                    
+            <div class="stroke-act-desc" style="font-size:64px; line-height:1.18;">Regional Educational Research Conference</div>
+            
+                    <div style="display:flex; align-items:baseline; gap:16px; margin-top:2px;">
+                        <span class="stroke-label" style="font-size:46px;">LEAD OFFICE:</span>
+                        <span class="stroke-val" style="font-size:48px;">GAD Office</span>
+                    </div>
+                </div>
+                <div class="track-block">
+                    <div class="stroke-tag track-tag">ONLINE ADVOCACY</div>
+                    <div class="stroke-act-desc" style="font-size:56px; line-height:1.18;">Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters</div>
+                </div>
+            </div>
+            <div class="bottom-block">
+                
+        <div class="detail-row">
+            <div class="detail-label-col stroke-label">PARTNERS:</div>
+            <div class="detail-val-col stroke-val">SDO Cauayan City, DEPED RO2</div>
+        </div>
+        
+                
+        <div class="detail-row">
+            <div class="detail-label-col stroke-label">VENUE:</div>
+            <div class="detail-val-col stroke-val">F. L. Dy Colliseum, District III, Cauayan City, Isabela</div>
+        </div>
+        
+            </div>
+        </div>
+        </body></html>
