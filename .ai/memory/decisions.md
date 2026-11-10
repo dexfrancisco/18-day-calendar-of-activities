@@ -1,5 +1,19 @@
 # Durable Decisions
 
+## 2026-11-10 — Day 7 Activity Title Realignment (Gender Sensitivity Training)
+**Decision:**
+1. **Day 7 (Dec 1) Activity Title Updated:**
+   - Changed Main Activity to: `Gender Sensitivity Training for LGU Employees and LDC Members`.
+   - Lead Office: `CHRMO & CODI`.
+   - Partners: `DILG, HR Office, GAD Office, CSOs` (DILG first).
+   - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela` (A3) / `F. L. Dy Colliseum, District III` (A4).
+2. **Preserved Layout Quality:**
+   - Maintained clean single-activity layout hierarchy (`.card-body-single`) with zero clipping and optimal vertical breathing space.
+**Reason:** Official LGU Cauayan campaign realignment updating the Day 7 capacity-building focus to Gender Sensitivity Training for LGU employees and Local Development Council members.
+**Alternatives:** Retaining preliminary "Safe workplace, anti-sexual harassment" general description.
+**Impact:** Synchronized across all 5 HTML templates (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`, `18-day-campaign-calendar-a4.html`, and `Final Copy/`), text extractions, and 300 DPI PNG exports.
+**Status:** Active
+
 ## 2026-11-09 — Day 3 Activity 1 Description Update (Sign Language Orientation)
 **Decision:**
 1. **Day 3 (Nov 27) Activity 1 Updated:**
