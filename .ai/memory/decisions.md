@@ -1,5 +1,161 @@
 # Durable Decisions
 
+## 2026-11-10 — Expanded Typography & Bottom Canvas Clearance Calibration across All 19 Posters
+**Decision:**
+1. **Scaled-Up Typography across All Day Types:**
+   - Pre-Campaign & Single-Activity Days: Titles scaled to `108px`-`112px` (standard) and `86px`-`92px` (long copy on Days 6 & 14); subtitles at `76px` / `62px`.
+   - Multi-Activity Days: Descriptions scaled to `74px` (Days 1, 8, 16), `68px` (Day 9), `58px` (Days 2, 13, 15), `48px` (Day 3), and `44px` (Day 10). Numerals scaled to `64px`-`76px` in Gotham Ultra.
+   - Partners & Venue Blocks: Labels scaled up to `50px`-`54px` Gotham Ultra (`width: 400px-420px`), values scaled to `52px`-`58px` Gotham Bold across all posters.
+   - Online Advocacy Days: Track tags scaled to `68px`, descriptions to `96px`-`100px`.
+2. **Spacing Optimization:**
+   - Tightened line heights to `1.15`-`1.16` and reduced inner gaps (6px-8px) to eliminate unnatural empty space between sentences and blocks.
+3. **Strict Bottom Artwork Clearance ($100\%$ Verified via Pixel Diff):**
+   - Utilized the lower canvas without touching the jeepney artwork ($x \in [1567, 2399], y \ge 2950-3043$ px) or asphalt road ($y \ge 3388$ px).
+   - Every single poster finishes above $y = 2930$ px with verified positive buffer:
+     `00: y=2743 (+207px)`, `01: y=2918 (+32px)`, `02: y=2838 (+112px)`, `03: y=2882 (+68px)`, `04: y=2837 (+113px)`, `05: y=2572 (+378px)`, `06: y=2739 (+211px)`, `07: y=2631 (+319px)`, `08: y=2769 (+181px)`, `09: y=2765 (+185px)`, `10: y=2842 (+108px)`, `11: y=2546 (+404px)`, `12: y=2572 (+378px)`, `13: y=2771 (+179px)`, `14: y=2808 (+142px)`, `15: y=2680 (+270px)`, `16: y=2683 (+267px)`, `17: y=2627 (+323px)`, `18: y=2509 (+441px)`.
+4. **All Deliverables Synchronized:**
+   - `FABMAT/`: 19 daily posters (`00-pre-campaign.png` through `18-day-18.png`), 2480 × 3508 px, 300 DPI.
+   - `output/1x/`: 19 native posters (2480 × 3508 px, 300 DPI).
+   - `output/2x/`: 19 double-density posters (4960 × 7016 px).
+   - `output/18-day-campaign-posters.pdf`: Combined 19-page PDF.
+**Reason:** User instruction to utilize available bottom space, make titles, partners, and venues larger across all days, and lessen large spacing while strictly preventing text from touching the car or road.
+**Status:** Completed & Active
+
+## 2026-11-10 — Full 19-Poster Generation: Flat Header-Matched Orange Outline & Zero Shadows
+**Decision:**
+1. **Flat Vector Aesthetics (Zero Shadows):**
+   - Eliminated all drop-shadows and blur filters from both text elements and transparent hero icons across all 19 posters.
+   - Text is rendered flat and clean with pure white fill (`#FFFFFF`) and vivid orange vector outline (`#FF6D00` / `#FA5400`) directly sampled from the template header banner *"18-Day Orange Campaign"*.
+2. **Hero Icon Sizing & Top Row:**
+   - Standardized hero icons on the left: 750px for single-activity/online days, 640px for 2-activity days, 540px for 3-activity days, 480px for Day 3, and 420px for Day 10.
+   - Day badge + Date line stacked on the right.
+3. **Activity Section Typography & Alignment:**
+   - Single activity days (Pre-Campaign, Days 4, 6, 7, 14): Titles and subtitles centered horizontally in the middle.
+   - Multi-activity days (Days 1, 2, 8, 9, 10, 13, 15, 16): Plain numbered items with numbers on the left, lead offices directly below each item, and partners/venue at the very bottom.
+   - Strictly zero occurrences of the words "Activity" or "Main Activity".
+4. **All User Revisions Incorporated:**
+   - Day 14: Title updated to `Orange Exhibit and Orange Bubble Culture Arts and Public Advocacy: Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing` with `Awarding of Winners` badge.
+   - Day 3: Activity 1 includes `, and Sign Language Orientation.`.
+   - Day 7: Title updated to `Gender Sensitivity Training for LGU Employees and LDC Members`.
+5. **Deliverables Synchronized:**
+   - `FABMAT/`: 19 posters (2480 × 3508 px, 300 DPI)
+   - `output/1x/`: 19 native posters (2480 × 3508 px, 300 DPI)
+   - `output/2x/`: 19 double-density posters (4960 × 7016 px)
+   - `output/18-day-campaign-posters.pdf`: Combined 19-page PDF (18.33 MB)
+**Reason:** User praise and confirmation ("WOW, now that looks so Good") of the flat, shadow-free, orange-outline styling.
+**Status:** Completed & Active
+
+
+
+## 2026-11-10 — Pre-Campaign Fine-Tuning: 750px Hero Icon, Unified White Text, Minimized Spacing
+**Decision:**
+1. **Hero Icon Enlargement:**
+   - Increased hero icon from 570px to **750px**, creating a commanding presence that balances the header block.
+2. **Unified White Typography (Matching the Title):**
+   - Changed all text fills (Date line, Subtitle, `LEAD OFFICE:`, `PARTNERS:`, `VENUE:`, and detail values) from yellow to **pure white (`#FFFFFF`)**, directly matching the title color.
+   - Retained the high-contrast deep purple outline (`#240546`) with `paint-order: stroke fill`.
+3. **Minimized Spacing:**
+   - Replaced large vertical gaps with tight, compact spacing (~45px between major blocks, 16px between title/subtitle, 18px between detail rows) to ensure sentences and sections are visually cohesive.
+4. **Deliverable Updated:**
+   - Exported to `FABMAT/00-pre-campaign.png` (2480 × 3508 px, 300 DPI).
+**Reason:** User instruction to make the icon bigger, change text color to match the title (white), and minimize spacing.
+**Status:** Active (Awaiting User Review)
+
+## 2026-11-10 — Full 19-Poster Generation: Calibrated Direct Canvas, Text Stroke Outlines, Zero Boxes
+**Decision:**
+1. **Direct Canvas Rendering with Deep Purple Text Stroke:**
+   - Text is rendered directly on the template orange background with zero cards, panels, or container boxes.
+   - Contrast is established using vector-level `-webkit-text-stroke` with `paint-order: stroke fill` in deep purple (`#240546`) matching the template banner, paired with soft drop-shadows. This guarantees razor-sharp legibility without occluding letter interiors.
+2. **Icon Treatment & Header Layout:**
+   - Transparent PNG icons used **as-is** with a natural drop shadow; no circular backgrounds, glowing halos, or borders around the icon.
+   - Top row features the hero icon on the left (570px standard, 540px for 2-act, 460px for 3-act, 390px for Day 10) and Day badge + Date line on the right.
+3. **Activity Section Typography & Alignment:**
+   - Single activity days (Pre-Campaign, Days 4, 6, 7, 14): Title and Subtitle centered horizontally in the middle.
+   - Multi-activity days (Days 1, 2, 8, 9, 10, 13, 15, 16): Plain numbered items with yellow numerals (`1.`) on the left, white descriptions, and `LEAD OFFICE:` directly below each item. Strictly zero occurrences of the words "Activity" or "Main Activity".
+   - Bottom metadata: `LEAD OFFICE`, `PARTNERS`, and `VENUE` anchored cleanly at the bottom.
+4. **All User Revisions Incorporated:**
+   - Day 14: Title updated to `Orange Exhibit and Orange Bubble Culture Arts and Public Advocacy: Painting Competition, Spoken Poetry, Declamation and Wearable Fashion Designing` with `Awarding of Winners` badge.
+   - Day 3: Activity 1 includes `, and Sign Language Orientation.`.
+   - Day 7: Title updated to `Gender Sensitivity Training for LGU Employees and LDC Members`.
+5. **Deliverables Synchronized:**
+   - `FABMAT/`: 19 posters (2480 × 3508 px, 300 DPI)
+   - `output/1x/`: 19 native posters (2480 × 3508 px, 300 DPI)
+   - `output/2x/`: 19 double-density posters (4960 × 7016 px)
+   - `output/18-day-campaign-posters.pdf`: Combined 19-page PDF (19.33 MB)
+**Reason:** User approval of the Pre-Campaign layout and instruction to generate the entire series under the exact same design system.
+**Status:** Completed & Active
+
+
+
+## 2026-11-10 — Poster Redesign: Grand Luminous Glassmorphic Relayout (High Readability, Eye Comfort, Uniform Icons, Proportional Space Filling)
+**Decision:**
+1. **Luminous Royal Plum Glassmorphic Plate:**
+   - Overcame the low-contrast optical vibration of raw white/yellow text on bare orange by introducing a single unified translucent plate (`linear-gradient(160deg, rgba(34, 6, 62, 0.78) 0%, rgba(16, 2, 30, 0.84) 100%)`) with `backdrop-filter: blur(28px)` and warm golden amber border (`rgba(255, 183, 77, 0.55)`).
+   - Lets the underlying orange/purple template gradient shine through with depth and luminosity while guaranteeing a certified **14:1 contrast ratio**.
+   - Strictly avoided nested box anti-patterns by using clean, open typography directly on the glass plate.
+2. **Standardized Hero Icon Presentation:**
+   - Unified icon containers across all 19 posters (320px/340px) with warm ambient radial glow and drop shadow.
+3. **Proportional Vertical Space Distribution:**
+   - *Single-Activity Days (Pre-Campaign, Days 4, 6, 7, 14):* Centered hero icon, bold orange day badge (72px), bright golden yellow date (46px), commanding 78px Gotham Ultra headline, and generous bottom metadata grid.
+   - *2-Activity Days (Days 1, 2, 8, 9, 13, 15, 16):* Header row with hero icon on left; two spacious activity cards with 58px golden numeral badges, 42px bold white titles, and 30px amber lead offices distributed with `justify-content: space-evenly;` to eliminate empty caverns.
+   - *3–5 Activity Days (Days 3, 10):* Compact header, 40px golden numeral badges, 30px bold descriptions, and structured metadata footer.
+   - *Online & Hybrid Days (Days 5, 11, 12, 17, 18):* Distinct visual treatment for digital advocacy tracks and in-person highlights.
+4. **Safe Zone Bounds Verified:**
+   - Container positioned at $y \in [1290, 2940]$ px, strictly preserving the header title banner ($y < 1280$) and footer artwork ($y > 2964$) with 100% automated pass.
+**Reason:** User feedback to relayout the posters for superior readability, eye comfort, uniform icon sizing, and eliminating dead vertical spaces.
+**Impact:** Synchronized in `generate_posters.py`, regenerating all 19 1x posters, 19 2x posters, and the combined 19-page PDF.
+**Status:** Active
+
+## 2026-11-10 — Direct-on-Orange Design Architecture: Zero Panels/Cards, Layout A & Layout B, Double Drop-Shadows
+**Decision:**
+1. **Eliminated All Panels and Containers:**
+   - Removed all white background cards, semi-opaque containers, boxes, and pill wrappers around activities.
+   - Text is rendered directly onto the template's warm orange/purple background.
+2. **Two Complementary Layout Architectures:**
+   - **Layout A (Standard Days: Pre-Campaign, Days 4, 5, 6, 7, 12, 14):**
+     - Hero icon (520–660 px) centered with 50px soft white glow, deep purple drop-shadow, and 2–3 four-point yellow sparkles.
+     - Centered Day label in Gotham Ultra/Black (`#FFFFFF`, 170–190 px).
+     - Centered Date line in Gotham Bold (`#FFE650`, 70–80 px).
+     - Centered 7px thick white divider line (1400 px wide, rounded).
+     - Centered Activity title in Gotham Bold (`#FFFFFF`, 74–96 px) + yellow italic subtitle (Pre-Campaign).
+     - Left-aligned 2-column details grid from 270 px (labels in yellow small-caps 54 px, values in white 58 px, yellow pin icon for venue).
+   - **Layout B (Heavy Days: Days 1, 2, 3, 8, 9, 10, 11, 13, 15, 16, 17, 18):**
+     - Compact horizontal header: hero icon (310 px) on left, day badge (175 px, white) + date line (58 px, yellow) stacked on right.
+     - 7px thick white divider spanning the 1940 px content column.
+     - Numbered activities as plain text (yellow numeral, white description 42–46 px, yellow/white Lead Office).
+     - Compact details grid (labels yellow 40 px, values white 42 px, yellow pin icon for venue).
+     - Activity date ranges next to descriptions; tags (`IN-PERSON` / `ONLINE`) for hybrid days.
+3. **Contrast and Shadow Formulation:**
+   - White (`#FFFFFF`) and yellow (`#FFE650`) text only.
+   - Deep-purple double drop-shadow (`rgba(59, 22, 120, 0.45)` blur 14px offset 8px; `rgba(59, 22, 120, 0.60)` blur 3px offset 4px) ensures crisp legibility directly over the bright orange canvas without any background panel.
+4. **Safe Content Zone Calibration:**
+   - Safe zone: $y \in [1280, 2964]$ (36.5% to 84.5% page height) and 11% side margins ($x \in [270, 2210]$ px).
+   - Container positioned at `top: 1316px; height: 1612px;` to account for icon white glow (+26px top spread) and text shadow (+14px bottom spread).
+   - 100% of all 19 posters passed pixel-level bounding box audit.
+**Reason:** User requirement for a clean, direct-on-template look with zero card containers, maximum visual impact, distinct standard vs heavy layouts, and guaranteed safe-zone compliance.
+**Impact:** Synchronized in `generate_posters.py`, regenerating all 19 1x posters, 19 2x posters, and the combined 19-page PDF.
+**Status:** Active
+
+## 2026-11-10 — Poster Redesign: Removal of White Background, Uniform Icon Sizing, Free Space Filling, High-Contrast Typography
+**Decision:**
+1. **Removed White Card Background:**
+   - Completely removed the large semi-opaque white panel (`.poster-card`) that previously covered the poster.
+   - The template's native orange/peach gradient background now shows through across the entire poster canvas.
+   - Content is structured in rich deep royal purple translucent containers (`rgba(36, 8, 70, 0.90)`) with warm orange accent borders (`#FF9800`) and soft shadows.
+2. **Unified Hero Icon Sizing:**
+   - Standardized all 19 posters to have the exact same hero icon size: `360px × 360px` in a 360px high header block.
+3. **Vertical Free Space Distribution:**
+   - Safe zone height calibrated to 1670px ($y \in [1268, 2938]$).
+   - Layouts employ flexible height distribution (`flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;`), eliminating large empty voids on light and medium days.
+4. **Enhanced Typography & Readability:**
+   - Body text set in pure white (`#FFFFFF`) on deep royal purple cards at 38px to 62px Gotham Medium/Bold with 1.3 to 1.45 line-heights for optimal visual comfort.
+   - Section and lead labels set in golden amber (`#FFD54F` / `#FFB74D`) uppercase small-caps.
+   - Partners text set in soft lavender (`#E2D7F3`).
+   - Day badge in deep purple with white text, and date in deep purple with soft outline.
+**Reason:** User feedback to remove the white background, make icons uniform in size across all pages, expand elements to occupy empty vertical spaces, and optimize readability.
+**Impact:** Synchronized in `generate_posters.py`, regenerating all 19 1x posters, 19 2x posters, and the combined 19-page PDF.
+**Status:** Active
+
 ## 2026-11-10 — Day 7 Activity Title Realignment (Gender Sensitivity Training)
 **Decision:**
 1. **Day 7 (Dec 1) Activity Title Updated:**
@@ -219,4 +375,19 @@
 **Reason:** Provides persistent, verified architectural and schedule context for future sessions while strictly preserving working project deliverables.
 **Alternatives:** Ad-hoc session discovery without persistent project memory.
 **Impact:** Future tasks must consult and maintain `.ai/memory/` and `.ai/state/` in accordance with `GEMINI.md` and `.ai/workflows/memory-update.md`.
+**Status:** Active
+
+## 2026-11-10 — Multi-Activity Poster Layout Fine-Tuning & Automated Safe Clearance
+**Decision:**
+1. **Layout Direction for Multi-Activity Days:** Implemented user-selected **Option 1 (Structured Left-Aligned)**:
+   - Numerals (`1.`, `2.`, etc.) placed on the left in their own bold column (`68px` / `76px` Gotham Ultra with `#FF6D00` vector outline). Strictly omitted words "Activity" or "Main Activity".
+   - Activity descriptions scaled up to bold, authoritative sizes (`66px` on 2-activity days, `52px` on 3-activity days, `40px` on 5-activity days, `44px` on Day 3 dual-group) with tight `1.16` line height to maximize canvas fill and avoid empty space.
+   - Lead Office indented directly under each description with bold label and value.
+   - Partners and Venue anchored at the very bottom.
+2. **Top-Row Alignment Fix:** Centered `.top-row` flex container in `COMMON_CSS` so that hero icons (`680px` / `750px`) and Day/Date text blocks sit side-by-side on every day type, preventing vertical stacking and ensuring all content strictly finishes above $y = 2850$ px.
+3. **Single-Activity Responsive Calibration:** Single-activity days with long titles (Days 4, 6, 14) scaled dynamically (`640px` icon, `76px`-`82px` title) to ensure $100\%$ safe clearance above bottom jeepney graphics.
+4. **Automated Verification:** Verified that all 19 posters in `FABMAT/` have positive clearance ($> 0$ px) above the bottom artwork boundary ($y = 2850$ px).
+**Reason:** User requested layout adjustment for multiple-activity days to maximize presence, tighten spacing, and align with the approved Pre-Campaign visual identity.
+**Alternatives:** Centered activities (rejected in user poll); looser spacing with space-between (rejected due to excessive voids).
+**Impact:** `generate_posters.py` updated and executed; all 19 posters regenerated in `FABMAT/`, `output/1x/`, `output/2x/`, and `output/18-day-campaign-posters.pdf`.
 **Status:** Active

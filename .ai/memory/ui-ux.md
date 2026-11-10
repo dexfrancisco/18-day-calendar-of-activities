@@ -13,6 +13,66 @@
   - Avoid uniform equal-width columns across rows that mix 5-activity days with single-activity or Sunday online-advocacy days; proportional column widths (`fr`) are required so dense cards do not overflow or clip.
   - Avoid shrinking fonts below legibility thresholds on print canvases or introducing scrollbars (`overflow: hidden` is enforced on `.calendar-canvas` and `.page-canvas`).
 
+## Daily Poster Generator (Expanded Typography & Bottom Clearance Architecture)
+- **Direct Canvas Architecture (`FABMAT/` and `output/`):**
+  - Zero cards, white panels, or box containers behind text or icons.
+  - Zero drop-shadows on text and zero drop-shadows on transparent icons (flat vector finish).
+  - Pure white (`#FFFFFF`) letterforms with vivid orange vector outline (`#FF6D00`) sampled from *"18-Day Orange Campaign"*, using `-webkit-text-stroke` with `paint-order: stroke fill`.
+  - Transparent PNG icons used **as-is** with zero shadow or halo.
+  - All typography in licensed **Gotham** (`Gotham Ultra`, `Gotham Bold`, `Gotham Medium Italic`).
+- **Expanded Typography & Spacing Calibration:**
+  - **Single Activity Days:** Titles scaled to `108px`-`112px` (standard) and `86px`-`92px` (long copy on Days 6 & 14); subtitles `76px` / `62px`. Centered horizontally.
+  - **Multi-Activity Days:** Numerals `64px`-`76px` on the left; descriptions scaled to `74px` (Days 1, 8, 16), `68px` (Day 9), `58px` (Days 2, 13, 15), `48px` (Day 3), and `44px` (Day 10). Lead offices indented directly beneath each item.
+  - **Partners & Venue Grid:** Anchored at the bottom; labels scaled to `50px`-`54px` Gotham Ultra (`width: 400px-420px`), values scaled to `52px`-`58px` Gotham Bold.
+  - **Spacing:** Tightened line heights to `1.15`-`1.16` and gaps to `6px`-`8px` between titles and lead offices to maximize density and eliminate empty vertical space.
+  - **Bottom Artwork Safe Clearance:** Strictly terminates above $y = 2930$ px across all 19 posters, completely clearing the jeepney ($x \in [1567, 2399], y \ge 2950-3043$ px) and asphalt road ($y \ge 3388$ px).
+
+## Daily Poster Generator (Official Flat Header-Matched Orange Outline Architecture)
+- **Direct Canvas Architecture (`FABMAT/` and `output/`):**
+  - Zero cards, white panels, or box containers behind text or icons.
+  - Zero drop-shadows on text and zero drop-shadows on transparent icons (flat vector finish).
+  - Text placed directly onto the warm orange background with header-matched orange outlines (`#FF6D00` / `#FA5400`) sampled from *"18-Day Orange Campaign"*, using `-webkit-text-stroke` with `paint-order: stroke fill` around pure white (`#FFFFFF`) letterforms.
+  - Transparent PNG icons used **as-is** with zero shadow or halo.
+  - All typography in licensed **Gotham** (`Gotham Ultra`, `Gotham Bold`, `Gotham Medium Italic`).
+- **Layout Topography:**
+  - **Top Row Header:** Fixed icon position & size (750px for single-activity/online days, 640px for 2-activity days, 540px for 3-activity days, 480px for Day 3, 420px for Day 10). Icon on Left, Day badge + Date on Right.
+  - **Single Activity Days:** Title and subtitle centered in the middle; bottom metadata grid (`LEAD OFFICE`, `PARTNERS`, `VENUE`).
+  - **Multi-Activity Days:** Plain numbered items with numbers on the left (zero occurrences of "Activity" label), lead office below each item, partners and venue at the very bottom.
+  - **Safe Zone Calibration:** Content safe zone between $y=1340$ px and $y=2960$ px (strictly clears the header title banner at $y < 1280$ and footer jeepney artwork at $y > 3050$).
+
+## Daily Poster Generator (Calibrated Direct-Canvas & Text-Stroke Architecture)
+- **Direct Canvas Architecture (`FABMAT/`):**
+  - Zero cards, white panels, or box containers behind text or icons.
+  - Text placed directly onto the warm orange background with deep banner purple (`#240546`) text borders using `-webkit-text-stroke` and `paint-order: stroke fill`.
+  - Icon used **as-is** with natural drop shadow (zero circular or glowing background elements).
+  - All typography in licensed **Gotham** (`Gotham Ultra`, `Gotham Bold`, `Gotham Medium Italic`).
+- **Layout Topography:**
+  - **Top Row Header:** Fixed icon position & size (**570px**). Icon on Left, Day (`PRE-CAMPAIGN`, 142px Gotham Ultra) and Date (`NOVEMBER 16 - 20, 2026`, 70px Gotham Bold) on Right.
+  - **Middle Activity Block:** Activity Title (106px Gotham Ultra) and Subtitle (74px Gotham Medium Italic) without the words "Activity" or "Main Activity".
+  - **Bottom Metadata Block:** `LEAD OFFICE` (52px yellow), `PARTNERS` (52px yellow), and `VENUE` (52px yellow) with 56px white values at bottom of content zone.
+  - **Multi-Activity Rule:** Numerals directly adjacent to activity titles (no "Activity" label), lead office directly below each numbered activity, partners & venue at the very bottom.
+  - **Safe Zone Calibration:** Content safe zone between $y=1380$ px and $y=2940$ px (strictly clears the header title banner at $y < 1280$ and footer jeepney artwork at $y > 3050$).
+
+## Daily Poster Generator (Direct-on-Orange Architecture)
+- **Direct-on-Orange Canvas (`generate_posters.py`):**
+  - Text placed directly onto `FABMAT/fabmat_template.png` (2480 x 3508 px) orange canvas without cards, white panels, or box containers.
+  - Safe zone: $y \in [1280, 2964]$ (36.5% to 84.5% page height), 11% side margins ($x \in [270, 2210]$ px).
+  - Layout A (Standard Days: Pre-Campaign, Days 4, 5, 6, 7, 12, 14): Centered hero icon (520–660 px) with soft white glow, deep purple shadow, yellow 4-point sparkles; centered day badge (`#FFFFFF`, 170–190 px); centered date (`#FFE650`, 70–80 px); 7px white divider; centered activity title (74–96 px); left-aligned details grid (labels yellow 54 px, values white 58 px, yellow pin icon).
+  - Layout B (Heavy Days: Days 1, 2, 3, 8, 9, 10, 11, 13, 15, 16, 17, 18): Compact horizontal header with hero icon (310 px) on left, day (175 px) + date (58 px) on right; 7px white divider; plain numbered activities with yellow numeral + white description (42–46 px) + yellow/white Lead Office; compact details grid (labels yellow 40 px, values white 42 px, yellow pin).
+  - High-Contrast Double Drop-Shadow: Deep purple `#3B1678` double shadow (`rgba(59, 22, 120, 0.45)` blur 14px offset 8px; `rgba(59, 22, 120, 0.60)` blur 3px offset 4px) applied to all text.
+
+## Daily Poster Generator (Grand Luminous Glassmorphic Design System)
+- **Design Tokens & Canvas (`generate_posters.py`):**
+  - **Single Unified Translucent Plate:** `linear-gradient(160deg, rgba(34, 6, 62, 0.78) 0%, rgba(16, 2, 30, 0.84) 100%)` with `backdrop-filter: blur(28px)`, border `3px solid rgba(255, 183, 77, 0.55)`, border-radius `44px`.
+  - **High-Contrast Typographic Hierarchy (14:1 Ratio):**
+    - Headings/Titles: Pure white `#FFFFFF` in Gotham Ultra / Bold.
+    - Dates & Accents: Bright golden yellow `#FFE082` in Gotham Bold.
+    - Labels: Golden amber `#FFD54F` in uppercase small-caps with generous tracking.
+    - Day Badges: Vibrant orange gradient `#FF6F00` to `#E65100` with white text.
+  - **Safe Content Zone:** Fixed bounds $y \in [1290, 2940]$ px, $x \in [230, 2250]$ px. Zero overlap with header banner ($y < 1280$) or footer artwork ($y > 2964$).
+  - **Uniform Icon Container:** Dedicated 320px/340px container with ambient radial glow and drop shadow.
+  - **Proportional Space Distribution:** Eliminates empty caverns on light days and crowding on heavy days using calibrated flexbox distribution.
+
 ## Component library
 - **Actual library and version, if verified:** Custom vanilla CSS3 component system embedded in each HTML file (`<style>`), paired with inline SVG icons (`viewBox="0 0 24 24"` and `viewBox="0 0 16 16"`). No external CSS framework (no Tailwind/Bootstrap/shadcn).
 - **Existing components to reuse:**
