@@ -1,5 +1,18 @@
 # Durable Decisions
 
+## 2026-11-11 — Hero Icon Re-alignment & Venue Exact Match for Day 9 and Day 10 FABMAT Posters
+**Decision:**
+- When activities and partners were exchanged between Day 9 and Day 10, the corresponding illustrated 3D hero icons were re-aligned to follow their respective activities:
+  - **Day 9 (End VAWC Action Forum):** Hero icon assigned to `icons/DAY 10.png` (Scales of Justice, Healthcare Shield, and Digital Smartphone with Lock). Venue strictly set to **"ICON"**.
+  - **Day 10 (MOVE Forum & Safeline 922 Simulation):** Hero icon assigned to `icons/DAY 9.png` (Responder with emergency hotline phone and siren). Venue set to **"F. L. Dy Colliseum, District III, Cauayan City, Isabela"**.
+- Force-re-rendered with cache-busting flags (`--incognito --disable-application-cache --disk-cache-size=0`) across:
+  - `FABMAT/09-day-09.png` & `FABMAT/10-day-10.png` (300 DPI)
+  - `output/1x/`, `output/2x/`, and `output/18-day-campaign-posters.pdf`
+  - Master Calendars (`18-Day_Campaign_Calendar_A3.png`, `A4_Page1.png`, `A4_Page2.png`)
+  - Standalone workbench `editor.html`
+**Reason:** User noted "the fabmats are not updated" — identified that the 3D icons had remained linked to day number instead of following the swapped activity topics, and venue needed exact match "ICON".
+**Status:** Completed & Visually Verified
+
 ## 2026-11-11 — Exchange Activities & Partners for Day 9 and Day 10 (Venue Day 9: ICON)
 **Decision:**
 - Swapped activities and partners between Day 9 and Day 10:

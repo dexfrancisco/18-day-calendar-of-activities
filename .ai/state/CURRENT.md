@@ -1,30 +1,24 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — Calendar & Poster Day 9 and Day 10 Exchange (ICON Venue & Full Re-renders)
+18-Day Orange Campaign — FABMAT Posters & Calendars Full Icon Alignment & Venue Fix (Day 9 & Day 10)
 
 ## Current task
-Completed exchanging activities, partners, and venues between Day 9 and Day 10:
-- **Day 9 (Dec 3, 2026 | Thursday):**
-  - Activities: End VAWC Action Forum (Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk, and Digital Safety) [Activities 1-5 in calendar / combined forum title on poster].
-  - Partners: DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI.
-  - Venue: **ICON, San Fermin, Cauayan City, Isabela**.
-- **Day 10 (Dec 4, 2026 | Friday):**
-  - Activity 1: Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility (Lead: GAD Office & MOVE).
-  - Activity 2: Safeline 922 Emergency Response Simulation and Referral Drill (Lead: CDRRMO / Rescue 922 / Safe Line).
-  - Partners: PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan.
+Resolved issue where FABMAT posters for Day 9 and Day 10 had mismatched icons and venue phrasing:
+- **Day 9 (`FABMAT/09-day-09.png`):**
+  - Updated Hero Icon to **`icons/DAY 10.png`** (Scales of Justice, Healthcare Shield, and Digital Locked Smartphone), matching the **End VAWC Action Forum** (Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk, and Digital Safety Innovations).
+  - Updated Venue strictly to **"ICON"**.
+- **Day 10 (`FABMAT/10-day-10.png`):**
+  - Updated Hero Icon to **`icons/DAY 9.png`** (First responder man with emergency hotline phone and siren), matching **MOVE Forum** & **Safeline 922 Emergency Response Simulation and Referral Drill**.
   - Venue: **F. L. Dy Colliseum, District III, Cauayan City, Isabela**.
-- **Regenerated & Verified:**
-  - `18-Day_Campaign_Calendar_Extracted_Text.txt`
-  - `18-day-campaign-calendar-a3.html` & `18-Day_Campaign_Calendar_A3.png`
-  - `18-day-campaign-calendar-a4.html`, `18-day-campaign-calendar-a4-page1.html` (`A4_Page1.png`), `18-day-campaign-calendar-a4-page2.html` (`A4_Page2.png`)
-  - `18-day-campaign-calendar.html` and `Final Copy/` mirrors
-  - `scratch/schedule_data.json`, `scratch/final_html/09-day-09.html`, `scratch/final_html/10-day-10.html`
-  - 300 DPI Posters: `FABMAT/09-day-09.png`, `FABMAT/10-day-10.png`, `output/1x/`, `output/2x/`, `output/18-day-campaign-posters.pdf`
-  - Interactive STUDIO Editor: `editor.html` updated and verified
+- **Re-rendered with zero cache:**
+  - `FABMAT/09-day-09.png` & `FABMAT/10-day-10.png` (300 DPI print-ready).
+  - `output/1x/`, `output/2x/`, and combined 19-page PDF `output/18-day-campaign-posters.pdf`.
+  - Master Calendars: `18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`.
+  - Re-baked `editor.html` and verified.
 
 ## Status
-Completed & Verified
+Completed & Verified with Visual Inspection
 
 ## Branch
 `master`
@@ -33,12 +27,12 @@ Completed & Verified
 None
 
 ## Last meaningful change
-- Swapped activity definitions and partners between Day 9 and Day 10 across all calendar HTML files and poster generator.
-- Set Day 9 venue to ICON and Day 10 venue to F. L. Dy Coliseum.
-- Re-rendered all 19 300 DPI posters (`generate_posters.py`) and calendar layouts (`render_calendars.py`).
-- Re-baked `editor.html` via `build_clean_editor.py`.
+- Re-assigned 3D illustrated hero icons so that the Action Forum carries the Justice/Health/Digital icon and MOVE/Safeline carries the Emergency Responder icon.
+- Changed Day 9 venue text strictly to "ICON" across all calendar HTMLs, text file, and poster generators.
+- Used fresh cache-busted Chrome headless instances to render 1x, 2x, and PDF outputs.
 
 ## Last verification
-- Bounding box measurement in Chrome: Day 9 bottom $y=2566$ px (384 px safe clearance), Day 10 bottom $y=2844$ px (106 px safe clearance).
-- Template verification script (`check_editor_templates.py`): Day 9 has End VAWC Forum + ICON = True; Day 10 has MOVE + Safeline + F. L. Dy = True.
-- Output crops generated and saved in artifact directory: `crop_day9_swapped.png`, `crop_day10_swapped.png`, `crop_calendar_d9_d10.png`.
+- Visual inspection via `read_file` binary image viewer:
+  - `crop_d9_fresh_top.png`: Verified Scales of Justice icon + "DAY 9" + "End VAWC Action Forum".
+  - `crop_d9_fresh_venue.png`: Verified "VENUE: ICON".
+  - `crop_d10_fresh_top.png`: Verified Responder with emergency siren icon + "DAY 10" + MOVE Forum & Safeline 922.
