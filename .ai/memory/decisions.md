@@ -1,5 +1,12 @@
 # Durable Decisions
 
+## 2026-11-11 — Top Header Branding Update: Orange "STUDIO" Badge
+**Decision:**
+- Replaced the blue "PS" logo badge in `editor.html` with a campaign-matched vibrant orange badge displaying **"STUDIO"**.
+- Styled with `background: #FF6D00; border: 1px solid #FFA04D; color: #FFFFFF; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase;` with a soft orange ambient glow.
+**Reason:** User requested replacing "PS" with "STUDIO" in orange color.
+**Status:** Completed & Active
+
 ## 2026-11-11 — Photoshop Studio CSS Syntax & Relative Path Resolution
 **Issue in User Screenshot:**
 In the previous build step, a `<style id="dynamicDayStyle"></style>` tag was accidentally placed inside the main `<head><style>` block in `editor.html`. In HTML parsing, as soon as the browser encounters `</style>`, it terminates the stylesheet; all subsequent CSS rules spilled out into the DOM as visible raw text at the top of the browser window. Furthermore, absolute root paths (`src="/icons/..."` and `url('/FABMAT/...')`) failed to resolve when the user opened `editor.html` directly via `file:///`.
