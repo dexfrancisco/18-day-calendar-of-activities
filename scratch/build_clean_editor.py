@@ -94,7 +94,7 @@ html_code = f"""<!DOCTYPE html>
     --accent-orange: #FF6D00;
     --danger: #ff4d4f;
     --success: #52c41a;
-    --handle-size: 10px;
+    --handle-size: 26px;
 }}
 
 * {{
@@ -462,8 +462,10 @@ body {{
 
 .transform-border {{
     position: absolute;
-    border: 2px solid var(--accent-blue);
-    pointer-events: none;
+    border: 3px solid var(--accent-blue);
+    pointer-events: auto;
+    cursor: move;
+    box-sizing: border-box;
 }}
 
 .transform-handle {{
@@ -471,12 +473,28 @@ body {{
     width: var(--handle-size);
     height: var(--handle-size);
     background: #ffffff;
-    border: 1.5px solid var(--accent-blue);
-    border-radius: 2px;
+    border: 2.5px solid var(--accent-blue);
+    border-radius: 4px;
     pointer-events: auto;
     z-index: 1002;
     transform: translate(-50%, -50%);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    box-sizing: border-box;
+    transition: transform 0.08s ease, background-color 0.08s ease;
+}}
+
+.transform-handle:hover {{
+    background: #0078d4;
+    transform: translate(-50%, -50%) scale(1.25);
+}}
+
+.transform-handle::before {{
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
 }}
 
 .transform-handle.nw {{ cursor: nwse-resize; }}
@@ -879,15 +897,15 @@ body {{
 
                     <!-- TRANSFORM BOX -->
                     <div class="transform-box" id="transformBox">
-                        <div class="transform-border" id="transformBorder"></div>
-                        <div class="transform-handle nw" data-handle="nw"></div>
-                        <div class="transform-handle n"  data-handle="n"></div>
-                        <div class="transform-handle ne" data-handle="ne"></div>
-                        <div class="transform-handle e"  data-handle="e"></div>
-                        <div class="transform-handle se" data-handle="se"></div>
-                        <div class="transform-handle s"  data-handle="s"></div>
-                        <div class="transform-handle sw" data-handle="sw"></div>
-                        <div class="transform-handle w"  data-handle="w"></div>
+                        <div class="transform-border" id="transformBorder" title="Drag border to move layer"></div>
+                        <div class="transform-handle nw" data-handle="nw" title="Drag to resize"></div>
+                        <div class="transform-handle n"  data-handle="n" title="Drag to resize"></div>
+                        <div class="transform-handle ne" data-handle="ne" title="Drag to resize"></div>
+                        <div class="transform-handle e"  data-handle="e" title="Drag to resize"></div>
+                        <div class="transform-handle se" data-handle="se" title="Drag to resize"></div>
+                        <div class="transform-handle s"  data-handle="s" title="Drag to resize"></div>
+                        <div class="transform-handle sw" data-handle="sw" title="Drag to resize"></div>
+                        <div class="transform-handle w"  data-handle="w" title="Drag to resize"></div>
                     </div>
                 </div>
             </div>
@@ -950,7 +968,7 @@ body {{
                         <div class="prop-col">
                             <span class="prop-label">Icon Width / Height</span>
                             <div class="prop-slider-wrap">
-                                <input type="range" id="propIconSizeSlider" class="prop-slider" min="300" max="950" step="10" value="720">
+                                <input type="range" id="propIconSizeSlider" class="prop-slider" min="150" max="1200" step="10" value="720">
                                 <span id="propIconSizeVal" style="width: 45px; text-align: right; color:#fff;">720px</span>
                             </div>
                         </div>
@@ -970,7 +988,7 @@ body {{
                         <div class="prop-col">
                             <span class="prop-label">Font Size (px)</span>
                             <div class="prop-slider-wrap">
-                                <input type="range" id="propFontSizeSlider" class="prop-slider" min="30" max="180" step="2" value="70">
+                                <input type="range" id="propFontSizeSlider" class="prop-slider" min="20" max="220" step="2" value="70">
                                 <span id="propFontSizeVal" style="width: 45px; text-align: right; color:#fff;">70px</span>
                             </div>
                         </div>
@@ -1034,12 +1052,19 @@ let isPanning = false;
 let startPanX = 0;
 let startPanY = 0;
 
-// Dragging
+// Dragging (Move)
 let isDraggingLayer = false;
 let dragStartX = 0;
 let dragStartY = 0;
 let initialDx = 0;
 let initialDy = 0;
+
+// Handle Resizing
+let isResizingLayer = false;
+let resizeHandle = null;
+let resizeStartX = 0;
+let resizeStartY = 0;
+let resizeInitState = {{}};
 
 // History
 let history = [];
@@ -1170,6 +1195,7 @@ function initApp() {{
         propIconSelect.appendChild(opt);
     }});
 
+    initTransformHandles();
     loadDay("00");
     fitToScreen();
     drawRulers();
@@ -1397,7 +1423,153 @@ function updateTransformBox() {{
     }});
 }}
 
-// --- LAYER MOVEMENT (DRAGGING) ---
+// --- LAYER RESIZING (DRAG HANDLES) ---
+function initTransformHandles() {{
+    document.querySelectorAll('.transform-handle').forEach(handle => {{
+        handle.addEventListener('mousedown', (e) => {{
+            if (!selectedLayerId) return;
+            e.stopPropagation();
+            e.preventDefault();
+
+            isResizingLayer = true;
+            resizeHandle = handle.dataset.handle;
+            resizeStartX = e.clientX;
+            resizeStartY = e.clientY;
+
+            const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+            if (!el) return;
+
+            const rect = el.getBoundingClientRect();
+            const w0 = Math.round(rect.width / zoom);
+            const h0 = Math.round(rect.height / zoom);
+            const st = layerStates[selectedLayerId] || {{ dx: 0, dy: 0 }};
+
+            const textNodes = Array.from(el.querySelectorAll('.stroke-title, .stroke-subtitle, .stroke-day, .stroke-date, .act-desc, .act-num, .act-lead-val, .act-lead-lbl, .detail-label-col, .detail-val-col, .stroke-tag'));
+            if (textNodes.length === 0 && (el.classList.contains('stroke-title') || el.classList.contains('stroke-subtitle'))) {{
+                textNodes.push(el);
+            }}
+
+            const initialFonts = textNodes.map(tn => ({{
+                node: tn,
+                fs: parseFloat(window.getComputedStyle(tn).fontSize) || 60,
+                sw: parseFloat(window.getComputedStyle(tn).webkitTextStrokeWidth) || 12,
+                color: window.getComputedStyle(tn).webkitTextStrokeColor || '#FF6D00'
+            }}));
+
+            resizeInitState = {{
+                w0: w0,
+                h0: h0,
+                dx0: st.dx || 0,
+                dy0: st.dy || 0,
+                isImage: selectedLayerId === 'layer_icon',
+                initialFonts: initialFonts
+            }};
+
+            window.addEventListener('mousemove', onHandleDragMove);
+            window.addEventListener('mouseup', onHandleDragEnd);
+        }});
+    }});
+
+    // Dragging on the transform border moves the layer
+    transformBorder.addEventListener('mousedown', (e) => {{
+        if (!selectedLayerId || currentTool !== 'move') return;
+        e.stopPropagation();
+        const st = layerStates[selectedLayerId];
+        if (st && !st.locked) {{
+            startLayerDrag(e, selectedLayerId);
+        }}
+    }});
+}}
+
+function onHandleDragMove(e) {{
+    if (!isResizingLayer || !selectedLayerId) return;
+
+    const deltaX = (e.clientX - resizeStartX) / zoom;
+    const deltaY = (e.clientY - resizeStartY) / zoom;
+    const init = resizeInitState;
+    const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+    const st = layerStates[selectedLayerId];
+    if (!el || !st) return;
+
+    if (init.isImage) {{
+        // HERO ICON RESIZING
+        let newW = init.w0;
+        if (resizeHandle === 'se' || resizeHandle === 'e') {{
+            newW = Math.max(120, Math.min(1400, Math.round(init.w0 + deltaX)));
+        }} else if (resizeHandle === 's') {{
+            newW = Math.max(120, Math.min(1400, Math.round(init.h0 + deltaY)));
+        }} else if (resizeHandle === 'sw' || resizeHandle === 'w') {{
+            newW = Math.max(120, Math.min(1400, Math.round(init.w0 - deltaX)));
+            st.dx = Math.round(init.dx0 + (init.w0 - newW));
+        }} else if (resizeHandle === 'nw') {{
+            newW = Math.max(120, Math.min(1400, Math.round(init.w0 - deltaX)));
+            st.dx = Math.round(init.dx0 + (init.w0 - newW));
+            st.dy = Math.round(init.dy0 + (init.h0 - newW));
+        }} else if (resizeHandle === 'ne' || resizeHandle === 'n') {{
+            newW = Math.max(120, Math.min(1400, Math.round(init.w0 + deltaX)));
+            st.dy = Math.round(init.dy0 + (init.h0 - newW));
+        }}
+
+        el.style.width = `${{newW}}px`;
+        el.style.height = `${{newW}}px`;
+        applyLayerTransform(selectedLayerId);
+
+        propIconSizeSlider.value = newW;
+        propIconSizeVal.textContent = `${{newW}}px`;
+    }} else {{
+        // TEXT LAYER RESIZING (SCALES FONT SIZE & PROPORTIONS)
+        let scale = 1.0;
+        if (resizeHandle === 'se' || resizeHandle === 'e') {{
+            scale = Math.max(0.25, (init.w0 + deltaX) / init.w0);
+        }} else if (resizeHandle === 'sw' || resizeHandle === 'w') {{
+            scale = Math.max(0.25, (init.w0 - deltaX) / init.w0);
+            st.dx = Math.round(init.dx0 + (init.w0 - init.w0 * scale));
+            applyLayerTransform(selectedLayerId);
+        }} else if (resizeHandle === 's') {{
+            scale = Math.max(0.25, (init.h0 + deltaY) / init.h0);
+        }} else if (resizeHandle === 'nw') {{
+            scale = Math.max(0.25, (init.w0 - deltaX) / init.w0);
+            st.dx = Math.round(init.dx0 + (init.w0 - init.w0 * scale));
+            st.dy = Math.round(init.dy0 + (init.h0 - init.h0 * scale));
+            applyLayerTransform(selectedLayerId);
+        }} else if (resizeHandle === 'ne' || resizeHandle === 'n') {{
+            scale = Math.max(0.25, (init.w0 + deltaX) / init.w0);
+            st.dy = Math.round(init.dy0 + (init.h0 - init.h0 * scale));
+            applyLayerTransform(selectedLayerId);
+        }}
+
+        init.initialFonts.forEach(item => {{
+            const newFs = Math.max(16, Math.min(260, Math.round(item.fs * scale)));
+            const newSw = Math.max(1, Math.round(item.sw * scale));
+            item.node.style.fontSize = `${{newFs}}px`;
+            if (item.sw > 0) {{
+                item.node.style.webkitTextStroke = `${{newSw}}px ${{item.color}}`;
+            }}
+            propFontSizeSlider.value = newFs;
+            propFontSizeVal.textContent = `${{newFs}}px`;
+        }});
+    }}
+
+    updateTransformBox();
+    updateOptionsBar();
+    updatePropertiesPanel();
+    updateRadar();
+}}
+
+function onHandleDragEnd() {{
+    if (!isResizingLayer) return;
+    isResizingLayer = false;
+    resizeHandle = null;
+    window.removeEventListener('mousemove', onHandleDragMove);
+    window.removeEventListener('mouseup', onHandleDragEnd);
+
+    const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+    const name = el ? el.dataset.layerName : 'Layer';
+    pushHistory(`Resize ${{name}}`);
+    showToast(`Resized ${{name}}`);
+}}
+
+// --- LAYER MOVEMENT (DRAGGING BODY) ---
 function startLayerDrag(e, layerId) {{
     isDraggingLayer = true;
     dragStartX = e.clientX;
@@ -1712,6 +1884,41 @@ document.getElementById('btnNudgeDown').addEventListener('click', () => nudgeSel
 document.getElementById('btnNudgeLeft').addEventListener('click', () => nudgeSelected(-10, 0));
 document.getElementById('btnNudgeRight').addEventListener('click', () => nudgeSelected(10, 0));
 
+// Property Sliders Direct Sync
+propIconSizeSlider.addEventListener('input', () => {{
+    if (selectedLayerId === 'layer_icon') {{
+        const el = document.querySelector('.layer-target[data-layer-id="layer_icon"]');
+        if (el) {{
+            const val = parseInt(propIconSizeSlider.value);
+            el.style.width = `${{val}}px`;
+            el.style.height = `${{val}}px`;
+            propIconSizeVal.textContent = `${{val}}px`;
+            updateTransformBox();
+            updateRadar();
+        }}
+    }}
+}});
+propIconSizeSlider.addEventListener('change', () => pushHistory('Resize Hero Icon'));
+
+propFontSizeSlider.addEventListener('input', () => {{
+    if (selectedLayerId && selectedLayerId !== 'layer_icon') {{
+        const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+        if (el) {{
+            const val = parseInt(propFontSizeSlider.value);
+            const textNodes = el.querySelectorAll('.stroke-title, .stroke-subtitle, .stroke-day, .stroke-date, .act-desc, .act-num, .act-lead-val, .act-lead-lbl, .detail-label-col, .detail-val-col, .stroke-tag');
+            if (textNodes.length === 0) {{
+                el.style.fontSize = `${{val}}px`;
+            }} else {{
+                textNodes.forEach(tn => tn.style.fontSize = `${{val}}px`);
+            }}
+            propFontSizeVal.textContent = `${{val}}px`;
+            updateTransformBox();
+            updateRadar();
+        }}
+    }}
+}});
+propFontSizeSlider.addEventListener('change', () => pushHistory('Change Font Size'));
+
 // Keyboard Shortcuts
 window.addEventListener('keydown', (e) => {{
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
@@ -1824,5 +2031,4 @@ editor_path = os.path.join(BASE_DIR, "editor.html")
 with open(editor_path, "w", encoding="utf-8") as f:
     f.write(html_code)
 
-print(f"✓ Fixed editor.html ({len(html_code)} bytes)")
-
+print(f"✓ Rebuilt editor.html with interactive transform resize engine ({len(html_code)} bytes)")

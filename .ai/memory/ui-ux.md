@@ -6,10 +6,17 @@
 - **Visual Parity Guarantee:**
   - Embeds the exact approved CSS rules and DOM hierarchies from `scratch/final_html/*.html` directly into the studio.
   - Zero distortion: 2-column detail grid (420px label column, flexible value column), activity number + description row, indented lead office row (`margin-left: 98px`), and vertically-centered Day/Date headers next to the Hero Icon remain $100\%$ preserved upon loading every day.
-- **Interactive Layer Overlay System:**
+- **Interactive Layer Overlay & Transform Box System:**
   - Every logical component (`.hero-icon`, `.day-date-group`, `.stroke-title`, each `.act-item`, `.bottom-block`) is tagged as an interactive layer target.
   - Independent positioning is powered by non-destructive `transform: translate(dx, dy)`, enabling smooth moving and nudging without breaking sibling flow or parent grid structures.
   - Hover highlights target with blue dashed border; click selects with solid `#0078D4` outline and 8-point transform handles.
+  - **8-Handle Transform Resize Engine:**
+    - High-visibility 26px handles with 2.5px solid border, 4px border radius, and a `-12px` hit-padding pseudo-element (`::before`) for effortless grab targets even at ~28% canvas zoom.
+    - Dragging the `.transform-border` moves the layer (`dx`, `dy`).
+    - Dragging any of the 8 handles (`nw`, `n`, `ne`, `e`, `se`, `s`, `sw`, `w`) interactively scales the layer:
+      - **Hero Icons:** Resizes width and height with 1:1 aspect ratio constraint, auto-syncing the Properties slider.
+      - **Text Layers:** Scales font size and stroke width proportionally across all text nodes, maintaining visual hierarchy and line wrap stability, auto-syncing the Properties font size slider.
+    - Mouseup pushes `Resize <LayerName>` to undo history stack and shows instant feedback toast.
   - Double-click on text enters inline `contenteditable` typing mode with real-time DOM sync.
   - Layers panel in right dock lists all active layers with visibility (👁) and lock (🔒) toggles.
   - Live Clearance Radar calculates dynamic element clearance to the vehicle ($y \ge 2950$ px) and road ($y \ge 3388$ px).

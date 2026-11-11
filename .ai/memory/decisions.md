@@ -1,5 +1,23 @@
 # Durable Decisions
 
+## 2026-11-11 — Interactive Transform Box Resizing Engine (8-Handle Drag Resizing)
+**Decision:**
+- Implemented real-time interactive resizing when dragging the 8 bounding box transform handles (`nw`, `n`, `ne`, `e`, `se`, `s`, `sw`, `w`) around any selected layer in `editor.html`.
+- **Canvas-Scaled Grab Targets:** Increased `--handle-size: 26px` with 2.5px solid border, 4px border radius, and a `-12px` expanded hit-padding pseudo-element (`::before`), creating a comfortable ~14px screen grab target at standard canvas display zoom (~28-38%).
+- **Dual Drag Modes on Transform Box:**
+  - Dragging the **bounding box border** (`.transform-border`) triggers layer movement (`dx`, `dy`).
+  - Dragging any of the **8 handles** (`.transform-handle`) triggers interactive scaling.
+- **Hero Icon Resizing:**
+  - Dragging corner or edge handles dynamically adjusts the icon's `width` and `height` while maintaining a strict 1:1 aspect ratio.
+  - Automatically syncs the "Icon Width / Height" slider and numerical display in the Properties panel.
+- **Text Layers Proportional Typography Scaling:**
+  - Rather than arbitrarily modifying container CSS widths (which can distort flexbox layouts and wrap lines unpredictably), dragging corner/edge handles computes the scale ratio $scale = (W_0 + \Delta x) / W_0$.
+  - Proportionally scales `font-size` and `-webkit-text-stroke` width across all typography elements in the selected block, automatically synchronizing the "Font Size" slider in the Properties panel.
+- **Undo / Redo & Radar Integration:**
+  - Automatically pushes `Resize <LayerName>` to the undo/redo history stack on mouse release (`mouseup`).
+  - Re-evaluates bottom hazard clearance in real-time on every animation frame during resizing.
+**Status:** Completed & Mathematically Verified in Headless Chrome (`data-w1="750"` -> `data-w2="1143"`, `data-fs1="112"` -> `data-fs2="133"`).
+
 ## 2026-11-11 — Top Header Branding Update: Orange "STUDIO" Badge
 **Decision:**
 - Replaced the blue "PS" logo badge in `editor.html` with a campaign-matched vibrant orange badge displaying **"STUDIO"**.

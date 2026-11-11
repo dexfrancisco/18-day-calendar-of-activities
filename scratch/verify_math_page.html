@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><body>
+<iframe id="app" src="http://127.0.0.1:9222/editor.html" style="width:1920px;height:1080px;border:none;"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const win = document.getElementById('app').contentWindow;
+        win.selectLayer('layer_icon');
+        const iconEl = win.document.querySelector('.layer-target[data-layer-id="layer_icon"]');
+        const w1 = iconEl.offsetWidth;
+
+        const handleSe = win.document.querySelector('.transform-handle.se');
+        const rect = handleSe.getBoundingClientRect();
+
+        handleSe.dispatchEvent(new MouseEvent('mousedown', {
+            clientX: rect.left + rect.width / 2,
+            clientY: rect.top + rect.height / 2,
+            bubbles: true
+        }));
+
+        win.dispatchEvent(new MouseEvent('mousemove', {
+            clientX: rect.left + rect.width / 2 + 100,
+            clientY: rect.top + rect.height / 2 + 100,
+            bubbles: true
+        }));
+
+        win.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+
+        const w2 = iconEl.offsetWidth;
+
+        // Check text layer
+        win.selectLayer('layer_title');
+        const titleEl = win.document.querySelector('.stroke-title');
+        const fs1 = parseFloat(win.getComputedStyle(titleEl).fontSize);
+
+        const handleSe2 = win.document.querySelector('.transform-handle.se');
+        const r2 = handleSe2.getBoundingClientRect();
+        handleSe2.dispatchEvent(new MouseEvent('mousedown', {
+            clientX: r2.left + r2.width / 2,
+            clientY: r2.top + r2.height / 2,
+            bubbles: true
+        }));
+
+        win.dispatchEvent(new MouseEvent('mousemove', {
+            clientX: r2.left + r2.width / 2 + 100,
+            clientY: r2.top + r2.height / 2 + 100,
+            bubbles: true
+        }));
+        win.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+
+        const fs2 = parseFloat(win.getComputedStyle(titleEl).fontSize);
+
+        const res = document.createElement('div');
+        res.id = 'results';
+        res.setAttribute('data-w1', w1);
+        res.setAttribute('data-w2', w2);
+        res.setAttribute('data-fs1', fs1);
+        res.setAttribute('data-fs2', fs2);
+        document.body.appendChild(res);
+    }, 1500);
+});
+</script>
+</body></html>
