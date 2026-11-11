@@ -184,12 +184,38 @@
     "icon_filename": "DAY 10.png",
     "badge": "DAY 9",
     "date_str": "DECEMBER 3, 2026 | THURSDAY",
-    "layout_type": "single_activity",
-    "main_activity": "End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations",
+    "layout_type": "standard_activities",
     "lead_office": "City Health Office, City Legal Office, PNP-WCPD, Liga ng mga Barangay, JCD GAD CONNECT & CDRRMO",
     "partners": "DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI",
     "venue": "ICON",
     "activities_detailed": [
+      {
+        "num": 1,
+        "lead_office": "City Health Office",
+        "description": "Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors."
+      },
+      {
+        "num": 2,
+        "lead_office": "City Legal Office",
+        "description": "Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways."
+      },
+      {
+        "num": 3,
+        "lead_office": "PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector",
+        "description": "Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response."
+      },
+      {
+        "num": 4,
+        "lead_office": "Liga ng mga Barangay / VAW Desks",
+        "description": "Barangay action planning, desk strengthening, community watch, and referral readiness."
+      },
+      {
+        "num": 5,
+        "lead_office": "JCD GAD CONNECT and CDRRMO",
+        "description": "Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness."
+      }
+    ],
+    "activities": [
       {
         "num": 1,
         "lead_office": "City Health Office",

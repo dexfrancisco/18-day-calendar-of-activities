@@ -1,5 +1,20 @@
 # Durable Decisions
 
+## 2026-11-11 — Day 9 FABMAT Poster Expansion to Full 5 Activities
+**Decision:**
+- Expanded `FABMAT/09-day-09.png` from a single consolidated forum title to explicitly show all 5 numbered activities with their respective lead offices, matching the master calendar cards:
+  - **Activity 1:** Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors. (City Health Office)
+  - **Activity 2:** Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways. (City Legal Office)
+  - **Activity 3:** Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response. (PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector)
+  - **Activity 4:** Barangay action planning, desk strengthening, community watch, and referral readiness. (Liga ng mga Barangay / VAW Desks)
+  - **Activity 5:** Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness. (JCD GAD CONNECT and CDRRMO)
+  - **Hero Icon:** `DAY 10.png` (Scales of Justice, Healthcare Shield, Locked Smartphone).
+  - **Venue:** `ICON`.
+- Calibrated 5-activity typography & spacing: `icon_sz = 460`, `act_desc_sz = 44`, `act_num_sz = 50`, `lead_val_sz = 38`.
+- Measured bottom clearance: finishes at $y = 2843$ px with **+107 px safe clearance** above the vehicle boundary ($y = 2950$ px).
+**Reason:** User asked: "why is the fabmat of day 9 only has 1 activity? it has multiple activity in the calendar" — ensuring the daily poster and calendar exhibit full 1:1 activity parity.
+**Status:** Completed & Visually Verified
+
 ## 2026-11-11 — Hero Icon Re-alignment & Venue Exact Match for Day 9 and Day 10 FABMAT Posters
 **Decision:**
 - When activities and partners were exchanged between Day 9 and Day 10, the corresponding illustrated 3D hero icons were re-aligned to follow their respective activities:

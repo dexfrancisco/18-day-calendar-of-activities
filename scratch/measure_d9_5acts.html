@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><body>
+<iframe id="f9" src="http://127.0.0.1:9245/scratch/final_html/09-day-09.html" style="width:2480px;height:3508px;"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const win = document.getElementById('f9').contentWindow;
+        const btm = win.document.querySelector('.bottom-block');
+        const r = btm.getBoundingClientRect();
+        const b9 = Math.round(r.bottom);
+        const res = document.createElement('div');
+        res.id = 'results';
+        res.setAttribute('data-b9', b9);
+        document.body.appendChild(res);
+    }, 2000);
+});
+</script>
+</body></html>

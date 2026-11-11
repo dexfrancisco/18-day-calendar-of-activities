@@ -1,21 +1,19 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — FABMAT Posters & Calendars Full Icon Alignment & Venue Fix (Day 9 & Day 10)
+18-Day Orange Campaign — Day 9 FABMAT Poster Full 5-Activity Expansion & Re-render
 
 ## Current task
-Resolved issue where FABMAT posters for Day 9 and Day 10 had mismatched icons and venue phrasing:
-- **Day 9 (`FABMAT/09-day-09.png`):**
-  - Updated Hero Icon to **`icons/DAY 10.png`** (Scales of Justice, Healthcare Shield, and Digital Locked Smartphone), matching the **End VAWC Action Forum** (Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk, and Digital Safety Innovations).
-  - Updated Venue strictly to **"ICON"**.
-- **Day 10 (`FABMAT/10-day-10.png`):**
-  - Updated Hero Icon to **`icons/DAY 9.png`** (First responder man with emergency hotline phone and siren), matching **MOVE Forum** & **Safeline 922 Emergency Response Simulation and Referral Drill**.
-  - Venue: **F. L. Dy Colliseum, District III, Cauayan City, Isabela**.
-- **Re-rendered with zero cache:**
-  - `FABMAT/09-day-09.png` & `FABMAT/10-day-10.png` (300 DPI print-ready).
-  - `output/1x/`, `output/2x/`, and combined 19-page PDF `output/18-day-campaign-posters.pdf`.
-  - Master Calendars: `18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`.
-  - Re-baked `editor.html` and verified.
+Updated the Day 9 FABMAT poster (`FABMAT/09-day-09.png`) to display all 5 numbered activities rather than a single collapsed forum title:
+- **Activity 1:** Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors. (LEAD: City Health Office)
+- **Activity 2:** Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways. (LEAD: City Legal Office)
+- **Activity 3:** Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response. (LEAD: PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector)
+- **Activity 4:** Barangay action planning, desk strengthening, community watch, and referral readiness. (LEAD: Liga ng mga Barangay / VAW Desks)
+- **Activity 5:** Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness. (LEAD: JCD GAD CONNECT and CDRRMO)
+- **Hero Icon:** Scales of Justice + Healthcare Cross Shield + Locked Phone (`DAY 10.png` asset matched to legal/health/digital activities).
+- **Partners:** DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI.
+- **Venue:** **ICON**.
+- **Clearance:** Content ends cleanly at $y = 2843$ px (**+107 px safe clearance** above jeepney hazard line $y = 2950$ px).
 
 ## Status
 Completed & Verified with Visual Inspection
@@ -27,12 +25,12 @@ Completed & Verified with Visual Inspection
 None
 
 ## Last meaningful change
-- Re-assigned 3D illustrated hero icons so that the Action Forum carries the Justice/Health/Digital icon and MOVE/Safeline carries the Emergency Responder icon.
-- Changed Day 9 venue text strictly to "ICON" across all calendar HTMLs, text file, and poster generators.
-- Used fresh cache-busted Chrome headless instances to render 1x, 2x, and PDF outputs.
+- Reconfigured Day 9 layout in `scratch/schedule_data.json` to `standard_activities` with all 5 activity objects.
+- Generated `scratch/final_html/09-day-09.html` and measured bottom clearance ($y = 2843$ px).
+- Re-rendered 1x and 2x posters with cache-busting flags (`FABMAT/09-day-09.png`, `output/1x/`, `output/2x/`).
+- Rebuilt combined 19-page PDF (`output/18-day-campaign-posters.pdf`).
+- Rebuilt `editor.html` (206,138 bytes) to include the complete 5-activity Day 9 template.
 
 ## Last verification
 - Visual inspection via `read_file` binary image viewer:
-  - `crop_d9_fresh_top.png`: Verified Scales of Justice icon + "DAY 9" + "End VAWC Action Forum".
-  - `crop_d9_fresh_venue.png`: Verified "VENUE: ICON".
-  - `crop_d10_fresh_top.png`: Verified Responder with emergency siren icon + "DAY 10" + MOVE Forum & Safeline 922.
+  - `crop_d9_5acts_poster.png` confirms all 5 numbered activities, lead offices, partners, venue ICON, and justice/health/digital hero icon.

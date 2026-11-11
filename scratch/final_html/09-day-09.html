@@ -155,24 +155,59 @@ body {
             width: 2100px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            gap: 22px;
         }
-        .hero-icon { width: 580px; height: 580px; }
-        .stroke-day { font-size: 146px; }
-        .stroke-date { font-size: 66px; }
-        .middle-block {
+        .hero-icon { width: 460px; height: 460px; }
+        .stroke-day { font-size: 132px; }
+        .stroke-date { font-size: 60px; }
+        .acts-block {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            gap: 14px;
+            width: 100%;
+        }
+        .act-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .act-header-row {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+        }
+        .act-num {
+            font-size: 50px;
+            flex-shrink: 0;
+            width: 58px;
+        }
+        .act-desc {
+            font-size: 44px;
+            line-height: 1.15;
+            flex: 1;
+        }
+        .act-lead-row {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            margin-left: 76px;
+        }
+        .act-lead-lbl {
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+        .act-lead-val {
+            font-size: 38px;
+            flex: 1;
+        }
+        .bottom-block {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
             width: 100%;
         }
-        .stroke-title { font-size: 78px; line-height: 1.16; }
-        .bottom-block { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-        .detail-label-col { width: 420px; flex-shrink: 0; font-size: 44px; }
-        .detail-val-col { flex: 1; font-size: 46px; }
+        .detail-label-col { width: 350px; flex-shrink: 0; font-size: 42px; }
+        .detail-val-col { flex: 1; font-size: 44px; }
         </style></head><body>
         <div class="safe-zone">
             <div class="top-row">
@@ -182,15 +217,65 @@ body {
                     <div class="stroke-date">DECEMBER 3, 2026 | THURSDAY</div>
                 </div>
             </div>
-            <div class="middle-block">
-                <div class="stroke-title">End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations</div>
+            <div class="acts-block">
                 
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">1.</div>
+                    <div class="stroke-act-desc act-desc">Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">City Health Office</span>
+                </div>
+            </div>
+            
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">2.</div>
+                    <div class="stroke-act-desc act-desc">Orientation on RA 9262, Safe Spaces Act, Anti-Trafficking, cyber-related VAWC and online crimes; legal referral pathways.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">City Legal Office</span>
+                </div>
+            </div>
+            
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">3.</div>
+                    <div class="stroke-act-desc act-desc">Case documentation, law enforcement coordination, protection procedures, and anti-online exploitation response.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">PNP-WCPD / LCAT-VAWC / BJMP / Justice Sector</span>
+                </div>
+            </div>
+            
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">4.</div>
+                    <div class="stroke-act-desc act-desc">Barangay action planning, desk strengthening, community watch, and referral readiness.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">Liga ng mga Barangay / VAW Desks</span>
+                </div>
+            </div>
+            
+            <div class="act-item">
+                <div class="act-header-row">
+                    <div class="stroke-num act-num">5.</div>
+                    <div class="stroke-act-desc act-desc">Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.</div>
+                </div>
+                <div class="act-lead-row">
+                    <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
+                    <span class="stroke-val act-lead-val">JCD GAD CONNECT and CDRRMO</span>
+                </div>
+            </div>
+            
             </div>
             <div class="bottom-block">
-                <div class="detail-row">
-                    <div class="detail-label-col stroke-label">LEAD OFFICE:</div>
-                    <div class="detail-val-col stroke-val">City Health Office, City Legal Office, PNP-WCPD, Liga ng mga Barangay, JCD GAD CONNECT & CDRRMO</div>
-                </div>
                 <div class="detail-row">
                     <div class="detail-label-col stroke-label">PARTNERS:</div>
                     <div class="detail-val-col stroke-val">DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI</div>
