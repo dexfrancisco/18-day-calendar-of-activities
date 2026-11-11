@@ -1,5 +1,28 @@
 # Durable Decisions
 
+## 2026-11-11 — Day 10 Venue Update to Isabela Convention Center ("ICON")
+**Decision:**
+- Confirmed user clarification: Day 10's venue is ALSO **Isabela Convention Center, San Fermin, Cauayan City, Isabela** ("ICON"), identical to Day 9.
+- Updated:
+  - `18-Day_Campaign_Calendar_Extracted_Text.txt`
+  - `scratch/schedule_data.json`
+  - `scratch/final_html/10-day-10.html`
+  - All Master Calendars (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `Final Copy/` copies, `18-day-campaign-calendar-a4.html`, `18-day-campaign-calendar-a4-page2.html`)
+  - Rendered `FABMAT/10-day-10.png` (300 DPI, 2480x3508), `output/1x/`, `output/2x/`, `output/18-day-campaign-posters.pdf`
+  - Master calendar renders (`18-Day_Campaign_Calendar_A3.png`, `A4_Page1.png`, `A4_Page2.png`)
+  - `editor.html` rebuilt with latest Day 10 template
+- Verified clearance: Day 10 content finishes at $y = 2843$ px with **+107 px safe clearance** above vehicle hazard line $y = 2950$ px.
+**Status:** Completed & Visually Verified
+
+## 2026-11-11 — Venue Clarification: "ICON" Resolves to "Isabela Convention Center"
+**Decision:**
+- Clarified that user's reference to "ICON" represents **Isabela Convention Center** (local acronym/shorthand in Cauayan City, Isabela).
+- Updated Day 9's venue across all calendar documents, extracted text, and daily posters to:
+  `Isabela Convention Center, San Fermin, Cauayan City, Isabela` (matching Day 4 and Day 13).
+- Re-rendered master calendars (`18-Day_Campaign_Calendar_A3.png`, `A4_Page1.png`, `A4_Page2.png`), `FABMAT/09-day-09.png` (300 DPI), and combined PDF.
+- Verified bottom clearance: finishes at $y = 2843$ px with **+107 px safe clearance** above $y = 2950$ px.
+**Status:** Completed & Visually Verified
+
 ## 2026-11-11 — Day 9 FABMAT Poster Expansion to Full 5 Activities
 **Decision:**
 - Expanded `FABMAT/09-day-09.png` from a single consolidated forum title to explicitly show all 5 numbered activities with their respective lead offices, matching the master calendar cards:
