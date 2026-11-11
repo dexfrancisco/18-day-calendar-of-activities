@@ -111,18 +111,6 @@ Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
 DAY 9 | DEC 3, 2026 | THU
 --------------------------------------------------------------------------------
 Activity 1:
-  Lead Office: GAD Office & MOVE
-  Description: Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility
-Activity 2:
-  Lead Office: CDRRMO / Rescue 922 / Safe Line
-  Description: Safeline 922 Emergency Response Simulation and Referral Drill
-Partners: PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan
-Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
-
---------------------------------------------------------------------------------
-DAY 10 | DEC 4, 2026 | FRI
---------------------------------------------------------------------------------
-Activity 1:
   Lead Office: City Health Office
   Description: Health response, mental health, reproductive health, medico-legal awareness, and support services for survivors.
 Activity 2:
@@ -137,8 +125,21 @@ Activity 4:
 Activity 5:
   Lead Office: JCD GAD CONNECT and CDRRMO
   Description: Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness.
+(Tarp/Poster Combined Title: End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations)
 Partners: DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI
-Venue: Isabela Convention Center, San Fermin, Cauayan City, Isabela
+Venue: ICON, San Fermin, Cauayan City, Isabela
+
+--------------------------------------------------------------------------------
+DAY 10 | DEC 4, 2026 | FRI
+--------------------------------------------------------------------------------
+Activity 1:
+  Lead Office: GAD Office & MOVE
+  Description: Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility
+Activity 2:
+  Lead Office: CDRRMO / Rescue 922 / Safe Line
+  Description: Safeline 922 Emergency Response Simulation and Referral Drill
+Partners: PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan
+Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
 
 --------------------------------------------------------------------------------
 DAY 11 | DEC 5, 2026 | SAT

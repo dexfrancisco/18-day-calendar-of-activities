@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><body>
+<iframe id="app" src="http://127.0.0.1:9235/editor.html" style="width:1920px;height:1080px;border:none;"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const win = document.getElementById('app').contentWindow;
+        
+        // 1. Switch to Day 9
+        win.selectDay('09');
+        setTimeout(() => {
+            const d9Text = win.document.getElementById('posterCanvasInner').innerText;
+            const hasForum = d9Text.includes('End VAWC Action Forum');
+            const hasIcon = d9Text.includes('ICON');
+            
+            // 2. Switch to Day 10
+            win.selectDay('10');
+            setTimeout(() => {
+                const d10Text = win.document.getElementById('posterCanvasInner').innerText;
+                const hasMove = d10Text.includes('Men as Allies');
+                const hasSafeline = d10Text.includes('Safeline 922');
+                const hasFLDy = d10Text.includes('F. L. Dy Colliseum');
+                
+                const res = document.createElement('div');
+                res.id = 'results';
+                res.setAttribute('data-d9-forum', hasForum);
+                res.setAttribute('data-d9-icon', hasIcon);
+                res.setAttribute('data-d10-move', hasMove);
+                res.setAttribute('data-d10-safeline', hasSafeline);
+                res.setAttribute('data-d10-fldy', hasFLDy);
+                document.body.appendChild(res);
+            }, 500);
+        }, 500);
+    }, 1500);
+});
+</script>
+</body></html>

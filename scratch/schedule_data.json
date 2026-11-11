@@ -184,34 +184,11 @@
     "icon_filename": "DAY 9.png",
     "badge": "DAY 9",
     "date_str": "DECEMBER 3, 2026 | THURSDAY",
-    "layout_type": "standard_activities",
-    "activities": [
-      {
-        "num": 1,
-        "lead_office": "GAD Office & MOVE",
-        "description": "Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility"
-      },
-      {
-        "num": 2,
-        "lead_office": "CDRRMO / Rescue 922 / Safe Line",
-        "description": "Safeline 922 Emergency Response Simulation and Referral Drill"
-      }
-    ],
-    "partners": "PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan",
-    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
-  },
-  {
-    "id": "10",
-    "day_number": 10,
-    "filename": "10-day-10.png",
-    "icon_filename": "DAY 10.png",
-    "badge": "DAY 10",
-    "date_str": "DECEMBER 4, 2026 | FRIDAY",
     "layout_type": "single_activity",
     "main_activity": "End VAWC Action Forum: Enhancing Survivor Healthcare, Legal Frameworks, LCAT-VAW Desk Coordination, and Digital Safety Innovations",
     "lead_office": "City Health Office, City Legal Office, PNP-WCPD, Liga ng mga Barangay, JCD GAD CONNECT & CDRRMO",
     "partners": "DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI",
-    "venue": "Isabela Convention Center, San Fermin, Cauayan City, Isabela",
+    "venue": "ICON, San Fermin, Cauayan City, Isabela",
     "activities_detailed": [
       {
         "num": 1,
@@ -239,6 +216,29 @@
         "description": "Digital Safety Day: demo of Project S.U.N.S.H.I.N.E., iReport VAWC, Safe Line, online reporting, cyber safety & digital evidence awareness."
       }
     ]
+  },
+  {
+    "id": "10",
+    "day_number": 10,
+    "filename": "10-day-10.png",
+    "icon_filename": "DAY 10.png",
+    "badge": "DAY 10",
+    "date_str": "DECEMBER 4, 2026 | FRIDAY",
+    "layout_type": "standard_activities",
+    "activities": [
+      {
+        "num": 1,
+        "lead_office": "GAD Office & MOVE",
+        "description": "Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility"
+      },
+      {
+        "num": 2,
+        "lead_office": "CDRRMO / Rescue 922 / Safe Line",
+        "description": "Safeline 922 Emergency Response Simulation and Referral Drill"
+      }
+    ],
+    "partners": "PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
   },
   {
     "id": "11",

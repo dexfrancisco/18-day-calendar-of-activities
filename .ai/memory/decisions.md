@@ -1,5 +1,25 @@
 # Durable Decisions
 
+## 2026-11-11 — Exchange Activities & Partners for Day 9 and Day 10 (Venue Day 9: ICON)
+**Decision:**
+- Swapped activities and partners between Day 9 and Day 10:
+  - **Day 9 (December 3, 2026 | Thursday):**
+    - Now hosts the **End VAWC Action Forum** (Healthcare, Legal Frameworks, LCAT-VAW Desk, and Digital Safety) [Activities 1-5 in calendar / combined forum title on poster].
+    - Partners: DILG, PNP, BJMP, City Prosecutor's Office, PAO, Barangays, Barangay Officials, BSWDO, Hospitals, RHUs, NGOs, Mental Health Partners, GAD Office, Tech Partners, JCI.
+    - Venue: **ICON, San Fermin, Cauayan City, Isabela**.
+  - **Day 10 (December 4, 2026 | Friday):**
+    - Now hosts Activity 1: **MOVE Forum on Healthy Masculinity** & Activity 2: **Safeline 922 Emergency Response Simulation and Referral Drill**.
+    - Partners: PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan.
+    - Venue: **F. L. Dy Colliseum, District III, Cauayan City, Isabela**.
+- **Synchronized across all system tiers:**
+  - `18-Day_Campaign_Calendar_Extracted_Text.txt`
+  - A3 and A4 Calendar HTML files & rendered 300 DPI PNGs (`18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`)
+  - Poster Generator & HTML templates (`scratch/final_html/09-day-09.html`, `10-day-10.html`)
+  - Output posters: `FABMAT/09-day-09.png`, `FABMAT/10-day-10.png`, `output/1x/`, `output/2x/`, and `output/18-day-campaign-posters.pdf`
+  - Interactive STUDIO Editor: `editor.html`
+**Reason:** User requested: "exchange the activities of day 9 and day 10 including their partners, then change the venue of day 9 to ICON".
+**Status:** Completed & Verified (Day 9 bottom clearance $y=2566$ px / 384 px safe margin; Day 10 bottom clearance $y=2844$ px / 106 px safe margin).
+
 ## 2026-11-11 — Interactive Transform Box Resizing Engine (8-Handle Drag Resizing)
 **Decision:**
 - Implemented real-time interactive resizing when dragging the 8 bounding box transform handles (`nw`, `n`, `ne`, `e`, `se`, `s`, `sw`, `w`) around any selected layer in `editor.html`.

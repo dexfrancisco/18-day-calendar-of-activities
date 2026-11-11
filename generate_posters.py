@@ -279,7 +279,7 @@ def render_day_html(day):
         special_html = f'<div class="stroke-subtitle" style="font-size:62px; margin-top:4px;">★ {special_badge} ★</div>' if special_badge else ''
         
         # Sizing calibrated for text length
-        if day_num == 10:
+        if day_num in [9, 10] or "End VAWC Action Forum" in title:
             icon_sz = 580
             title_font_size = 78
             safe_gap = 20
@@ -416,8 +416,8 @@ def render_day_html(day):
         acts = day.get("activities", [])
         num_acts = len(acts)
 
-        if day_num == 10 or num_acts >= 5:
-            # Day 10 (5 activities) - scaled up and well grouped
+        if num_acts >= 5:
+            # 5 activities - scaled and well grouped
             icon_sz = 460
             day_font_sz = 132
             date_font_sz = 60
@@ -455,8 +455,8 @@ def render_day_html(day):
                 bottom_val_sz = 48
                 bottom_gap = 10
                 lbl_w = 380
-            elif day_num == 9:
-                # Day 9 has 3 lines of partners
+            elif day_num in [9, 10]:
+                # Day 9/10 (MOVE + Safeline) has 3 lines of partners
                 icon_sz = 660
                 day_font_sz = 146
                 date_font_sz = 68
