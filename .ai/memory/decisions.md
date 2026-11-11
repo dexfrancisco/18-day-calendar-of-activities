@@ -1,5 +1,25 @@
 # Durable Decisions
 
+## 2026-11-11 — Interactive Webpage Canvas Studio & Photoshop-Style Live Editor
+**Decision:**
+1. **Interactive Web Canvas Editor (`editor.html`):**
+   - Built a zero-dependency, self-contained interactive web editor (`editor.html`, 74.9 KB) that runs directly in any modern browser (via `file:///` or HTTP).
+   - Features full Photoshop-like canvas capabilities:
+     - **Hover & Selection Inspection:** Real-time visual bounding boxes, element dimensions, coordinates, and layer badges.
+     - **Drag & Drop Repositioning:** Smooth pixel-accurate drag with snapping guides at canvas center ($X=1240$ px) and content left margin ($X=190$ px).
+     - **Inline & Sidebar Text Editing:** Double-click on canvas text for direct inline editing or use the right-side inspector textarea.
+     - **Live Inspector Sliders & Numeric Inputs:** Real-time adjustment of Top/Left coordinates, Icon Size, Font Size, Line Height, Stroke Width, Font Family, and Spacing Gap.
+     - **Full 19-Day Switcher:** Dropdown navigation and prev/next shortcuts across all 19 days (Pre-Campaign through Day 18) with complete schedule data embedded directly as JSON.
+     - **Anti-Hazard Clearance Radar (Live HUD):** Dynamically tracks element bounds against the jeepney ($y \ge 2950$ px) and asphalt road ($y \ge 3388$ px), glowing green when safe and alerting red when approaching danger zones.
+     - **High-Res Export & Config Copy:** One-click copy of JSON layout configuration and direct high-resolution print download.
+2. **Local Server Runner (`run_studio.py`):**
+   - Created standalone script that automatically finds an available port starting at 8080, serves the workspace over local HTTP, and launches the default browser.
+3. **Design Fidelity:**
+   - Embedded licensed Gotham fonts (`Gotham Ultra`, `Gotham Bold`, `Gotham Medium`, `Gotham Book`, `Gotham Medium Italic`).
+   - Matched exact flat vector orange outline aesthetics (`#FF6D00` outline, pure white fill `#FFFFFF`, zero shadows).
+**Reason:** User requested a webpage where they can hover over elements and adjust poster layouts interactively like Photoshop.
+**Status:** Completed & Active
+
 ## 2026-11-10 — Revised Activity Titles & Day 10 Combined Forum for Posters (Tarp)
 **Decision:**
 1. **Activity Title Updates across Master Calendars & Daily Posters:**

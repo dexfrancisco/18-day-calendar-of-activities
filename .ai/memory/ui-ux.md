@@ -1,6 +1,26 @@
 # UI/UX
 
-> Status: Verified from repository HTML/CSS files (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4.html`, `18-day-campaign-calendar-a4-page1.html`, `18-day-campaign-calendar-a4-page2.html`) on 2026-10-28.
+> Status: Verified from repository HTML/CSS files (`editor.html`, `18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4.html`) on 2026-11-11.
+
+## Interactive Poster Studio & Canvas Editor (`editor.html`)
+- **Photoshop/Canva-like Web Interface:**
+  - **Dark Professional Theme:** `#1E1E1E` workbench background, `#252526` toolbars, `#333333` borders, and high-visibility `#FF6D00` accent highlights.
+  - **Infinite Pan & Smooth Zoom:** Mouse wheel zoom (10% to 150%) centered on cursor, Spacebar + drag to pan the viewport, and one-click "Fit to Screen" ($0.28\times$).
+  - **Hover Inspection & Selection:** Blue dashed outline and coordinate badge on hover; solid `#0078D4` outline with resize/move handles on selection.
+  - **Snapping Guides:** Subtle dynamic guidelines snapping elements to horizontal center ($X = 1240$ px) and content margin ($X = 190$ px).
+  - **Live Inspector Controls:**
+    - Position X & Y sliders (px) with numeric steppers.
+    - Hero Icon Width/Height slider ($200$ px to $1000$ px).
+    - Element Spacing Gap slider ($0$ px to $120$ px).
+    - Font Size slider ($24$ px to $160$ px) and Line Height stepper ($0.9$ to $2.0$).
+    - Stroke Width ($0$ px to $30$ px) and Color presets (`#FF6D00`, `#FA5400`, `#240546`, `#000000`, None).
+    - Font Family picker (`Gotham Ultra`, `Gotham Black`, `Gotham Bold`, `Gotham Medium`, `Gotham Book`).
+    - Direct Text Editor textarea with real-time DOM sync.
+  - **Live Clearance Radar HUD:** Real-time calculation of bottom-most text element position:
+    - Displays lowest element $Y$, jeepney buffer ($2950 - Y$), and road buffer ($3388 - Y$).
+    - Green pulse badge `[Clearance Safe (+XXpx)]` when $Y \le 2930$ px.
+    - Red alert badge `[WARNING: Hazard Zone!]` if text approaches or touches $Y \ge 2950$ px.
+  - **Zero-Dependency Portability:** Works standalone via double-click (`file:///`) or over local HTTP via `python run_studio.py`.
 
 ## Design approach
 - **Product context and target users:** Large-format print poster (A3 Landscape) and 2-page handout/bulletin (A4 Portrait) for the City Government of Cauayan, Isabela's 18-Day Orange Campaign to End VAWC (`Nov 25 – Dec 12, 2026`). Read by LGU officials, 65 barangay teams, partner agencies, and citizens.
