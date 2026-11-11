@@ -1,22 +1,20 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — Photoshop Studio Layout Preservation & Non-Destructive Layer System (`editor.html` & `run_studio.py`)
+18-Day Orange Campaign — Photoshop Studio CSS Syntax & Path Resolution Fix (`editor.html` & `run_studio.py`)
 
 ## Current task
-Resolved layout distortion caused by naive absolute coordinate flattening:
-1. **Identified Exact Root Cause:**
-   - The previous iteration converted the clean, approved flexbox and 2-column grid layout into flat absolute `div` elements with guessed pixel numbers.
-   - This broke the 2-column grid (`width: 420px` for labels), destroyed the side-by-side activity numerals and descriptions, removed lead office margins (`margin-left: 98px`), and ruined vertical centering of the Day/Date badge next to the Hero Icon.
-2. **Delivered Non-Destructive Layout-Preserved Architecture:**
-   - Directly embedded the exact approved CSS rules and DOM trees from `scratch/final_html/*.html` into `editor.html`.
-   - Every day (Pre-Campaign through Day 18) loads with $100\%$ visual fidelity to the approved print posters.
-   - Attached interactive layer handles to `.hero-icon`, `.day-date-group`, `.stroke-title`, each `.act-item`, and `.bottom-block`.
-   - Enabled independent layer movement via non-destructive CSS `translate(dx, dy)`.
-   - Retained all Photoshop capabilities: 8-point transform handles, Arrow key nudging, double-click inline typing, Layers panel (visibility/lock), and real-time clearance radar HUD.
+Resolved the display bug shown in the user's uploaded screenshot:
+1. **Identified the Two Root Causes:**
+   - **Nested `<style>` tag syntax error:** A `<style id="dynamicDayStyle"></style>` tag was accidentally placed inside the main `<head><style>` block, causing the browser to close the style block prematurely and dump hundreds of lines of raw CSS code as visible text at the top of the body.
+   - **Root-relative paths on `file:///`:** Icons and templates using `src="/icons/..."` failed to load when opened directly from the filesystem without an HTTP web server.
+2. **Delivered Complete Resolution in `editor.html`:**
+   - Separated the main app `<style>` block and placed `<style id="dynamicDayStyle"></style>` as a dedicated standalone tag.
+   - Cleaned all asset references to relative paths (`icons/...` and `FABMAT/...`).
+   - Restored full visual rendering of the poster canvas, dark top bar, left toolbar, and dock panels.
 3. **Verification:**
-   - Headless Chrome rendered `scratch/editor_preview.png` and `scratch/perfect_studio_tested.png`.
-   - Verified that Day 0 and Day 1 match the approved posters with 100% visual parity and that nudging the icon or title moves only that element.
+   - Headless Chrome rendered `scratch/clean_editor_preview.png`.
+   - Verified zero CSS text spilling at the top, dark header `#2c2c2c`, and full rendering of the Day 0 / Pre-Campaign poster on canvas with 97,400+ colors.
 
 ## Status
 Completed
@@ -28,10 +26,9 @@ Completed
 None
 
 ## Last meaningful change
-- Replaced flat-coordinate generator in `editor.html` with template-preserved interactive layer engine.
-- Verified visual output via headless browser screenshot and pixel analysis.
-- Updated artifacts: `editor_studio_preview.png`, `perfect_studio_tested.png`, `tested_title_crop.png`.
+- Re-generated `editor.html` via `scratch/build_clean_editor.py`.
+- Verified layout and element rendering in headless Chrome.
+- Updated artifacts: `editor_studio_preview.png`, `clean_canvas_crop.png`, `clean_top_crop.png`, `clean_dock_crop.png`.
 
 ## Last verification
-- Tested in headless Chrome at 1920x1080; verified that poster layout matches `FABMAT/` approved posters exactly.
-- Verified individual layer selection and non-destructive nudging.
+- Visual verification in headless Chrome confirmed clean UI rendering and accurate canvas layout.

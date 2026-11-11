@@ -1,0 +1,1825 @@
+import os
+import glob
+import re
+import json
+
+BASE_DIR = r"c:\Users\CODEX\Desktop\18 day calendar of activity\18 day calendar of activity"
+
+# Load schedule data
+with open(os.path.join(BASE_DIR, "scratch", "schedule_data.json"), "r", encoding="utf-8") as f:
+    schedule_data = json.load(f)
+
+# Load HTML templates from scratch/final_html
+html_files = sorted(glob.glob(os.path.join(BASE_DIR, "scratch", "final_html", "*.html")))
+day_templates = {}
+
+for h_path in html_files:
+    fname = os.path.basename(h_path)
+    day_id = fname.split('-')[0]
+    with open(h_path, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    style_m = re.search(r'<style>(.*?)</style>', html, re.DOTALL)
+    style_content = style_m.group(1) if style_m else ""
+    style_content = re.sub(r'body\s*\{[^}]*\}', '', style_content)
+    style_content = style_content.replace("url('/", "url('").replace('url("/', 'url("')
+
+    body_m = re.search(r'<body>(.*?)</body>', html, re.DOTALL)
+    body_content = body_m.group(1) if body_m else ""
+    body_content = body_content.replace('src="/icons/', 'src="icons/').replace("src='/icons/", "src='icons/")
+
+    day_templates[day_id] = {
+        "filename": fname.replace('.html', '.png'),
+        "style": style_content,
+        "body": body_content
+    }
+
+available_icons = sorted([f for f in os.listdir(os.path.join(BASE_DIR, "icons")) if f.lower().endswith(".png")])
+
+schedule_json_str = json.dumps(schedule_data, indent=2, ensure_ascii=False)
+templates_json_str = json.dumps(day_templates, indent=2, ensure_ascii=False)
+icons_json_str = json.dumps(available_icons, indent=2, ensure_ascii=False)
+
+html_code = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photoshop Studio — 18-Day Orange Campaign Poster Editor</title>
+<style>
+@font-face {{
+    font-family: 'Gotham Black';
+    src: url('Gotham-font-family/Gotham/Gotham-Black.otf') format('opentype');
+    font-weight: 900;
+}}
+@font-face {{
+    font-family: 'Gotham Ultra';
+    src: url('Gotham-font-family/Gotham/Gotham-Ultra.otf') format('opentype');
+    font-weight: 900;
+}}
+@font-face {{
+    font-family: 'Gotham Bold';
+    src: url('Gotham-font-family/Gotham/Gotham-Bold.otf') format('opentype');
+    font-weight: 700;
+}}
+@font-face {{
+    font-family: 'Gotham Medium';
+    src: url('Gotham-font-family/Gotham/Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+}}
+@font-face {{
+    font-family: 'Gotham Book';
+    src: url('Gotham-font-family/Gotham/Gotham-Book.otf') format('opentype');
+    font-weight: 400;
+}}
+@font-face {{
+    font-family: 'Gotham Medium Italic';
+    src: url('Gotham-font-family/Gotham/Gotham-MediumItalic.otf') format('opentype');
+    font-style: italic;
+    font-weight: 500;
+}}
+
+:root {{
+    --bg-app: #181818;
+    --bg-panel: #242424;
+    --bg-panel-header: #2c2c2c;
+    --bg-toolbar: #202020;
+    --bg-input: #151515;
+    --border-color: #383838;
+    --border-light: #484848;
+    --text-primary: #e6e6e6;
+    --text-muted: #8e8e8e;
+    --accent-blue: #0078d4;
+    --accent-blue-hover: #1084d8;
+    --accent-orange: #FF6D00;
+    --danger: #ff4d4f;
+    --success: #52c41a;
+    --handle-size: 10px;
+}}
+
+* {{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}}
+
+body {{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}}
+
+/* TOP APP BAR */
+.app-header {{
+    height: 44px;
+    background: var(--bg-panel-header);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    z-index: 100;
+}}
+
+.app-title-group {{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}}
+
+.app-logo-badge {{
+    background: #001e36;
+    border: 1px solid #005a9e;
+    color: #40a9ff;
+    font-weight: 900;
+    font-size: 13px;
+    padding: 3px 7px;
+    border-radius: 4px;
+}}
+
+.app-title {{
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+}}
+
+.day-selector-group {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-toolbar);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}}
+
+.day-select {{
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}}
+
+.day-nav-btn {{
+    background: #333;
+    border: 1px solid var(--border-color);
+    color: #ddd;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}}
+.day-nav-btn:hover {{
+    background: #444;
+    color: #fff;
+}}
+
+.top-actions {{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}}
+
+.btn {{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}}
+
+.btn-default {{
+    background: #333;
+    border-color: var(--border-light);
+    color: #e0e0e0;
+}}
+.btn-default:hover {{
+    background: #404040;
+    color: #fff;
+}}
+
+.btn-orange {{
+    background: var(--accent-orange);
+    color: #fff;
+}}
+.btn-orange:hover {{
+    background: #ff7f1a;
+}}
+
+/* OPTIONS BAR */
+.options-bar {{
+    height: 38px;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 16px;
+    font-size: 11px;
+    z-index: 90;
+}}
+
+.options-group {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-right: 1px solid var(--border-color);
+    padding-right: 14px;
+}}
+.options-group:last-child {{
+    border-right: none;
+}}
+
+.opt-label {{
+    color: var(--text-muted);
+    font-weight: 600;
+}}
+
+.opt-input {{
+    width: 65px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    outline: none;
+}}
+
+.tool-badge {{
+    background: #303030;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #aaa;
+    font-weight: 700;
+}}
+
+/* RADAR HUD */
+.clearance-pill {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #444;
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: auto;
+}}
+
+.clearance-dot {{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 6px var(--success);
+}}
+.clearance-pill.danger .clearance-dot {{
+    background: var(--danger);
+    box-shadow: 0 0 8px var(--danger);
+}}
+
+/* MAIN WORKBENCH */
+.workbench {{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}}
+
+/* LEFT TOOLBAR */
+.toolbar {{
+    width: 48px;
+    background: var(--bg-toolbar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    gap: 6px;
+    z-index: 80;
+}}
+
+.tool-btn {{
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.15s ease;
+}}
+.tool-btn:hover {{
+    background: #2e2e2e;
+    color: #fff;
+}}
+.tool-btn.active {{
+    background: #383838;
+    color: #fff;
+    border-color: var(--accent-blue);
+}}
+
+.tool-divider {{
+    width: 28px;
+    height: 1px;
+    background: var(--border-color);
+    margin: 4px 0;
+}}
+
+/* CENTER VIEWPORT */
+.viewport-container {{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    overflow: hidden;
+    position: relative;
+}}
+
+.canvas-viewport {{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    background:
+        radial-gradient(circle at center, #1c1c1c 0%, #101010 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 19px, #181818 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, #181818 20px);
+}}
+
+/* RULERS */
+.ruler-top {{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 0;
+    height: 20px;
+    background: #1c1c1c;
+    border-bottom: 1px solid #333;
+    z-index: 50;
+}}
+.ruler-left {{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    background: #1c1c1c;
+    border-right: 1px solid #333;
+    z-index: 50;
+}}
+.ruler-corner {{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #242424;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    z-index: 55;
+}}
+
+/* CANVAS STAGE (2480 x 3508 px) */
+.canvas-stage {{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2480px;
+    height: 3508px;
+    transform-origin: 0 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.85);
+}}
+
+.poster-canvas {{
+    position: relative;
+    width: 2480px;
+    height: 3508px;
+    background: url('FABMAT/fabmat_template.png') no-repeat top left;
+    background-size: 2480px 3508px;
+    overflow: hidden;
+}}
+
+/* INTERACTIVE LAYER ELEMENT OVERLAYS */
+.layer-target {{
+    cursor: move;
+    transition: outline 0.1s ease;
+    position: relative;
+}}
+
+.layer-target:hover:not(.selected) {{
+    outline: 2px dashed rgba(0, 120, 212, 0.7) !important;
+    outline-offset: 4px;
+}}
+
+.layer-target.selected {{
+    outline: 3px solid var(--accent-blue) !important;
+    outline-offset: 4px;
+}}
+
+.layer-target.locked {{
+    cursor: not-allowed !important;
+}}
+
+/* TRANSFORM BOUNDING BOX & HANDLES */
+.transform-box {{
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+}}
+
+.transform-box.active {{
+    display: block;
+}}
+
+.transform-border {{
+    position: absolute;
+    border: 2px solid var(--accent-blue);
+    pointer-events: none;
+}}
+
+.transform-handle {{
+    position: absolute;
+    width: var(--handle-size);
+    height: var(--handle-size);
+    background: #ffffff;
+    border: 1.5px solid var(--accent-blue);
+    border-radius: 2px;
+    pointer-events: auto;
+    z-index: 1002;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}}
+
+.transform-handle.nw {{ cursor: nwse-resize; }}
+.transform-handle.n  {{ cursor: ns-resize; }}
+.transform-handle.ne {{ cursor: nesw-resize; }}
+.transform-handle.e  {{ cursor: ew-resize; }}
+.transform-handle.se {{ cursor: nwse-resize; }}
+.transform-handle.s  {{ cursor: ns-resize; }}
+.transform-handle.sw {{ cursor: nesw-resize; }}
+.transform-handle.w  {{ cursor: ew-resize; }}
+
+/* HAZARD OVERLAY */
+.hazard-overlay {{
+    position: absolute;
+    left: 0;
+    width: 2480px;
+    pointer-events: none;
+    z-index: 900;
+    display: none;
+}}
+.hazard-overlay.jeepney {{
+    top: 2950px;
+    height: 558px;
+    background: rgba(255, 77, 79, 0.12);
+    border-top: 2px dashed #ff4d4f;
+}}
+.hazard-overlay.road {{
+    top: 3388px;
+    height: 120px;
+    background: rgba(255, 77, 79, 0.22);
+    border-top: 2px dashed #ff1100;
+}}
+
+.hazard-badge {{
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    background: rgba(255, 77, 79, 0.9);
+    color: #fff;
+    font-weight: 800;
+    font-size: 26px;
+    padding: 6px 14px;
+    border-radius: 6px;
+}}
+
+/* RIGHT DOCK */
+.dock {{
+    width: 370px;
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 80;
+}}
+
+.dock-tabs {{
+    height: 38px;
+    background: var(--bg-panel-header);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+}}
+
+.dock-tab {{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+}}
+.dock-tab:hover {{
+    color: #fff;
+}}
+.dock-tab.active {{
+    color: #fff;
+    border-bottom-color: var(--accent-blue);
+    background: var(--bg-panel);
+}}
+
+.dock-body {{
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}}
+
+.tab-pane {{
+    display: none;
+}}
+.tab-pane.active {{
+    display: block;
+}}
+
+/* LAYERS PANEL */
+.layers-header {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+}}
+
+.layer-list {{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}}
+
+.layer-item {{
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    background: #1c1c1c;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.12s ease;
+}}
+.layer-item:hover {{
+    background: #2a2a2a;
+}}
+.layer-item.active {{
+    background: #094771;
+    border-color: #0078d4;
+    color: #fff;
+}}
+
+.layer-item-icon {{
+    font-size: 13px;
+    color: #888;
+    width: 16px;
+    text-align: center;
+}}
+.layer-item.active .layer-item-icon {{
+    color: #fff;
+}}
+
+.layer-item-name {{
+    flex: 1;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}}
+
+.layer-btn-icon {{
+    background: transparent;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px 4px;
+    border-radius: 3px;
+}}
+.layer-btn-icon:hover {{
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}}
+.layer-btn-icon.active {{
+    color: #40a9ff;
+}}
+
+/* PROPERTIES PANEL */
+.prop-section {{
+    margin-bottom: 14px;
+    background: #1e1e1e;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+}}
+
+.prop-title {{
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}}
+
+.prop-row {{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}}
+.prop-row:last-child {{
+    margin-bottom: 0;
+}}
+
+.prop-col {{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}}
+
+.prop-label {{
+    font-size: 10px;
+    color: #aaa;
+    font-weight: 600;
+}}
+
+.prop-control {{
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    outline: none;
+}}
+.prop-control:focus {{
+    border-color: var(--accent-blue);
+}}
+
+.prop-slider-wrap {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}}
+.prop-slider {{
+    flex: 1;
+    accent-color: var(--accent-orange);
+    cursor: pointer;
+}}
+
+/* HISTORY PANEL */
+.history-list {{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}}
+
+.history-item {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: #1c1c1c;
+    border-radius: 3px;
+    font-size: 11px;
+    color: #aaa;
+    cursor: pointer;
+}}
+.history-item:hover {{
+    background: #282828;
+    color: #fff;
+}}
+.history-item.active {{
+    background: #003a6c;
+    color: #fff;
+    font-weight: 600;
+}}
+
+/* STATUS BAR */
+.status-bar {{
+    height: 26px;
+    background: var(--bg-panel-header);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-size: 11px;
+    color: var(--text-muted);
+    z-index: 100;
+}}
+
+.status-left, .status-right {{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}}
+.status-item strong {{
+    color: #fff;
+}}
+
+.toast {{
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}}
+.toast.show {{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}}
+</style>
+<style id="dynamicDayStyle"></style>
+</head>
+<body>
+
+<!-- TOP APP HEADER -->
+<header class="app-header">
+    <div class="app-title-group">
+        <span class="app-logo-badge">PS</span>
+        <span class="app-title">18-Day Orange Campaign Poster Studio</span>
+    </div>
+
+    <!-- DAY SELECTOR -->
+    <div class="day-selector-group">
+        <button class="day-nav-btn" id="prevDayBtn" title="Previous Day">◀ Prev</button>
+        <label for="daySelect" style="font-size: 11px; color: var(--text-muted); font-weight: 600;">ACTIVE DAY:</label>
+        <select id="daySelect" class="day-select"></select>
+        <button class="day-nav-btn" id="nextDayBtn" title="Next Day">Next ▶</button>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="top-actions">
+        <button class="btn btn-default" id="undoBtn" title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button class="btn btn-default" id="redoBtn" title="Redo (Ctrl+Y)">↷ Redo</button>
+        <button class="btn btn-default" id="resetDayBtn" title="Reset current poster to calibrated default">↺ Reset Layout</button>
+        <button class="btn btn-orange" id="downloadPngBtn" title="Download High-Res 300 DPI Poster">⬇ Download 300 DPI PNG</button>
+    </div>
+</header>
+
+<!-- OPTIONS BAR -->
+<div class="options-bar">
+    <div class="options-group">
+        <span class="tool-badge" id="currentToolBadge">Tool: Move (V)</span>
+    </div>
+
+    <div class="options-group">
+        <span class="opt-label">Layer:</span>
+        <span id="optLayerName" style="color: #fff; font-weight: bold; max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">None</span>
+        <span class="opt-label">Offset X:</span>
+        <input type="number" id="optX" class="opt-input" value="0">
+        <span class="opt-label">Offset Y:</span>
+        <input type="number" id="optY" class="opt-input" value="0">
+    </div>
+
+    <div class="options-group">
+        <span class="opt-label">Nudge:</span>
+        <button class="btn btn-default" id="btnNudgeUp" title="Nudge Up">▲</button>
+        <button class="btn btn-default" id="btnNudgeDown" title="Nudge Down">▼</button>
+        <button class="btn btn-default" id="btnNudgeLeft" title="Nudge Left">◀</button>
+        <button class="btn btn-default" id="btnNudgeRight" title="Nudge Right">▶</button>
+    </div>
+
+    <!-- RADAR HUD -->
+    <div class="clearance-pill" id="radarHud">
+        <span class="clearance-dot" id="radarDot"></span>
+        <span id="radarText">Clearance Safe</span>
+    </div>
+</div>
+
+<!-- MAIN WORKBENCH -->
+<div class="workbench">
+    <!-- LEFT TOOLBAR -->
+    <aside class="toolbar">
+        <button class="tool-btn active" id="toolMove" title="Move Tool (V) — Select & drag individual layers">✦</button>
+        <button class="tool-btn" id="toolText" title="Type Tool (T) — Double click canvas or edit text">T</button>
+        <button class="tool-btn" id="toolHand" title="Hand Tool (H) — Pan canvas (or hold Spacebar)">✋</button>
+        <button class="tool-btn" id="toolZoom" title="Zoom Tool (Z) — Click to zoom in / Alt+Click out">🔍</button>
+        <div class="tool-divider"></div>
+        <button class="tool-btn" id="toolToggleHazard" title="Toggle Jeepney & Road Hazard Guide (G)">⚠️</button>
+        <button class="tool-btn" id="btnFitScreen" title="Fit to Screen (Ctrl+0)">⊡</button>
+    </aside>
+
+    <!-- CENTER VIEWPORT -->
+    <main class="viewport-container" id="viewportContainer">
+        <div class="ruler-corner"></div>
+        <canvas class="ruler-top" id="rulerTop"></canvas>
+        <canvas class="ruler-left" id="rulerLeft"></canvas>
+
+        <div class="canvas-viewport" id="canvasViewport">
+            <div class="canvas-stage" id="canvasStage">
+                <div class="poster-canvas" id="posterCanvas">
+                    <!-- HAZARD OVERLAYS -->
+                    <div class="hazard-overlay jeepney" id="jeepneyHazard">
+                        <span class="hazard-badge">⚠️ JEEPNEY HAZARD ZONE (Y ≥ 2950)</span>
+                    </div>
+                    <div class="hazard-overlay road" id="roadHazard">
+                        <span class="hazard-badge">⛔ ROAD ZONE (Y ≥ 3388)</span>
+                    </div>
+
+                    <!-- POSTER CONTENT (INJECTED EXACT APPROVED HTML) -->
+                    <div id="posterContent"></div>
+
+                    <!-- TRANSFORM BOX -->
+                    <div class="transform-box" id="transformBox">
+                        <div class="transform-border" id="transformBorder"></div>
+                        <div class="transform-handle nw" data-handle="nw"></div>
+                        <div class="transform-handle n"  data-handle="n"></div>
+                        <div class="transform-handle ne" data-handle="ne"></div>
+                        <div class="transform-handle e"  data-handle="e"></div>
+                        <div class="transform-handle se" data-handle="se"></div>
+                        <div class="transform-handle s"  data-handle="s"></div>
+                        <div class="transform-handle sw" data-handle="sw"></div>
+                        <div class="transform-handle w"  data-handle="w"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RIGHT DOCK -->
+    <aside class="dock">
+        <div class="dock-tabs">
+            <div class="dock-tab active" data-tab="layersTab">Layers</div>
+            <div class="dock-tab" data-tab="propsTab">Properties</div>
+            <div class="dock-tab" data-tab="historyTab">History</div>
+        </div>
+
+        <div class="dock-body">
+            <!-- TAB 1: LAYERS -->
+            <div class="tab-pane active" id="layersTab">
+                <div class="layers-header">
+                    <span style="font-weight: 700; color: #fff;">Document Layers</span>
+                    <span id="layersCount" style="color: #888;">0 layers</span>
+                </div>
+                <div class="layer-list" id="layersList"></div>
+            </div>
+
+            <!-- TAB 2: PROPERTIES -->
+            <div class="tab-pane" id="propsTab">
+                <div class="prop-section">
+                    <div class="prop-title">Layer Position & Size</div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Offset X (px)</span>
+                            <input type="number" id="propX" class="prop-control" value="0">
+                        </div>
+                        <div class="prop-col">
+                            <span class="prop-label">Offset Y (px)</span>
+                            <input type="number" id="propY" class="prop-control" value="0">
+                        </div>
+                    </div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Opacity</span>
+                            <div class="prop-slider-wrap">
+                                <input type="range" id="propOpacity" class="prop-slider" min="0" max="1" step="0.05" value="1">
+                                <span id="propOpacityVal" style="width: 35px; text-align: right; color:#fff;">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMAGE SPECIFIC -->
+                <div class="prop-section" id="sectionImageProps" style="display: none;">
+                    <div class="prop-title">Hero Icon</div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Select Campaign Icon</span>
+                            <select id="propIconSelect" class="prop-control"></select>
+                        </div>
+                    </div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Icon Width / Height</span>
+                            <div class="prop-slider-wrap">
+                                <input type="range" id="propIconSizeSlider" class="prop-slider" min="300" max="950" step="10" value="720">
+                                <span id="propIconSizeVal" style="width: 45px; text-align: right; color:#fff;">720px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT SPECIFIC -->
+                <div class="prop-section" id="sectionTextProps" style="display: none;">
+                    <div class="prop-title">Typography & Style</div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Text Content</span>
+                            <textarea id="propTextContent" class="prop-control" rows="3" style="resize: vertical;"></textarea>
+                        </div>
+                    </div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Font Size (px)</span>
+                            <div class="prop-slider-wrap">
+                                <input type="range" id="propFontSizeSlider" class="prop-slider" min="30" max="180" step="2" value="70">
+                                <span id="propFontSizeVal" style="width: 45px; text-align: right; color:#fff;">70px</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prop-row">
+                        <div class="prop-col">
+                            <span class="prop-label">Fill Color</span>
+                            <input type="color" id="propTextColor" class="prop-control" value="#ffffff" style="height: 32px; padding: 2px;">
+                        </div>
+                        <div class="prop-col">
+                            <span class="prop-label">Outline Color</span>
+                            <input type="color" id="propStrokeColor" class="prop-control" value="#FF6D00" style="height: 32px; padding: 2px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: HISTORY -->
+            <div class="tab-pane" id="historyTab">
+                <div class="prop-title" style="margin-bottom: 8px;">History Steps</div>
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- STATUS BAR -->
+<footer class="status-bar">
+    <div class="status-left">
+        <span class="status-item">Canvas: <strong>2480 × 3508 px (300 DPI)</strong></span>
+        <span class="status-item">Zoom: <strong id="statusZoom">28%</strong></span>
+        <span class="status-item" id="statusSelected">Selected: <strong>None</strong></span>
+    </div>
+    <div class="status-right">
+        <span class="status-item">Jeepney Safe Limit: <strong>Y &lt; 2950 px</strong></span>
+    </div>
+</footer>
+
+<div class="toast" id="toastMsg">Action completed</div>
+
+<script>
+// --- EMBEDDED APPROVED DAY TEMPLATES ---
+const SCHEDULE_DATA = {schedule_json_str};
+const DAY_TEMPLATES = {templates_json_str};
+const AVAILABLE_ICONS = {icons_json_str};
+
+// --- APP STATE ---
+let currentDayId = "00";
+let selectedLayerId = null;
+let currentTool = "move"; // move, text, hand, zoom
+let showHazardOverlay = true;
+
+// Layer Offsets & Custom State: {{ layerId: {{ dx: 0, dy: 0, visible: true, locked: false, opacity: 1.0, ... }} }}
+let layerStates = {{}};
+
+// Viewport Transform
+let zoom = 0.28;
+let panX = 0;
+let panY = 0;
+let isPanning = false;
+let startPanX = 0;
+let startPanY = 0;
+
+// Dragging
+let isDraggingLayer = false;
+let dragStartX = 0;
+let dragStartY = 0;
+let initialDx = 0;
+let initialDy = 0;
+
+// History
+let history = [];
+let historyIndex = -1;
+const MAX_HISTORY = 40;
+
+// DOM
+const canvasViewport = document.getElementById('canvasViewport');
+const canvasStage = document.getElementById('canvasStage');
+const posterCanvas = document.getElementById('posterCanvas');
+const posterContent = document.getElementById('posterContent');
+const transformBox = document.getElementById('transformBox');
+const transformBorder = document.getElementById('transformBorder');
+const daySelect = document.getElementById('daySelect');
+const layersList = document.getElementById('layersList');
+const historyList = document.getElementById('historyList');
+const radarHud = document.getElementById('radarHud');
+const radarDot = document.getElementById('radarDot');
+const radarText = document.getElementById('radarText');
+const toastMsg = document.getElementById('toastMsg');
+const statusZoom = document.getElementById('statusZoom');
+const statusSelected = document.getElementById('statusSelected');
+const jeepneyHazard = document.getElementById('jeepneyHazard');
+const roadHazard = document.getElementById('roadHazard');
+
+// Inputs
+const optLayerName = document.getElementById('optLayerName');
+const optX = document.getElementById('optX');
+const optY = document.getElementById('optY');
+const propX = document.getElementById('propX');
+const propY = document.getElementById('propY');
+const propOpacity = document.getElementById('propOpacity');
+const propOpacityVal = document.getElementById('propOpacityVal');
+
+const sectionImageProps = document.getElementById('sectionImageProps');
+const propIconSelect = document.getElementById('propIconSelect');
+const propIconSizeSlider = document.getElementById('propIconSizeSlider');
+const propIconSizeVal = document.getElementById('propIconSizeVal');
+
+const sectionTextProps = document.getElementById('sectionTextProps');
+const propTextContent = document.getElementById('propTextContent');
+const propFontSizeSlider = document.getElementById('propFontSizeSlider');
+const propFontSizeVal = document.getElementById('propFontSizeVal');
+const propTextColor = document.getElementById('propTextColor');
+const propStrokeColor = document.getElementById('propStrokeColor');
+
+// Rulers
+const rulerTop = document.getElementById('rulerTop');
+const rulerLeft = document.getElementById('rulerLeft');
+
+function showToast(msg) {{
+    toastMsg.textContent = msg;
+    toastMsg.classList.add('show');
+    setTimeout(() => toastMsg.classList.remove('show'), 2500);
+}}
+
+function pushHistory(name) {{
+    if (historyIndex < history.length - 1) {{
+        history = history.slice(0, historyIndex + 1);
+    }}
+    history.push({{
+        name: name,
+        layerStates: JSON.parse(JSON.stringify(layerStates)),
+        selectedLayerId: selectedLayerId
+    }});
+    if (history.length > MAX_HISTORY) history.shift();
+    else historyIndex++;
+    updateHistoryUI();
+}}
+
+function undo() {{
+    if (historyIndex > 0) {{
+        historyIndex--;
+        restoreState(history[historyIndex]);
+        showToast(`Undo: ${{history[historyIndex].name}}`);
+    }}
+}}
+
+function redo() {{
+    if (historyIndex < history.length - 1) {{
+        historyIndex++;
+        restoreState(history[historyIndex]);
+        showToast(`Redo: ${{history[historyIndex].name}}`);
+    }}
+}}
+
+function restoreState(state) {{
+    layerStates = JSON.parse(JSON.stringify(state.layerStates));
+    selectedLayerId = state.selectedLayerId;
+    applyAllLayerStates();
+    updateTransformBox();
+    updateLayersPanel();
+    updatePropertiesPanel();
+    updateHistoryUI();
+    updateRadar();
+}}
+
+function updateHistoryUI() {{
+    historyList.innerHTML = '';
+    history.forEach((h, idx) => {{
+        const item = document.createElement('div');
+        item.className = 'history-item' + (idx === historyIndex ? ' active' : '');
+        item.innerHTML = `<span>◷</span> <span>${{h.name}}</span>`;
+        item.addEventListener('click', () => {{
+            historyIndex = idx;
+            restoreState(history[idx]);
+        }});
+        historyList.appendChild(item);
+    }});
+    historyList.scrollTop = historyList.scrollHeight;
+}}
+
+// --- INITIALIZE ---
+function initApp() {{
+    daySelect.innerHTML = '';
+    SCHEDULE_DATA.forEach(d => {{
+        const opt = document.createElement('option');
+        opt.value = d.id;
+        opt.textContent = `${{d.badge}} — ${{d.title || (d.activities && d.activities[0] ? d.activities[0].description : d.main_activity || 'Activity')}}`;
+        daySelect.appendChild(opt);
+    }});
+
+    propIconSelect.innerHTML = '';
+    AVAILABLE_ICONS.forEach(ic => {{
+        const opt = document.createElement('option');
+        opt.value = `icons/${{ic}}`;
+        opt.textContent = ic;
+        propIconSelect.appendChild(opt);
+    }});
+
+    loadDay("00");
+    fitToScreen();
+    drawRulers();
+}}
+
+// --- LOAD DAY (PRESERVES EXACT APPROVED HTML & CSS) ---
+function loadDay(dayId) {{
+    currentDayId = dayId;
+    daySelect.value = dayId;
+    const tpl = DAY_TEMPLATES[dayId];
+    if (!tpl) return;
+
+    // 1. Inject exact CSS
+    document.getElementById('dynamicDayStyle').textContent = tpl.style;
+
+    // 2. Inject exact Body HTML
+    posterContent.innerHTML = tpl.body;
+
+    // 3. Attach Layer IDs and Classes to Logical Elements
+    tagLayers();
+
+    // 4. Initialize / Load layer states
+    layerStates = {{}};
+    document.querySelectorAll('.layer-target').forEach(el => {{
+        const id = el.dataset.layerId;
+        layerStates[id] = {{
+            dx: 0,
+            dy: 0,
+            visible: true,
+            locked: false,
+            opacity: 1.0
+        }};
+    }});
+
+    selectedLayerId = null;
+    history = [];
+    historyIndex = -1;
+    pushHistory(`Load ${{daySelect.options[daySelect.selectedIndex].text.split('—')[0].trim()}}`);
+
+    updateLayersPanel();
+    updatePropertiesPanel();
+    updateTransformBox();
+    updateRadar();
+}}
+
+// --- TAG LOGICAL ELEMENTS AS INDEPENDENT LAYERS ---
+function tagLayers() {{
+    // 1. Hero Icon
+    const icon = posterContent.querySelector('.hero-icon');
+    if (icon) {{
+        icon.classList.add('layer-target');
+        icon.dataset.layerId = 'layer_icon';
+        icon.dataset.layerName = 'Hero Icon';
+    }}
+
+    // 2. Day & Date Group
+    const dayDate = posterContent.querySelector('.day-date-group');
+    if (dayDate) {{
+        dayDate.classList.add('layer-target');
+        dayDate.dataset.layerId = 'layer_header';
+        dayDate.dataset.layerName = 'Day & Date Header';
+    }}
+
+    // 3. Middle / Activities
+    const title = posterContent.querySelector('.stroke-title');
+    if (title) {{
+        title.classList.add('layer-target');
+        title.dataset.layerId = 'layer_title';
+        title.dataset.layerName = 'Main Title';
+    }}
+    const subtitle = posterContent.querySelector('.stroke-subtitle');
+    if (subtitle) {{
+        subtitle.classList.add('layer-target');
+        subtitle.dataset.layerId = 'layer_subtitle';
+        subtitle.dataset.layerName = 'Subtitle';
+    }}
+
+    // Multi-activity items
+    const actItems = posterContent.querySelectorAll('.act-item');
+    actItems.forEach((act, idx) => {{
+        act.classList.add('layer-target');
+        act.dataset.layerId = `layer_act_${{idx+1}}`;
+        const descEl = act.querySelector('.act-desc');
+        const shortDesc = descEl ? descEl.textContent.slice(0, 25) + '...' : `Activity ${{idx+1}}`;
+        act.dataset.layerName = `Activity ${{idx+1}} (${{shortDesc}})`;
+    }});
+
+    // Online Track
+    const track = posterContent.querySelector('.stroke-tag');
+    if (track) {{
+        track.classList.add('layer-target');
+        track.dataset.layerId = 'layer_track';
+        track.dataset.layerName = 'Advocacy Track';
+    }}
+
+    // Bottom block (Partners & Venue)
+    const btm = posterContent.querySelector('.bottom-block');
+    if (btm) {{
+        btm.classList.add('layer-target');
+        btm.dataset.layerId = 'layer_bottom';
+        btm.dataset.layerName = 'Partners & Venue';
+    }}
+
+    // Attach click & double click listeners to each layer
+    document.querySelectorAll('.layer-target').forEach(el => {{
+        el.addEventListener('mousedown', (e) => {{
+            if (e.target.isContentEditable) return;
+            if (currentTool === 'move') {{
+                e.stopPropagation();
+                selectLayer(el.dataset.layerId);
+                const st = layerStates[el.dataset.layerId];
+                if (st && !st.locked) {{
+                    startLayerDrag(e, el.dataset.layerId);
+                }}
+            }}
+        }});
+
+        // Double click to edit text inline
+        el.addEventListener('dblclick', (e) => {{
+            const textNode = e.target.closest('.stroke-title, .stroke-subtitle, .stroke-day, .stroke-date, .act-desc, .act-lead-val, .detail-val-col, .stroke-tag');
+            if (textNode) {{
+                e.stopPropagation();
+                enterInlineEdit(textNode, el.dataset.layerId);
+            }}
+        }});
+    }});
+}}
+
+// --- INLINE EDITING ---
+function enterInlineEdit(textNode, layerId) {{
+    textNode.contentEditable = 'true';
+    textNode.focus();
+    transformBox.classList.remove('active');
+
+    function commit() {{
+        textNode.contentEditable = 'false';
+        updateTransformBox();
+        updatePropertiesPanel();
+        updateRadar();
+        pushHistory('Edit Text');
+    }}
+
+    textNode.addEventListener('blur', commit, {{ once: true }});
+    textNode.addEventListener('keydown', (e) => {{
+        if (e.key === 'Escape') {{
+            textNode.blur();
+        }}
+    }});
+}}
+
+// --- SELECTION & TRANSFORM BOX ---
+function selectLayer(id) {{
+    selectedLayerId = id;
+
+    document.querySelectorAll('.layer-target').forEach(el => {{
+        el.classList.toggle('selected', el.dataset.layerId === id);
+    }});
+
+    const el = document.querySelector(`.layer-target[data-layer-id="${{id}}"]`);
+    if (el) {{
+        statusSelected.innerHTML = `Selected: <strong>${{el.dataset.layerName || id}}</strong>`;
+        optLayerName.textContent = el.dataset.layerName || id;
+    }} else {{
+        statusSelected.innerHTML = `Selected: <strong>None</strong>`;
+        optLayerName.textContent = 'None';
+    }}
+
+    updateTransformBox();
+    updateLayersPanel();
+    updatePropertiesPanel();
+    updateOptionsBar();
+}}
+
+function deselectLayer() {{
+    selectedLayerId = null;
+    document.querySelectorAll('.layer-target').forEach(el => el.classList.remove('selected'));
+    transformBox.classList.remove('active');
+    statusSelected.innerHTML = `Selected: <strong>None</strong>`;
+    optLayerName.textContent = 'None';
+    updateLayersPanel();
+    updatePropertiesPanel();
+    updateOptionsBar();
+}}
+
+function updateTransformBox() {{
+    if (!selectedLayerId) {{
+        transformBox.classList.remove('active');
+        return;
+    }}
+
+    const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+    if (!el || el.style.display === 'none') {{
+        transformBox.classList.remove('active');
+        return;
+    }}
+
+    const canvasRect = posterCanvas.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+
+    const boxX = Math.round((elRect.left - canvasRect.left) / zoom);
+    const boxY = Math.round((elRect.top - canvasRect.top) / zoom);
+    const boxW = Math.round(elRect.width / zoom);
+    const boxH = Math.round(elRect.height / zoom);
+
+    transformBox.classList.add('active');
+    transformBox.style.left = `${{boxX}}px`;
+    transformBox.style.top = `${{boxY}}px`;
+    transformBox.style.width = `${{boxW}}px`;
+    transformBox.style.height = `${{boxH}}px`;
+
+    transformBorder.style.width = `${{boxW}}px`;
+    transformBorder.style.height = `${{boxH}}px`;
+
+    const hMap = {{
+        nw: [0, 0], n: [boxW/2, 0], ne: [boxW, 0], e: [boxW, boxH/2],
+        se: [boxW, boxH], s: [boxW/2, boxH], sw: [0, boxH], w: [0, boxH/2]
+    }};
+
+    Object.entries(hMap).forEach(([hKey, [hx, hy]]) => {{
+        const handleEl = transformBox.querySelector(`.transform-handle.${{hKey}}`);
+        if (handleEl) {{
+            handleEl.style.left = `${{hx}}px`;
+            handleEl.style.top = `${{hy}}px`;
+        }}
+    }});
+}}
+
+// --- LAYER MOVEMENT (DRAGGING) ---
+function startLayerDrag(e, layerId) {{
+    isDraggingLayer = true;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+
+    const st = layerStates[layerId] || {{ dx: 0, dy: 0 }};
+    initialDx = st.dx || 0;
+    initialDy = st.dy || 0;
+
+    function onMouseMove(ev) {{
+        if (!isDraggingLayer) return;
+        const deltaX = (ev.clientX - dragStartX) / zoom;
+        const deltaY = (ev.clientY - dragStartY) / zoom;
+
+        st.dx = Math.round(initialDx + deltaX);
+        st.dy = Math.round(initialDy + deltaY);
+
+        applyLayerTransform(layerId);
+        updateTransformBox();
+        updateOptionsBar();
+        updatePropertiesPanel();
+        updateRadar();
+    }}
+
+    function onMouseUp() {{
+        if (!isDraggingLayer) return;
+        isDraggingLayer = false;
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
+        pushHistory(`Move ${{document.querySelector(`.layer-target[data-layer-id="${{layerId}}"]`).dataset.layerName}}`);
+    }}
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+}}
+
+function applyLayerTransform(layerId) {{
+    const el = document.querySelector(`.layer-target[data-layer-id="${{layerId}}"]`);
+    const st = layerStates[layerId];
+    if (el && st) {{
+        el.style.transform = `translate(${{st.dx}}px, ${{st.dy}}px)`;
+        el.style.opacity = st.opacity !== undefined ? st.opacity : 1.0;
+        el.style.display = st.visible ? '' : 'none';
+    }}
+}}
+
+function applyAllLayerStates() {{
+    Object.keys(layerStates).forEach(id => applyLayerTransform(id));
+}}
+
+// --- VIEWPORT TRANSFORM (ZOOM & PAN) ---
+function updateTransform() {{
+    canvasStage.style.transform = `scale(${{zoom}}) translate(${{panX}}px, ${{panY}}px)`;
+    statusZoom.textContent = `${{Math.round(zoom * 100)}}%`;
+    drawRulers();
+}}
+
+function fitToScreen() {{
+    const rect = canvasViewport.getBoundingClientRect();
+    const margin = 40;
+    const availW = rect.width - margin * 2;
+    const availH = rect.height - margin * 2;
+
+    const scaleW = availW / 2480;
+    const scaleH = availH / 3508;
+    zoom = Math.min(scaleW, scaleH);
+
+    panX = Math.round((availW - 2480 * zoom) / (2 * zoom)) + Math.round(margin / zoom);
+    panY = Math.round((availH - 3508 * zoom) / (2 * zoom)) + Math.round(margin / zoom);
+
+    updateTransform();
+    updateTransformBox();
+}}
+
+canvasViewport.addEventListener('wheel', (e) => {{
+    e.preventDefault();
+    const zoomFactor = e.deltaY < 0 ? 1.12 : 0.89;
+    const newZoom = Math.min(Math.max(zoom * zoomFactor, 0.08), 2.5);
+
+    const rect = canvasViewport.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    panX -= (mouseX / newZoom - mouseX / zoom);
+    panY -= (mouseY / newZoom - mouseY / zoom);
+    zoom = newZoom;
+
+    updateTransform();
+    updateTransformBox();
+}}, {{ passive: false }});
+
+// Pan with Spacebar or Hand Tool
+canvasViewport.addEventListener('mousedown', (e) => {{
+    if (e.target === canvasViewport || e.target === canvasStage || e.target === posterCanvas || currentTool === 'hand' || e.spaceKey) {{
+        isPanning = true;
+        startPanX = e.clientX - panX * zoom;
+        startPanY = e.clientY - panY * zoom;
+        canvasViewport.style.cursor = 'grabbing';
+    }} else if (e.target.id === 'posterCanvas' || e.target.id === 'posterContent') {{
+        deselectLayer();
+    }}
+}});
+
+window.addEventListener('mousemove', (e) => {{
+    if (!isPanning) return;
+    panX = (e.clientX - startPanX) / zoom;
+    panY = (e.clientY - startPanY) / zoom;
+    updateTransform();
+    updateTransformBox();
+}});
+
+window.addEventListener('mouseup', () => {{
+    if (isPanning) {{
+        isPanning = false;
+        canvasViewport.style.cursor = currentTool === 'hand' ? 'grab' : 'default';
+    }}
+}});
+
+// --- RULERS ---
+function drawRulers() {{
+    const w = canvasViewport.clientWidth;
+    const h = canvasViewport.clientHeight;
+
+    rulerTop.width = w; rulerTop.height = 20;
+    rulerLeft.width = 20; rulerLeft.height = h;
+
+    const ctxT = rulerTop.getContext('2d');
+    const ctxL = rulerLeft.getContext('2d');
+
+    ctxT.fillStyle = '#1c1c1c'; ctxT.fillRect(0, 0, w, 20);
+    ctxT.strokeStyle = '#555'; ctxT.fillStyle = '#888'; ctxT.font = '9px sans-serif';
+
+    ctxL.fillStyle = '#1c1c1c'; ctxL.fillRect(0, 0, 20, h);
+    ctxL.strokeStyle = '#555'; ctxL.fillStyle = '#888'; ctxL.font = '9px sans-serif';
+
+    const startX = panX * zoom;
+    for (let x = 0; x <= 2480; x += 100) {{
+        const screenX = startX + x * zoom;
+        if (screenX >= 0 && screenX <= w) {{
+            const isMajor = x % 500 === 0;
+            ctxT.beginPath();
+            ctxT.moveTo(screenX, isMajor ? 0 : 12);
+            ctxT.lineTo(screenX, 20);
+            ctxT.stroke();
+            if (isMajor) ctxT.fillText(x.toString(), screenX + 3, 11);
+        }}
+    }}
+
+    const startY = panY * zoom;
+    for (let y = 0; y <= 3508; y += 100) {{
+        const screenY = startY + y * zoom;
+        if (screenY >= 0 && screenY <= h) {{
+            const isMajor = y % 500 === 0;
+            ctxL.beginPath();
+            ctxL.moveTo(isMajor ? 0 : 12, screenY);
+            ctxL.lineTo(20, screenY);
+            ctxL.stroke();
+            if (isMajor) {{
+                ctxL.save();
+                ctxL.translate(11, screenY + 3);
+                ctxL.rotate(-Math.PI / 2);
+                ctxL.fillText(y.toString(), 0, 0);
+                ctxL.restore();
+            }}
+        }}
+    }}
+}}
+
+// --- CLEARANCE RADAR ---
+function updateRadar() {{
+    const safeZone = posterContent.querySelector('.safe-zone');
+    if (!safeZone) return;
+
+    const canvasRect = posterCanvas.getBoundingClientRect();
+    const safeRect = safeZone.getBoundingClientRect();
+    const currentBottomY = Math.round((safeRect.bottom - canvasRect.top) / zoom);
+
+    const jeepBuffer = 2950 - currentBottomY;
+
+    if (currentBottomY <= 2930) {{
+        radarHud.classList.remove('danger');
+        radarDot.style.background = 'var(--success)';
+        radarDot.style.boxShadow = '0 0 6px var(--success)';
+        radarText.textContent = `Clearance Safe (+${{jeepBuffer}}px to Jeepney)`;
+    }} else {{
+        radarHud.classList.add('danger');
+        radarDot.style.background = 'var(--danger)';
+        radarDot.style.boxShadow = '0 0 10px var(--danger)';
+        radarText.textContent = `WARNING: Touching Vehicle Hazard (${{jeepBuffer}}px)!`;
+    }}
+}}
+
+// --- DOCK PANELS ---
+function updateLayersPanel() {{
+    layersList.innerHTML = '';
+    const layerEls = Array.from(document.querySelectorAll('.layer-target'));
+    document.getElementById('layersCount').textContent = `${{layerEls.length}} layers`;
+
+    layerEls.reverse().forEach(el => {{
+        const id = el.dataset.layerId;
+        const name = el.dataset.layerName;
+        const st = layerStates[id] || {{ visible: true, locked: false }};
+
+        const item = document.createElement('div');
+        item.className = 'layer-item' + (id === selectedLayerId ? ' active' : '');
+
+        const iconBadge = document.createElement('span');
+        iconBadge.className = 'layer-item-icon';
+        iconBadge.textContent = id === 'layer_icon' ? '🖼' : 'T';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'layer-item-name';
+        nameSpan.textContent = name;
+
+        const eyeBtn = document.createElement('button');
+        eyeBtn.className = 'layer-btn-icon' + (st.visible ? ' active' : '');
+        eyeBtn.innerHTML = st.visible ? '👁' : '─';
+        eyeBtn.addEventListener('click', (e) => {{
+            e.stopPropagation();
+            st.visible = !st.visible;
+            applyLayerTransform(id);
+            updateTransformBox();
+            updateLayersPanel();
+            updateRadar();
+            pushHistory(`Toggle Visibility: ${{name}}`);
+        }});
+
+        const lockBtn = document.createElement('button');
+        lockBtn.className = 'layer-btn-icon' + (st.locked ? ' active' : '');
+        lockBtn.innerHTML = st.locked ? '🔒' : '🔓';
+        lockBtn.addEventListener('click', (e) => {{
+            e.stopPropagation();
+            st.locked = !st.locked;
+            el.classList.toggle('locked', st.locked);
+            updateLayersPanel();
+        }});
+
+        item.appendChild(iconBadge);
+        item.appendChild(nameSpan);
+        item.appendChild(eyeBtn);
+        item.appendChild(lockBtn);
+
+        item.addEventListener('click', () => selectLayer(id));
+        layersList.appendChild(item);
+    }});
+}}
+
+function updatePropertiesPanel() {{
+    if (!selectedLayerId) {{
+        sectionImageProps.style.display = 'none';
+        sectionTextProps.style.display = 'none';
+        propX.value = '0';
+        propY.value = '0';
+        return;
+    }}
+
+    const st = layerStates[selectedLayerId] || {{ dx: 0, dy: 0, opacity: 1.0 }};
+    propX.value = st.dx || 0;
+    propY.value = st.dy || 0;
+    propOpacity.value = st.opacity !== undefined ? st.opacity : 1.0;
+    propOpacityVal.textContent = `${{Math.round((st.opacity !== undefined ? st.opacity : 1.0) * 100)}}%`;
+
+    const el = document.querySelector(`.layer-target[data-layer-id="${{selectedLayerId}}"]`);
+
+    if (selectedLayerId === 'layer_icon') {{
+        sectionImageProps.style.display = 'block';
+        sectionTextProps.style.display = 'none';
+        propIconSelect.value = el.getAttribute('src');
+        propIconSizeSlider.value = el.offsetWidth;
+        propIconSizeVal.textContent = `${{el.offsetWidth}}px`;
+    }} else {{
+        sectionImageProps.style.display = 'none';
+        sectionTextProps.style.display = 'block';
+
+        const textEl = el.querySelector('.stroke-title, .stroke-subtitle, .stroke-day, .act-desc') || el;
+        propTextContent.value = textEl.textContent.trim();
+        const curSize = parseInt(window.getComputedStyle(textEl).fontSize) || 70;
+        propFontSizeSlider.value = curSize;
+        propFontSizeVal.textContent = `${{curSize}}px`;
+    }}
+}}
+
+function updateOptionsBar() {{
+    if (!selectedLayerId) {{
+        optX.value = '0';
+        optY.value = '0';
+        return;
+    }}
+    const st = layerStates[selectedLayerId] || {{ dx: 0, dy: 0 }};
+    optX.value = st.dx || 0;
+    optY.value = st.dy || 0;
+}}
+
+// --- NUDGE CONTROLS ---
+function nudgeSelected(dx, dy) {{
+    if (!selectedLayerId) return;
+    const st = layerStates[selectedLayerId];
+    if (st && !st.locked) {{
+        st.dx = (st.dx || 0) + dx;
+        st.dy = (st.dy || 0) + dy;
+        applyLayerTransform(selectedLayerId);
+        updateTransformBox();
+        updateOptionsBar();
+        updatePropertiesPanel();
+        updateRadar();
+        pushHistory('Nudge');
+    }}
+}}
+
+document.getElementById('btnNudgeUp').addEventListener('click', () => nudgeSelected(0, -10));
+document.getElementById('btnNudgeDown').addEventListener('click', () => nudgeSelected(0, 10));
+document.getElementById('btnNudgeLeft').addEventListener('click', () => nudgeSelected(-10, 0));
+document.getElementById('btnNudgeRight').addEventListener('click', () => nudgeSelected(10, 0));
+
+// Keyboard Shortcuts
+window.addEventListener('keydown', (e) => {{
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {{
+        e.preventDefault();
+        const step = e.shiftKey ? 10 : 1;
+        if (e.key === 'ArrowUp') nudgeSelected(0, -step);
+        if (e.key === 'ArrowDown') nudgeSelected(0, step);
+        if (e.key === 'ArrowLeft') nudgeSelected(-step, 0);
+        if (e.key === 'ArrowRight') nudgeSelected(step, 0);
+    }} else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !e.shiftKey) {{
+        e.preventDefault();
+        undo();
+    }} else if (((e.ctrlKey || e.metaKey) && (e.key === 'y' || e.key === 'Y')) || ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'z' || e.key === 'Z'))) {{
+        e.preventDefault();
+        redo();
+    }} else if ((e.ctrlKey || e.metaKey) && e.key === '0') {{
+        e.preventDefault();
+        fitToScreen();
+    }}
+}});
+
+// --- DAY SWITCHING ---
+daySelect.addEventListener('change', () => loadDay(daySelect.value));
+document.getElementById('prevDayBtn').addEventListener('click', () => {{
+    let idx = daySelect.selectedIndex - 1;
+    if (idx < 0) idx = daySelect.options.length - 1;
+    daySelect.selectedIndex = idx;
+    loadDay(daySelect.value);
+}});
+document.getElementById('nextDayBtn').addEventListener('click', () => {{
+    let idx = daySelect.selectedIndex + 1;
+    if (idx >= daySelect.options.length) idx = 0;
+    daySelect.selectedIndex = idx;
+    loadDay(daySelect.value);
+}});
+
+document.getElementById('resetDayBtn').addEventListener('click', () => {{
+    loadDay(currentDayId);
+    showToast('Reset to calibrated layout!');
+}});
+
+// --- HIGH RES DOWNLOAD ---
+document.getElementById('downloadPngBtn').addEventListener('click', () => {{
+    const day = SCHEDULE_DATA.find(d => d.id === currentDayId);
+    showToast(`Downloading print poster for ${{day.badge}}...`);
+    window.open(`FABMAT/${{day.filename}}`, '_blank');
+}});
+
+// DOCK TABS
+document.querySelectorAll('.dock-tab').forEach(tab => {{
+    tab.addEventListener('click', () => {{
+        document.querySelectorAll('.dock-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+    }});
+}});
+
+// TOOL SWITCHING
+function setTool(tool) {{
+    currentTool = tool;
+    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('currentToolBadge').textContent = `Tool: ${{tool.toUpperCase()}} (${{tool[0].toUpperCase()}})`;
+    if (tool === 'move') {{
+        document.getElementById('toolMove').classList.add('active');
+        canvasViewport.style.cursor = 'default';
+    }} else if (tool === 'text') {{
+        document.getElementById('toolText').classList.add('active');
+        canvasViewport.style.cursor = 'text';
+    }} else if (tool === 'hand') {{
+        document.getElementById('toolHand').classList.add('active');
+        canvasViewport.style.cursor = 'grab';
+    }} else if (tool === 'zoom') {{
+        document.getElementById('toolZoom').classList.add('active');
+        canvasViewport.style.cursor = 'zoom-in';
+    }}
+}}
+
+document.getElementById('toolMove').addEventListener('click', () => setTool('move'));
+document.getElementById('toolText').addEventListener('click', () => setTool('text'));
+document.getElementById('toolHand').addEventListener('click', () => setTool('hand'));
+document.getElementById('toolZoom').addEventListener('click', () => setTool('zoom'));
+document.getElementById('btnFitScreen').addEventListener('click', fitToScreen);
+
+document.getElementById('toolToggleHazard').addEventListener('click', () => {{
+    showHazardOverlay = !showHazardOverlay;
+    jeepneyHazard.style.display = showHazardOverlay ? 'block' : 'none';
+    roadHazard.style.display = showHazardOverlay ? 'block' : 'none';
+    showToast(`Hazard Guides: ${{showHazardOverlay ? 'ON' : 'OFF'}}`);
+}});
+
+// UNDO / REDO
+document.getElementById('undoBtn').addEventListener('click', undo);
+document.getElementById('redoBtn').addEventListener('click', redo);
+
+// START APP
+window.addEventListener('load', initApp);
+window.addEventListener('resize', () => {{
+    fitToScreen();
+    drawRulers();
+}});
+</script>
+</body>
+</html>
+"""
+
+editor_path = os.path.join(BASE_DIR, "editor.html")
+with open(editor_path, "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print(f"✓ Fixed editor.html ({len(html_code)} bytes)")
+

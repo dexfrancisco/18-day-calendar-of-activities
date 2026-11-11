@@ -1,5 +1,15 @@
 # Durable Decisions
 
+## 2026-11-11 — Photoshop Studio CSS Syntax & Relative Path Resolution
+**Issue in User Screenshot:**
+In the previous build step, a `<style id="dynamicDayStyle"></style>` tag was accidentally placed inside the main `<head><style>` block in `editor.html`. In HTML parsing, as soon as the browser encounters `</style>`, it terminates the stylesheet; all subsequent CSS rules spilled out into the DOM as visible raw text at the top of the browser window. Furthermore, absolute root paths (`src="/icons/..."` and `url('/FABMAT/...')`) failed to resolve when the user opened `editor.html` directly via `file:///`.
+
+**Fix Delivered:**
+1. **Separated Style Blocks:** The main workbench CSS is cleanly closed with `</style>`, followed by `<style id="dynamicDayStyle"></style>` as a dedicated standalone tag.
+2. **Relative Path Resolution:** Replaced all `/icons/` and `/FABMAT/` root-relative URLs with standard relative paths (`icons/...` and `FABMAT/...`), ensuring $100\%$ offline compatibility whether opened via `file:///` or HTTP.
+3. **Verified Clean Execution:** Headless Chrome screenshot verified clean dark top bar, no raw CSS text spill, fully populated canvas, and working Layers and Properties panels.
+**Status:** Completed & Active
+
 ## 2026-11-11 — Photoshop Studio Layout Preservation & Non-Destructive Layer System
 **Root Cause of Layout Distortion:**
 In the previous iteration, attempting to decompose the posters into naive absolute-positioned layers stripped away the calibrated CSS flexbox structures (2-column 420px detail grid for Partners/Venue, side-by-side number + text alignment for activities, indented lead office rows with `margin-left: 98px`, and vertical centering of the Day/Date group next to the Hero Icon). Hardcoded arbitrary $(X, Y)$ coordinates and single-string mergers distorted text wrapping, altered typography scales, and destroyed the approved poster layout.
