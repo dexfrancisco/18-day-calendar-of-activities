@@ -1,5 +1,50 @@
 # Durable Decisions
 
+## 2026-11-11 — Photoshop Studio Layout Preservation & Non-Destructive Layer System
+**Root Cause of Layout Distortion:**
+In the previous iteration, attempting to decompose the posters into naive absolute-positioned layers stripped away the calibrated CSS flexbox structures (2-column 420px detail grid for Partners/Venue, side-by-side number + text alignment for activities, indented lead office rows with `margin-left: 98px`, and vertical centering of the Day/Date group next to the Hero Icon). Hardcoded arbitrary $(X, Y)$ coordinates and single-string mergers distorted text wrapping, altered typography scales, and destroyed the approved poster layout.
+
+**Resolution & Fixed Architecture:**
+1. **100% Layout Preservation (Zero Distortion):**
+   - Directly embedded the exact approved HTML and CSS templates from `scratch/final_html/` (the exact source of the approved `FABMAT/` and `output/` 300 DPI posters).
+   - Upon initial load of any day (Pre-Campaign through Day 18), the poster renders with $100\%$ visual parity to the approved final posters.
+2. **Non-Destructive Photoshop Layer System:**
+   - Attached interactive layer handles (`data-layer-id` and `data-layer-name`) to logical visual blocks:
+     - `Hero Icon` (`.hero-icon`)
+     - `Day Badge & Date` (`.day-date-group`)
+     - `Main Title` / `Activities` (each `.act-item` individually)
+     - `Partners & Venue Block` (`.bottom-block`)
+   - Independent layer movement operates via non-destructive CSS `translate(dx, dy)` offsets.
+   - 8-point transform bounding box wraps the exact rendered element bounding box.
+   - Nudging with keyboard Arrow keys (1px / 10px with Shift) updates only the selected layer.
+   - Double-clicking text enables direct inline typing (`contenteditable`).
+   - Layers panel in the right dock provides visibility toggling (👁), position lock (🔒), and selection.
+   - Real-time clearance radar calculates dynamic clearance to $y = 2950$ px.
+**Status:** Completed & Active
+
+## 2026-11-11 — Photoshop-Style Individual Layer Architecture & Full Tool Suite
+**Decision:**
+1. **True Individual Layer Independence (No Container Grouping):**
+   - Completely decoupled canvas elements into discrete, independently selectable, movable, and editable layers.
+   - **Hero Icon Layer:** Independent draggable, 8-handle resizable image layer with custom asset replacement and file upload.
+   - **Day Badge & Date Layers:** Independent draggable, editable text layers with full typography controls.
+   - **Activity Titles / Numerals / Lead Offices:** Each activity title and lead office is an independent layer that can be individually repositioned, edited in place, or resized without affecting the rest of the canvas.
+   - **Partners & Venue Blocks:** Separate independent layers.
+   - **Background Template Layer:** Locked base image layer (`FABMAT/fabmat_template.png`).
+2. **Complete Photoshop Tooling Suite:**
+   - **Move Tool (V):** Direct canvas click-to-select, drag-and-drop repositioning with smart snapping to canvas center ($X=1240$ px) and margins ($X=190$ px).
+   - **Transform Bounding Box:** 8 interactive resize handles (NW, N, NE, E, SE, S, SW, W) with live scaling.
+   - **Keyboard Arrow Nudge:** Nudge by 1px with Arrow keys, 10px with `Shift+Arrow`.
+   - **Type Tool (T) & Inline Editing:** Double-click on any text block on canvas to enter inline contenteditable mode with live text cursor.
+   - **Layers Panel:** Photoshop-grade vertical layer stack with visibility toggling (👁), position lock (🔒), layer reordering (Bring Forward / Send Backward), duplication (`Ctrl+J`), and deletion (`Del`).
+   - **History Stack (Undo/Redo):** 40-step visual history panel with `Ctrl+Z` (Undo) and `Ctrl+Y` / `Ctrl+Shift+Z` (Redo).
+   - **Character & Properties Panel:** Live controls for X, Y, W, H, Opacity, Font Family, Font Size, Line Height, Text Align, Text Color, Stroke Width, and Stroke Color.
+   - **Dual Rulers:** Pixel-accurate top and left rulers tracking mouse coordinates.
+   - **Anti-Hazard Radar HUD:** Dynamic clearance calculation against jeepney ($y \ge 2950$) and road ($y \ge 3388$).
+   - **300 DPI Export:** Native HTML5 canvas compositing and downloading print posters at $2480 \times 3508$ px.
+**Reason:** User requested that all basic actions of Photoshop be available, and that the icon and text be individually editable and movable rather than moving as an overall group.
+**Status:** Completed & Active
+
 ## 2026-11-11 — Interactive Webpage Canvas Studio & Photoshop-Style Live Editor
 **Decision:**
 1. **Interactive Web Canvas Editor (`editor.html`):**

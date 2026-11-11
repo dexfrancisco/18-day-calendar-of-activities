@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<iframe id="f0" src="http://127.0.0.1:9196/scratch/final_html/00-pre-campaign.html" width="2480" height="3508"></iframe>
+<iframe id="f1" src="http://127.0.0.1:9196/scratch/final_html/01-day-01.html" width="2480" height="3508"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        function getBounds(iframeId) {
+            const win = document.getElementById(iframeId).contentWindow;
+            const doc = win.document;
+            const results = [];
+            const safeZone = doc.querySelector('.safe-zone');
+            results.push({ name: 'safe-zone', rect: safeZone.getBoundingClientRect() });
+            
+            const icon = doc.querySelector('.hero-icon');
+            if (icon) results.push({ name: 'hero-icon', rect: icon.getBoundingClientRect() });
+            
+            const dayDate = doc.querySelector('.day-date-group');
+            if (dayDate) results.push({ name: 'day-date-group', rect: dayDate.getBoundingClientRect() });
+            
+            const mid = doc.querySelector('.middle-block');
+            if (mid) results.push({ name: 'middle-block', rect: mid.getBoundingClientRect() });
+            
+            const acts = doc.querySelectorAll('.act-item');
+            acts.forEach((a, i) => results.push({ name: 'act-item-' + (i+1), rect: a.getBoundingClientRect() }));
+            
+            const btm = doc.querySelector('.bottom-block');
+            if (btm) results.push({ name: 'bottom-block', rect: btm.getBoundingClientRect() });
+            
+            return results;
+        }
+        
+        console.log('F0_BOUNDS:' + JSON.stringify(getBounds('f0')));
+        console.log('F1_BOUNDS:' + JSON.stringify(getBounds('f1')));
+    }, 1500);
+});
+</script>
+</body>
+</html>

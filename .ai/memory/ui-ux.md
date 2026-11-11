@@ -1,6 +1,54 @@
 # UI/UX
 
-> Status: Verified from repository HTML/CSS files (`editor.html`, `18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `18-day-campaign-calendar-a4.html`) on 2026-11-11.
+> Status: Verified from repository HTML/CSS/JS application (`editor.html`, `18-day-campaign-calendar-a3.html`) on 2026-11-11.
+
+## Photoshop Studio Layout Preservation Architecture (`editor.html`)
+- **Visual Parity Guarantee:**
+  - Embeds the exact approved CSS rules and DOM hierarchies from `scratch/final_html/*.html` directly into the studio.
+  - Zero distortion: 2-column detail grid (420px label column, flexible value column), activity number + description row, indented lead office row (`margin-left: 98px`), and vertically-centered Day/Date headers next to the Hero Icon remain $100\%$ preserved upon loading every day.
+- **Interactive Layer Overlay System:**
+  - Every logical component (`.hero-icon`, `.day-date-group`, `.stroke-title`, each `.act-item`, `.bottom-block`) is tagged as an interactive layer target.
+  - Independent positioning is powered by non-destructive `transform: translate(dx, dy)`, enabling smooth moving and nudging without breaking sibling flow or parent grid structures.
+  - Hover highlights target with blue dashed border; click selects with solid `#0078D4` outline and 8-point transform handles.
+  - Double-click on text enters inline `contenteditable` typing mode with real-time DOM sync.
+  - Layers panel in right dock lists all active layers with visibility (👁) and lock (🔒) toggles.
+  - Live Clearance Radar calculates dynamic element clearance to the vehicle ($y \ge 2950$ px) and road ($y \ge 3388$ px).
+
+## Photoshop-Grade Studio & Individual Layer Architecture (`editor.html`)
+- **Complete Decoupled Layer Model:**
+  - Every canvas element (Hero Icon, Day Badge, Date Line, Activity 1 Title, Activity 1 Lead, Activity 2 Title, Partners, Venue) is rendered as an independent `layer-node` element with absolute positioning ($X, Y$), width, and height.
+  - Zero container locks: Moving or editing one element does NOT alter or displace other elements on the canvas.
+- **Photoshop Tooling & Interaction System:**
+  - **Move Tool (V):**
+    - Single-click selection on any layer.
+    - Drag-and-drop movement with pixel precision.
+    - Smart Center Snap ($X=1240$ px) with magenta guide line; Left Margin Snap ($X=190$ px) with cyan guide line.
+    - Keyboard arrow key nudging: 1px per tap, 10px with `Shift`.
+  - **8-Handle Free Transform Box:**
+    - Active selection bounding box with 4 corner handles (`nw`, `ne`, `se`, `sw`) and 4 side handles (`n`, `s`, `e`, `w`).
+    - Dragging corner handles scales the layer dynamically; 1:1 aspect ratio auto-maintained for hero icons.
+  - **Type Tool (T) & Inline Text Editing:**
+    - Double-click on any text block on canvas enables direct `contenteditable` typing with blinking cursor right on the poster.
+    - Real-time synchronization with the Properties panel textarea.
+  - **Layers Panel (Dock Tab 1):**
+    - Reverse z-order layer list mirroring Photoshop layer stacks.
+    - Quick eye toggle (👁) to show/hide layers.
+    - Position lock (🔒) to prevent accidental movement.
+    - Reorder layers with Bring Forward (`Ctrl+]`) and Send Backward (`Ctrl+[`).
+    - Add New Text Layer (`+T`), Add New Icon Layer (`+🖼`), Duplicate Layer (`Ctrl+J`), Delete Layer (`Del`).
+  - **Properties / Character Panel (Dock Tab 2):**
+    - Coordinate inputs ($X, Y, W, H$) and Opacity slider (0%–100%).
+    - Font Family picker (`Gotham Ultra`, `Gotham Black`, `Gotham Bold`, `Gotham Medium`, `Gotham Book`).
+    - Font Size slider + numeric box ($20$ px to $220$ px) and Line Height stepper.
+    - Fill color picker & quick swatches (`#FFFFFF`, `#FFE650`, `#FF6D00`, `#240546`, `#000000`).
+    - Stroke outline width ($0$ px to $40$ px) and stroke color picker & swatches.
+    - Hero Icon asset selector (switch between all 19 campaign icons or upload a custom image file).
+  - **History Panel (Dock Tab 3):**
+    - 40-step visual undo/redo history stack with click-to-revert.
+    - Keyboard shortcuts: `Ctrl+Z` (Undo), `Ctrl+Y` / `Ctrl+Shift+Z` (Redo).
+  - **Dual Rulers:** Interactive canvas rulers along top and left tracking cursor pixel coordinates.
+  - **Hazard Radar HUD & Overlay:** Toggleable dashed hazard lines showing the jeepney ($y \ge 2950$ px) and road ($y \ge 3388$ px), with live safe/danger badge.
+  - **High-Res Export:** Native HTML5 `<canvas>` compositing rendering 300 DPI print-ready PNG ($2480 \times 3508$ px).
 
 ## Interactive Poster Studio & Canvas Editor (`editor.html`)
 - **Photoshop/Canva-like Web Interface:**

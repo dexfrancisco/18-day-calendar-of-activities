@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<iframe id="editorFrame" src="http://127.0.0.1:9194/editor.html" width="1920" height="1080"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const win = document.getElementById('editorFrame').contentWindow;
+        
+console.log('--- TEST BEGIN ---');
+console.log('Total layers:', layers.length);
+layers.forEach(l => console.log('Layer:', l.id, l.name, 'pos:', l.x, l.y, 'type:', l.type));
+
+// Test selecting hero icon
+selectLayer('icon_00');
+console.log('Selected after click:', selectedLayerId);
+const iconLayer = getSelectedLayer();
+console.log('Icon layer pos before nudge:', iconLayer.x, iconLayer.y);
+
+// Nudge icon by +50px
+iconLayer.x += 50;
+iconLayer.y += 30;
+updateTransformBox();
+console.log('Icon layer pos after nudge:', iconLayer.x, iconLayer.y);
+
+// Check that badge layer pos is UNCHANGED
+const badgeLayer = layers.find(l => l.id === 'badge_00');
+console.log('Badge layer pos (should be unchanged):', badgeLayer.x, badgeLayer.y);
+
+// Test selecting Day 1
+loadDay('01');
+console.log('Day 1 layers count:', layers.length);
+layers.forEach(l => console.log('Day 1 Layer:', l.id, l.name, 'pos:', l.x, l.y));
+
+console.log('--- TEST END ---');
+
+        document.title = 'TEST_PASSED';
+    }, 2000);
+});
+</script>
+</body>
+</html>

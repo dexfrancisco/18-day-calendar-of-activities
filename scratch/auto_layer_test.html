@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; }
+iframe { width: 1920px; height: 1080px; border: none; }
+</style>
+</head>
+<body>
+<iframe id="app" src="http://127.0.0.1:9198/editor.html"></iframe>
+<script>
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const win = document.getElementById('app').contentWindow;
+        console.log('Selecting layer_icon...');
+        win.selectLayer('layer_icon');
+        // Nudge icon down by 50px
+        win.nudgeSelected(0, 50);
+        
+        setTimeout(() => {
+            console.log('Selecting layer_title...');
+            win.selectLayer('layer_title');
+            win.nudgeSelected(0, 30);
+            document.body.setAttribute('data-ready', 'true');
+        }, 600);
+    }, 1200);
+});
+</script>
+</body>
+</html>
