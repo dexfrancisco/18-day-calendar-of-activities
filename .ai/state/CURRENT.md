@@ -1,33 +1,41 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — Calendar & FABMAT Day 2 Sequential Activity Layout & Day 15 Clean Title
+18-Day Orange Campaign — Hybrid Days (11, 17, 18) Partners & Venue Ordering before Online Advocacy
 
 ## Current task
-1. **Day 2 Sequential Order (Activity 1, 2, 3) across Calendar & FABMAT:**
-   - **Calendar:** Updated Day 2 card in all master calendar formats ([`18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a3.html), [`18-day-campaign-calendar.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar.html), [`Final Copy/18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-day-campaign-calendar-a3.html), [`Final Copy/18-day-campaign-calendar.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-day-campaign-calendar.html), [`18-day-campaign-calendar-a4.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a4.html), [`18-day-campaign-calendar-a4-page1.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a4-page1.html)):
-     - **ACTIVITY 1:** PESO / COOP / CEDIPO — Economic Empowerment for Women Safe Employment and Anti Trafficking Forum
-     - **ACTIVITY 2:** City Agriculture & Cooperative Office — Rural Women Protection, Livelihood and Cooperative Support Forum (labeled with green `DA TAGARAN` venue pill)
-     - **ACTIVITY 3:** City Accounting Office — GAD Employee Development, Recognition and Organizational Strengthening Program. (labeled with orange `NOV 26–30, 2026` date pill)
-     - **Partners:** DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
-     - **Venue:** F. L. Dy Colliseum (Act 1 & 3) | DA Tagaran (Act 2)
-   - **FABMAT Poster:** Updated [`scratch/final_html/02-day-02.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/02-day-02.html) to sequential order:
-     - 1. Economic Empowerment for Women...
-     - 2. Rural Women Protection, Livelihood and Cooperative Support Forum (VENUE: DA TAGARAN)
-     - 3. GAD Employee Development, Recognition... (NOV 26–30, 2026)
-     - PARTNERS: DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
-     - VENUE: F. L. Dy Colliseum (Act 1 & 3) | DA Tagaran (Act 2)
-     - Measured clearance: finishes at $y = 2830$ px ($+120$ px safe clearance above $y = 2950$ px, $+285$ px above jeepney roof).
-2. **Day 15 Activity 2 Title Correction (Removed "12"):**
-   - Corrected title to `"PROJECT ORANGE RISE: Empowering Women in Economic Enterprise through the Proceeds of Orange Run"` across all calendars, [`scratch/final_html/15-day-15.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/15-day-15.html), [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json), [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html), [`FABMAT/15-day-15.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/15-day-15.png), and combined PDF [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf).
-3. **Re-rendered & Verified Assets:**
-   - [`18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A3.png) & [`Final Copy/18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_A3.png)
-   - [`18-Day_Campaign_Calendar_A4_Page1.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page1.png)
-   - [`18-Day_Campaign_Calendar_A4_Page2.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page2.png)
-   - [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png) & `output/1x/`, `output/2x/`
-   - [`FABMAT/15-day-15.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/15-day-15.png) & `output/1x/`, `output/2x/`
-   - [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf)
-   - [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html)
+1. **FABMAT Posters with Activity and Online Advocacy (Days 11, 17, 18):**
+   - Reordered sections so **PARTNERS** and **VENUE** are placed directly under the **IN-PERSON ACTIVITY**, followed by **ONLINE ADVOCACY**:
+     - **Day 11 ([`scratch/final_html/11-day-11.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/11-day-11.html)):**
+       1. In-Person Activity: `Campaign Learning and Service Readiness Day` (LEAD OFFICE: `GAD Office`)
+       2. `VENUE: Bamboo Hall, City Hall, Cauayan City, Isabela`
+       3. Divider (3px semi-transparent orange line)
+       4. Online Advocacy: `Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters`
+       - Clearance: finishes at $y = 2698$ px (+252 px above 2950 px hazard line, +417 px above jeepney roof).
+     - **Day 17 ([`scratch/final_html/17-day-17.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/17-day-17.html)):**
+       1. In-Person Activity: `Regional Educational Research Conference` (LEAD OFFICE: `GAD Office`)
+       2. `PARTNERS: SDO Cauayan City, DEPED RO2`
+       3. `VENUE: F. L. Dy Colliseum, District III, Cauayan City, Isabela`
+       4. Divider (3px semi-transparent orange line)
+       5. Online Advocacy: `Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters`
+       - Clearance: finishes at $y = 2761$ px (+189 px above 2950 px hazard line, +354 px above jeepney roof).
+     - **Day 18 ([`scratch/final_html/18-day-18.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/18-day-18.html)):**
+       1. In-Person Activity: 1. `Display of Orange Exhibits` | 2. `Posting of Accomplishment Reports for the 18-day Campaign` (LEAD OFFICE: `GAD Office`)
+       2. `PARTNERS: GAD Office, City Information Office, Partner Agencies`
+       3. `VENUE: F. L. Dy Colliseum & Cauayan City Hall Grounds`
+       4. Divider (3px semi-transparent orange line)
+       5. Online Advocacy: `Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters`
+       - Clearance: finishes at $y = 2855$ px (+95 px above 2950 px hazard line, +260 px above jeepney roof).
+2. **Re-rendered & Verified Assets:**
+   - [`FABMAT/11-day-11.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/11-day-11.png) & `output/1x/`, `output/2x/` (300 DPI)
+   - [`FABMAT/17-day-17.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/17-day-17.png) & `output/1x/`, `output/2x/` (300 DPI)
+   - [`FABMAT/18-day-18.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/18-day-18.png) & `output/1x/`, `output/2x/` (300 DPI)
+   - Combined print PDF: [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf)
+   - Interactive Studio: [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html)
+   - Verification crops saved in artifact directory:
+     - `crop_advocacy_11-day-11.png`
+     - `crop_advocacy_17-day-17.png`
+     - `crop_advocacy_18-day-18.png`
 
 ## Status
 Completed & Verified with High-Resolution Crops

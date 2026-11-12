@@ -53,17 +53,17 @@
       },
       {
         "num": 2,
-        "lead_office": "City Agriculture & Cooperative Office",
-        "description": "Rural Women Protection, Livelihood and Cooperative Support Forum",
-        "venue": "DA Tagaran, Cauayan City, Isabela",
-        "partners": "DA, Cooperatives, MSMES, Barangays"
-      },
-      {
-        "num": 3,
         "lead_office": "City Accounting Office",
         "description": "GAD Employee Development, Recognition and Organizational Strengthening Program.",
         "date_range": "NOV 26–30, 2026",
         "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
+      },
+      {
+        "num": 3,
+        "lead_office": "City Agriculture & Cooperative Office",
+        "description": "Rural Women Protection, Livelihood and Cooperative Support Forum",
+        "venue": "DA Tagaran, Cauayan City, Isabela",
+        "partners": "DA, Cooperatives, MSMES, Barangays"
       }
     ],
     "partners": "DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector | DA, Cooperatives, MSMES, Barangays",
