@@ -1,5 +1,32 @@
 # Durable Decisions
 
+## 2026-11-12 — Dual Venue and Partner Architecture on FABMAT Posters (Days 2 & 3)
+**Decision:**
+- Restructured posters with multiple venues and partner sets (Day 2 and Day 3) from combined bottom blocks into distinct sequential venue sections:
+  `Activities -> Partners -> Venue -> [Divider] -> Activities -> Partners -> Venue`.
+- **Day 2:**
+  - Section 1 (F. L. Dy Coliseum): Activities 1 & 3, Partners (DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector), Venue (F. L. Dy Colliseum, District III, Cauayan City, Isabela).
+  - Section 2 (DA Tagaran): Activity 2, Partners (DA, Cooperatives, MSMES, Barangays), Venue (DA Tagaran, Cauayan City, Isabela).
+  - Clearance: $y = 2704$ px ($+246$ px clearance above $y = 2950$ px).
+- **Day 3:**
+  - Section 1 (F. L. Dy Coliseum): Activities 1, 2, 3, Partners (CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group), Venue (F. L. Dy Colliseum, District III, Cauayan City, Isabela).
+  - Section 2 (Cauayan City Stand Alone SHS): Activity 4, Partners (City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School), Venue (Cauayan City Stand Alone Senior High School).
+  - Clearance: $y = 2708$ px ($+242$ px clearance above $y = 2950$ px).
+- Updated: `scratch/final_html/02-day-02.html`, `scratch/final_html/03-day-03.html`, `scratch/schedule_data.json`, `editor.html`, and rebuilt `output/18-day-campaign-posters.pdf`.
+**Status:** Completed & Visually Verified
+
+## 2026-11-12 — Day 13 Master Calendar Bottom Space Resolution
+**Issue:**
+In the A3 Master Calendar, Day 13 had an empty white void of over 350px below its venue box, while neighboring days (Days 14–18) filled the row height completely.
+**Root Cause:**
+The Master Calendar HTML used `<div class="card-body-3act">` and `<div class="sub-act-item-3">`, but these classes were never defined in the `<style>` sheet of `18-day-campaign-calendar-a3.html`. Without CSS rules specifying `flex: 1` and `justify-content: space-between`, the card collapsed to intrinsic content height and hugged the top, leaving the remaining grid cell height as empty white space.
+**Resolution:**
+- Defined `.card-body-3act` (`padding: 8px 12px; display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;`).
+- Defined `.sub-act-item-3` with `flex: 1`, flexbox spacing, background `#fffcf8`, border `2px solid #fed7aa`, left border `7px solid #ea580c`, and border-radius `12px`.
+- Styled header badges, lead offices, descriptions, and anchored the Partners and Venue boxes cleanly to the bottom of the card, matching Days 14–18 in height.
+- Synchronized across all 4 A3 calendar HTML files and re-rendered `18-Day_Campaign_Calendar_A3.png` and `Final Copy/18-Day_Campaign_Calendar_A3.png`.
+**Status:** Completed & Visually Verified
+
 ## 2026-11-12 — FABMAT Day 2 Dual Venue Sync & Calendar Grid Column/Row Recalibration
 **Decision:**
 1. **FABMAT Day 2 Venue Synchronization:**

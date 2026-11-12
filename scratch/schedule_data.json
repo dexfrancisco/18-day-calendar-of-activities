@@ -66,7 +66,7 @@
         "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela"
       }
     ],
-    "partners": "DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector",
+    "partners": "DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector | DA, Cooperatives, MSMES, Barangays",
     "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela | DA Tagaran, Cauayan City, Isabela"
   },
   {
@@ -106,7 +106,9 @@
       },
       "partners": "City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School",
       "venue": "Cauayan City Stand Alone Senior High School"
-    }
+    },
+    "partners": "CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group | City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School",
+    "venue": "F. L. Dy Colliseum, District III, Cauayan City, Isabela | Cauayan City Stand Alone Senior High School"
   },
   {
     "id": "04",

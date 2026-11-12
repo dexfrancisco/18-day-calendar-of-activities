@@ -4,7 +4,44 @@
 18-Day Orange Campaign — FABMAT Day 2 Dual Venue Update & Calendar Column/Row Grid Readjustments for Readability
 
 ## Current task
-1. **FABMAT & Campaign Suite Updates:**
+1. **Dual Venue & Partner Layout Architecture on FABMAT Posters (Days 2 & 3):**
+   - Refactored the daily posters that have 2 venues and partner sets (Day 2 and Day 3) to follow the requested sequential grouping:
+     ```
+     Activities (Venue 1)
+     PARTNERS: (Venue 1)
+     VENUE: (Venue 1)
+     [divider]
+     Activities (Venue 2)
+     PARTNERS: (Venue 2)
+     VENUE: (Venue 2)
+     ```
+   - **Day 2:**
+     - Venue 1 Section (F. L. Dy Coliseum): Activities 1 & 3 + Partners (DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector) + Venue.
+     - Venue 2 Section (DA Tagaran): Activity 2 + Partners (DA, Cooperatives, MSMES, Barangays) + Venue.
+     - Rendered clearance: finishes at $y = 2704$ px ($+246$ px safe clearance above $y = 2950$ px).
+   - **Day 3:**
+     - Venue 1 Section (F. L. Dy Coliseum): Activities 1, 2, 3 + Partners (CSWDO, Health Office, PNP, PNP-WCPD, NGAs, CSOs, ISAC, Women with Disabilities Group) + Venue.
+     - Venue 2 Section (Cauayan Stand Alone SHS): Activity 4 + Partners (City Health Office, Local Youth Development Office, Cauayan City Stand Alone Senior High School) + Venue.
+     - Rendered clearance: finishes at $y = 2708$ px ($+242$ px safe clearance above $y = 2950$ px).
+   - **Re-rendered:**
+     - 300 DPI posters: [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png), [`FABMAT/03-day-03.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/03-day-03.png), and `output/1x/` & `output/2x/`.
+     - Multi-page PDF: [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf).
+     - Studio Editor: [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html).
+     - Schedule data: [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json).
+
+2. **Exhaustive 19-Day FABMAT vs. Calendar Text Audit:**
+   - Ran comprehensive field-by-field verification across all 19 days (Pre-Campaign through Day 18) comparing Dates, Activities (numbers, titles, descriptions), Lead Offices, Partners, and Venues between the Master Calendar and FABMAT posters.
+   - **Audit Findings:**
+     - Verified $100\%$ text parity on Dates, Activities, Lead Offices, Partners, and Venues across all 19 days.
+     - **Resolved Minor Glitch in Day 2 FABMAT (`02-day-02.html`):** Removed an accidental duplicate `PARTNERS:` markup block in the HTML bottom section. Re-rendered [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png) at 300 DPI, updated `output/1x/`, `output/2x/`, rebuilt combined PDF [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf), and rebuilt [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html).
+   - Generated detailed audit report log in `scratch/fabmat_full_verification_log.txt`.
+
+2. **Day 13 Calendar Layout Space Fix (Root Cause Resolution):**
+   - **Root Cause Identified:** The Master Calendar stylesheet (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, and `Final Copy/` files) lacked CSS definitions for `.card-body-3act` and `.sub-act-item-3`. While other multi-activity cards had `flex: 1; justify-content: space-between;` and styled borders/backgrounds, Day 13 collapsed to intrinsic height at the top, leaving an empty white dead space of over 350px below its venue box.
+   - **Fix Implemented:** Added comprehensive CSS definitions for `.card-body-3act` and `.sub-act-item-3` with `flex: 1`, flexbox vertical distribution (`justify-content: space-between`), proper padding, orange accent borders, and bottom-anchored venue box.
+   - **Re-rendered:** [`18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A3.png) and [`Final Copy/18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_A3.png). Visually verified via [`crop_a3_day13_fixed.png`](file:///C:/Users/CODEX/.gemini/antigravity/brain/b7c2e81a-36ee-4a46-9056-c62523c3de30/crop_a3_day13_fixed.png).
+
+2. **FABMAT & Campaign Suite Updates:**
    - Applied Day 2 venue separation to FABMAT poster suite:
      - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela | DA Tagaran, Cauayan City, Isabela`
      - Updated source HTML: [`scratch/final_html/02-day-02.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/02-day-02.html)
