@@ -36,14 +36,16 @@ DAY 2 | NOV 26, 2026 | THU
 Activity 1:
   Lead Office: PESO / COOP / CEDIPO
   Description: Economic Empowerment for Women Safe Employment and Anti Trafficking Forum
-Activity 2:
-  Lead Office: City Agriculture & Cooperative Office
-  Description: Rural Women Protection, Livelihood and Cooperative Support Forum
 Activity 3 (NOV 26–30, 2026):
   Lead Office: City Accounting Office
   Description: GAD Employee Development, Recognition and Organizational Strengthening Program.
-Partners: DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
-Venue: F. L. Dy Colliseum, District III, Cauayan City, Isabela
+Partners (Activities 1, 3): DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+Venue (Activities 1, 3): F. L. Dy Colliseum, District III, Cauayan City, Isabela
+Activity 2:
+  Lead Office: City Agriculture & Cooperative Office
+  Description: Rural Women Protection, Livelihood and Cooperative Support Forum
+Partners (Activity 2): DA, Cooperatives, MSMES, Barangays
+Venue (Activity 2): DA Tagaran, Cauayan City, Isabela
 
 --------------------------------------------------------------------------------
 DAY 3 | NOV 27, 2026 | FRI

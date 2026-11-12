@@ -1,5 +1,50 @@
 # Durable Decisions
 
+## 2026-11-12 — FABMAT Day 2 Dual Venue Sync & Calendar Grid Column/Row Recalibration
+**Decision:**
+1. **FABMAT Day 2 Venue Synchronization:**
+   - Synchronized Day 2 venue separation to the daily FABMAT poster suite, schedule data, interactive editor, and multi-page PDF per user clarification:
+     - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela | DA Tagaran, Cauayan City, Isabela`
+     - Typography adjusted to `font-size: 48px; line-height: 1.2;` in `.detail-val-col` to maintain safe vertical clearance.
+     - Bottom text clearance measured at $y = 2870$ px, providing $+80$ px safe clearance above the $y = 2950$ px jeepney hazard line.
+     - Updated: [`scratch/final_html/02-day-02.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/02-day-02.html), [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json), [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html).
+     - Rendered 300 DPI posters: [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png), `output/1x/02-day-02.png`, `output/2x/02-day-02.png`, and [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf).
+2. **Master Calendar Grid Column & Row Recalibration:**
+   - Fixed column imbalance from the Day 9 (5 activities) / Day 10 (2 activities) swap across A3 and A4 calendars for optimal readability:
+     - **A3 Landscape:**
+       - Row 1: `0.85fr 1.15fr 1.38fr 1.42fr 0.90fr 0.62fr 0.92fr;` (gives Day 2 & Day 3 wider columns)
+       - Row 2: `0.92fr 1.08fr 2.05fr 1.20fr 0.90fr 0.65fr;` (Day 9 expanded to 2.05fr, +71% width; Day 10 balanced at 1.20fr; Days 7 & 8 expanded)
+       - Row 3: `1.25fr 1.20fr 1.25fr 1.15fr 0.90fr 0.85fr;`
+       - Pillars: `1fr 1.25fr 1.45fr 1.2fr;`
+     - **A4 Portrait:**
+       - Page 1 Row 1: `0.85fr 1.15fr 1.45fr 1.48fr;`
+       - Page 1 Row 2: `1.20fr 0.70fr 1.20fr;`
+       - Page 1 Row 3: `0.75fr 1.05fr 1.85fr;` (Day 9 expanded to 1.85fr)
+       - Page 2 Row 1: `1.30fr 1.10fr 0.75fr 1.65fr; flex: 1;` (Day 10 normalized from 2.35fr to 1.30fr; Day 13 expanded to 1.65fr)
+       - Page 2 Row 2: `1.15fr 1.30fr 1.20fr 1.00fr 1.05fr; flex: 1;`
+   - Re-rendered 300 DPI master calendar PNGs:
+     - [`18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A3.png) & [`Final Copy/18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_A3.png)
+     - [`18-Day_Campaign_Calendar_A4_Page1.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page1.png)
+     - [`18-Day_Campaign_Calendar_A4_Page2.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page2.png)
+**Status:** Completed & Visually Verified
+**Decision:**
+- Reconfigured Day 2 across all **calendar layouts only** (A3, A4 Page 1, standard calendar) with dual-venue architecture, leaving FABMAT daily posters and PDF completely untouched:
+  - **Activities 1 & 3 (Held at F. L. Dy Coliseum):**
+    - Activity 1: `Economic Empowerment for Women Safe Employment and Anti Trafficking Forum` (Lead: PESO / COOP / CEDIPO)
+    - Activity 3 (NOV 26–30, 2026): `GAD Employee Development, Recognition and Organizational Strengthening Program.` (Lead: City Accounting Office)
+    - Partners: DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+    - Venue: `F. L. Dy Colliseum, District III, Cauayan City, Isabela`
+  - **Activity 2 (Positioned Below Venue — Held at DA Tagaran):**
+    - Activity 2: `Rural Women Protection, Livelihood and Cooperative Support Forum` (Lead: City Agriculture & Cooperative Office)
+    - Partners: DA, Cooperatives, MSMES, Barangays
+    - Venue: `DA Tagaran, Cauayan City, Isabela`
+- Preserved FABMAT daily posters and combined PDF untouched.
+- Updated:
+  - `18-Day_Campaign_Calendar_Extracted_Text.txt`
+  - Master Calendars (`18-day-campaign-calendar-a3.html`, `18-day-campaign-calendar.html`, `Final Copy/` copies, `18-day-campaign-calendar-a4.html`, `18-day-campaign-calendar-a4-page1.html`)
+  - Rendered master calendar PNGs (`18-Day_Campaign_Calendar_A3.png`, `18-Day_Campaign_Calendar_A4_Page1.png`, `18-Day_Campaign_Calendar_A4_Page2.png`)
+**Status:** Completed & Visually Verified
+
 ## 2026-11-11 — Day 10 Venue Update to Isabela Convention Center ("ICON")
 **Decision:**
 - Confirmed user clarification: Day 10's venue is ALSO **Isabela Convention Center, San Fermin, Cauayan City, Isabela** ("ICON"), identical to Day 9.

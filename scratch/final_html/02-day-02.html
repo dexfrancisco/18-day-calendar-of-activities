@@ -1,152 +1,166 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>
-@font-face {
-    font-family: 'Gotham Black';
-    src: url('/Gotham-font-family/Gotham/Gotham-Black.otf') format('opentype');
-    font-weight: 900;
-}
-@font-face {
-    font-family: 'Gotham Ultra';
-    src: url('/Gotham-font-family/Gotham/Gotham-Ultra.otf') format('opentype');
-    font-weight: 900;
-}
-@font-face {
-    font-family: 'Gotham Bold';
-    src: url('/Gotham-font-family/Gotham/Gotham-Bold.otf') format('opentype');
-    font-weight: 700;
-}
-@font-face {
-    font-family: 'Gotham Medium';
-    src: url('/Gotham-font-family/Gotham/Gotham-Medium.otf') format('opentype');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'Gotham Book';
-    src: url('/Gotham-font-family/Gotham/Gotham-Book.otf') format('opentype');
-    font-weight: 400;
-}
-@font-face {
-    font-family: 'Gotham Medium Italic';
-    src: url('/Gotham-font-family/Gotham/Gotham-MediumItalic.otf') format('opentype');
-    font-style: italic;
-    font-weight: 500;
-}
+<!DOCTYPE html>
+<html>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<head>
+    <meta charset="utf-8">
+    <style>
+        @font-face {
+            font-family: 'Gotham Black';
+            src: url('/Gotham-font-family/Gotham/Gotham-Black.otf') format('opentype');
+            font-weight: 900;
+        }
 
-body {
-    width: 2480px;
-    height: 3508px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: url('/FABMAT/fabmat_template.png') no-repeat top left;
-    background-size: 2480px 3508px;
-    font-family: 'Gotham Bold', sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
+        @font-face {
+            font-family: 'Gotham Ultra';
+            src: url('/Gotham-font-family/Gotham/Gotham-Ultra.otf') format('opentype');
+            font-weight: 900;
+        }
 
-.hero-icon {
-    object-fit: contain;
-    flex-shrink: 0;
-}
+        @font-face {
+            font-family: 'Gotham Bold';
+            src: url('/Gotham-font-family/Gotham/Gotham-Bold.otf') format('opentype');
+            font-weight: 700;
+        }
 
-.top-row {
-    display: flex;
-    align-items: center;
-    gap: 45px;
-    width: 100%;
-}
+        @font-face {
+            font-family: 'Gotham Medium';
+            src: url('/Gotham-font-family/Gotham/Gotham-Medium.otf') format('opentype');
+            font-weight: 500;
+        }
 
-.day-date-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        @font-face {
+            font-family: 'Gotham Book';
+            src: url('/Gotham-font-family/Gotham/Gotham-Book.otf') format('opentype');
+            font-weight: 400;
+        }
 
-.stroke-day {
-    color: #FFFFFF;
-    font-family: 'Gotham Ultra', sans-serif;
-    letter-spacing: 3px;
-    line-height: 1.05;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 18px #FF6D00;
-}
+        @font-face {
+            font-family: 'Gotham Medium Italic';
+            src: url('/Gotham-font-family/Gotham/Gotham-MediumItalic.otf') format('opentype');
+            font-style: italic;
+            font-weight: 500;
+        }
 
-.stroke-date {
-    color: #FFFFFF;
-    font-family: 'Gotham Bold', sans-serif;
-    letter-spacing: 2px;
-    line-height: 1.15;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 12px #FF6D00;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.stroke-title {
-    color: #FFFFFF;
-    font-family: 'Gotham Ultra', sans-serif;
-    line-height: 1.16;
-    letter-spacing: -0.5px;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 16px #FF6D00;
-}
+        body {
+            width: 2480px;
+            height: 3508px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: url('/FABMAT/fabmat_template.png') no-repeat top left;
+            background-size: 2480px 3508px;
+            font-family: 'Gotham Bold', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.stroke-subtitle {
-    color: #FFFFFF;
-    font-family: 'Gotham Medium Italic', sans-serif;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 12px #FF6D00;
-}
+        .hero-icon {
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
-.stroke-tag {
-    color: #FFFFFF;
-    font-family: 'Gotham Ultra', sans-serif;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 10px #FF6D00;
-}
+        .top-row {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            width: 100%;
+        }
 
-.stroke-num {
-    color: #FFFFFF;
-    font-family: 'Gotham Ultra', sans-serif;
-    line-height: 1.1;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 14px #FF6D00;
-}
+        .day-date-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.stroke-act-desc {
-    color: #FFFFFF;
-    font-family: 'Gotham Bold', sans-serif;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 12px #FF6D00;
-}
+        .stroke-day {
+            color: #FFFFFF;
+            font-family: 'Gotham Ultra', sans-serif;
+            letter-spacing: 3px;
+            line-height: 1.05;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 18px #FF6D00;
+        }
 
-.stroke-label {
-    color: #FFFFFF;
-    font-family: 'Gotham Ultra', sans-serif;
-    letter-spacing: 2px;
-    line-height: 1.25;
-    text-transform: uppercase;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 11px #FF6D00;
-}
+        .stroke-date {
+            color: #FFFFFF;
+            font-family: 'Gotham Bold', sans-serif;
+            letter-spacing: 2px;
+            line-height: 1.15;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 12px #FF6D00;
+        }
 
-.stroke-val {
-    color: #FFFFFF;
-    font-family: 'Gotham Bold', sans-serif;
-    line-height: 1.25;
-    paint-order: stroke fill;
-    -webkit-text-stroke: 11px #FF6D00;
-}
+        .stroke-title {
+            color: #FFFFFF;
+            font-family: 'Gotham Ultra', sans-serif;
+            line-height: 1.16;
+            letter-spacing: -0.5px;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 16px #FF6D00;
+        }
 
-.detail-row {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-}
+        .stroke-subtitle {
+            color: #FFFFFF;
+            font-family: 'Gotham Medium Italic', sans-serif;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 12px #FF6D00;
+        }
+
+        .stroke-tag {
+            color: #FFFFFF;
+            font-family: 'Gotham Ultra', sans-serif;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 10px #FF6D00;
+        }
+
+        .stroke-num {
+            color: #FFFFFF;
+            font-family: 'Gotham Ultra', sans-serif;
+            line-height: 1.1;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 14px #FF6D00;
+        }
+
+        .stroke-act-desc {
+            color: #FFFFFF;
+            font-family: 'Gotham Bold', sans-serif;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 12px #FF6D00;
+        }
+
+        .stroke-label {
+            color: #FFFFFF;
+            font-family: 'Gotham Ultra', sans-serif;
+            letter-spacing: 2px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 11px #FF6D00;
+        }
+
+        .stroke-val {
+            color: #FFFFFF;
+            font-family: 'Gotham Bold', sans-serif;
+            line-height: 1.25;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 11px #FF6D00;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+        }
 
         .safe-zone {
             position: absolute;
@@ -157,57 +171,76 @@ body {
             flex-direction: column;
             gap: 26px;
         }
-        .hero-icon { width: 600px; height: 600px; }
-        .stroke-day { font-size: 142px; }
-        .stroke-date { font-size: 64px; }
+
+        .hero-icon {
+            width: 600px;
+            height: 600px;
+        }
+
+        .stroke-day {
+            font-size: 142px;
+        }
+
+        .stroke-date {
+            font-size: 64px;
+        }
+
         .acts-block {
             display: flex;
             flex-direction: column;
             gap: 22px;
             width: 100%;
         }
+
         .act-item {
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
+
         .act-header-row {
             display: flex;
             align-items: baseline;
             gap: 18px;
         }
+
         .act-num {
             font-size: 66px;
             flex-shrink: 0;
             width: 72px;
         }
+
         .act-desc {
             font-size: 58px;
             line-height: 1.16;
             flex: 1;
         }
+
         .act-lead-row {
             display: flex;
             align-items: baseline;
             gap: 18px;
             margin-left: 88px;
         }
+
         .act-lead-lbl {
             font-size: 44px;
             flex-shrink: 0;
         }
+
         .act-lead-val {
             font-size: 48px;
             flex: 1;
         }
+
         .bottom-block {
             display: flex;
             flex-direction: column;
             gap: 14px;
             width: 100%;
         }
-        .detail-label-col { width: 400px; flex-shrink: 0; font-size: 50px; }
-        .detail-val-col { flex: 1; font-size: 54px; }
+        .detail-label-col { width: 400px; flex-shrink: 0; font-size: 48px; }
+        .detail-val-col { flex: 1; font-size: 48px; line-height: 1.2; }
         </style></head><body>
         <div class="safe-zone">
             <div class="top-row">
@@ -217,41 +250,52 @@ body {
                     <div class="stroke-date">NOVEMBER 26, 2026 | THURSDAY</div>
                 </div>
             </div>
-            <div class="acts-block">
-                
+        </div>
+        <div class="acts-block">
+
             <div class="act-item">
                 <div class="act-header-row">
                     <div class="stroke-num act-num">1.</div>
-                    <div class="stroke-act-desc act-desc">Economic Empowerment for Women Safe Employment and Anti Trafficking Forum</div>
+                    <div class="stroke-act-desc act-desc">Economic Empowerment for Women Safe Employment and Anti
+                        Trafficking Forum</div>
                 </div>
                 <div class="act-lead-row">
                     <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
                     <span class="stroke-val act-lead-val">PESO / COOP / CEDIPO</span>
                 </div>
             </div>
-            
+
             <div class="act-item">
                 <div class="act-header-row">
                     <div class="stroke-num act-num">2.</div>
-                    <div class="stroke-act-desc act-desc">Rural Women Protection, Livelihood and Cooperative Support Forum</div>
+                    <div class="stroke-act-desc act-desc">Rural Women Protection, Livelihood and Cooperative Support
+                        Forum</div>
                 </div>
                 <div class="act-lead-row">
                     <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
                     <span class="stroke-val act-lead-val">City Agriculture & Cooperative Office</span>
                 </div>
             </div>
-            
+
             <div class="act-item">
                 <div class="act-header-row">
                     <div class="stroke-num act-num">3.</div>
-                    <div class="stroke-act-desc act-desc">GAD Employee Development, Recognition and Organizational Strengthening Program. <span class="stroke-tag" style="font-size:38px; margin-left:12px;">(NOV 26–30, 2026)</span></div>
+                    <div class="stroke-act-desc act-desc">GAD Employee Development, Recognition and Organizational
+                        Strengthening Program. <span class="stroke-tag" style="font-size:38px; margin-left:12px;">(NOV
+                            26–30, 2026)</span></div>
                 </div>
                 <div class="act-lead-row">
                     <span class="stroke-label act-lead-lbl">LEAD OFFICE:</span>
                     <span class="stroke-val act-lead-val">City Accounting Office</span>
                 </div>
             </div>
-            
+
+        </div>
+        <div class="bottom-block">
+            <div class="detail-row">
+                <div class="detail-label-col stroke-label">PARTNERS:</div>
+                <div class="detail-val-col stroke-val">DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs,
+                    Private Sector</div>
             </div>
             <div class="bottom-block">
                 <div class="detail-row">
@@ -260,8 +304,11 @@ body {
                 </div>
                 <div class="detail-row">
                     <div class="detail-label-col stroke-label">VENUE:</div>
-                    <div class="detail-val-col stroke-val">F. L. Dy Colliseum, District III, Cauayan City, Isabela</div>
+                    <div class="detail-val-col stroke-val">F. L. Dy Colliseum, District III, Cauayan City, Isabela | DA Tagaran, Cauayan City, Isabela</div>
                 </div>
             </div>
         </div>
-        </body></html>
+    </div>
+</body>
+
+</html>

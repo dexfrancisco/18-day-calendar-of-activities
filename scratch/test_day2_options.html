@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; background: #333; padding: 20px; display: flex; gap: 20px; }
+  .day-card { width: 450px; background: white; border: 2px solid #fed7aa; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .card-top-bar { background: #fff7ed; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #fed7aa; font-weight: bold; }
+  .day-pill { background: #ea580c; color: white; padding: 3px 8px; border-radius: 4px; }
+  .card-body { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .sub-act-item { background: #fffcf8; border: 1.5px solid #fed7aa; border-left: 5px solid #ea580c; border-radius: 8px; padding: 6px 10px; display: flex; flex-direction: column; gap: 3px; }
+  .sub-act-header { font-size: 11px; font-weight: bold; background: #fed7aa; color: #9a3412; padding: 2px 6px; border-radius: 3px; align-self: flex-start; }
+  .act3-date-pill { background: #ea580c; color: white; font-size: 10px; font-weight: bold; padding: 1px 5px; border-radius: 3px; }
+  .sub-lead-name { font-size: 13px; font-weight: bold; color: #0f172a; }
+  .sub-act-desc { font-size: 12px; color: #334155; line-height: 1.2; }
+  .card-partner-box { background: #fdf4ff; border: 1.5px solid #f0abfc; border-radius: 6px; padding: 4px 8px; font-size: 11px; color: #701a75; }
+  .card-venue-box { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px; padding: 4px 8px; font-size: 11px; color: #166534; font-weight: bold; display: flex; align-items: center; gap: 4px; }
+</style>
+</head>
+<body>
+
+<!-- OPTION 1: Activity 2 placed below Venue of Act 1 & 3 (Like Day 3) -->
+<div class="day-card">
+  <div class="card-top-bar">
+    <span class="day-pill">DAY 2 (Option 1: Act 2 below Venue)</span>
+    <span>NOV 26 | THU</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-act-item">
+      <div class="sub-act-header">ACTIVITY 1</div>
+      <div class="sub-lead-name">📍 PESO / COOP / CEDIPO</div>
+      <div class="sub-act-desc">Economic Empowerment for Women Safe Employment and Anti Trafficking Forum</div>
+    </div>
+    <div class="sub-act-item">
+      <div style="display: flex; justify-content: space-between;">
+        <div class="sub-act-header">ACTIVITY 3</div>
+        <span class="act3-date-pill">NOV 26–30, 2026</span>
+      </div>
+      <div class="sub-lead-name">📍 City Accounting Office</div>
+      <div class="sub-act-desc">GAD Employee Development, Recognition and Organizational Strengthening Program.</div>
+    </div>
+    <div class="card-partner-box">
+      <strong>Partners:</strong> DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+    </div>
+    <div class="card-venue-box">
+      <span>📍 <strong>Venue:</strong> F. L. Dy Colliseum, District III, Cauayan City, Isabela</span>
+    </div>
+    
+    <div class="sub-act-item">
+      <div class="sub-act-header">ACTIVITY 2</div>
+      <div class="sub-lead-name">📍 City Agriculture & Cooperative Office</div>
+      <div class="sub-act-desc">Rural Women Protection, Livelihood and Cooperative Support Forum</div>
+    </div>
+    <div class="card-venue-box">
+      <span>📍 <strong>Venue:</strong> DA Tagaran, Cauayan City, Isabela</span>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION 2: 1, 2, 3 order, venue directly under Activity 2 -->
+<div class="day-card">
+  <div class="card-top-bar">
+    <span class="day-pill">DAY 2 (Option 2: Venue under Act 2)</span>
+    <span>NOV 26 | THU</span>
+  </div>
+  <div class="card-body">
+    <div class="sub-act-item">
+      <div class="sub-act-header">ACTIVITY 1</div>
+      <div class="sub-lead-name">📍 PESO / COOP / CEDIPO</div>
+      <div class="sub-act-desc">Economic Empowerment for Women Safe Employment and Anti Trafficking Forum</div>
+    </div>
+    <div class="sub-act-item">
+      <div class="sub-act-header">ACTIVITY 2</div>
+      <div class="sub-lead-name">📍 City Agriculture & Cooperative Office</div>
+      <div class="sub-act-desc">Rural Women Protection, Livelihood and Cooperative Support Forum</div>
+      <div class="card-venue-box" style="margin-top: 4px;">
+        <span>📍 <strong>Venue:</strong> DA Tagaran, Cauayan City, Isabela</span>
+      </div>
+    </div>
+    <div class="sub-act-item">
+      <div style="display: flex; justify-content: space-between;">
+        <div class="sub-act-header">ACTIVITY 3</div>
+        <span class="act3-date-pill">NOV 26–30, 2026</span>
+      </div>
+      <div class="sub-lead-name">📍 City Accounting Office</div>
+      <div class="sub-act-desc">GAD Employee Development, Recognition and Organizational Strengthening Program.</div>
+    </div>
+    <div class="card-partner-box">
+      <strong>Partners:</strong> DA, DOLE, DTI, OWWA, COA, Cooperatives, MSMES, Barangays, CSOs, Private Sector
+    </div>
+    <div class="card-venue-box">
+      <span>📍 <strong>Venue (Act. 1 & 3):</strong> F. L. Dy Colliseum, District III, Cauayan City, Isabela</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
