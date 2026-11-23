@@ -2,8 +2,8 @@ import os
 
 BASE_DIR = r"c:\Users\CODEX\Desktop\18 day calendar of activity\18 day calendar of activity"
 
-OLD_VAL = "PESO / COOP / CEDIPO"
-NEW_VAL = "PESO / CSWDO"
+OLD_VAL = "PESO / CSWDO"
+NEW_VAL = "PESO & CSWDO"
 
 target_files = [
     os.path.join(BASE_DIR, "scratch", "final_html", "02-day-02.html"),

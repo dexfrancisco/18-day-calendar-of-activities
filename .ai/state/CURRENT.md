@@ -1,11 +1,11 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — Day 2 Activity 1 Lead Office Update (`PESO / CSWDO`) & Workspace Junction
+18-Day Orange Campaign — Day 2 Activity 1 Lead Office Update (`PESO & CSWDO`) & Workspace Junction
 
 ## Current task
-1. **Day 2 Activity 1 Lead Office Update (`PESO / CSWDO`):**
-   - Updated Day 2, Activity 1 lead office from `PESO / COOP / CEDIPO` to `PESO / CSWDO` across all targets:
+1. **Day 2 Activity 1 Lead Office Update (`PESO & CSWDO`):**
+   - Updated Day 2, Activity 1 lead office from `PESO / CSWDO` to `PESO & CSWDO` across all targets:
      - [`scratch/final_html/02-day-02.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/02-day-02.html)
      - [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json)
      - [`18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a3.html) & [`Final Copy/18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-day-campaign-calendar-a3.html)
