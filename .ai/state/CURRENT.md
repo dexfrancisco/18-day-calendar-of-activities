@@ -1,25 +1,18 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — Day 2 Activity 1 Lead Office Update (`PESO & CSWDO`) & Workspace Junction
+18-Day Orange Campaign — `FABMAT with SDD` Isolated Poster Pipeline (Day 1 Activity 1 SDD)
 
 ## Current task
-1. **Day 2 Activity 1 Lead Office Update (`PESO & CSWDO`):**
-   - Updated Day 2, Activity 1 lead office from `PESO / CSWDO` to `PESO & CSWDO` across all targets:
-     - [`scratch/final_html/02-day-02.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html/02-day-02.html)
-     - [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json)
-     - [`18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a3.html) & [`Final Copy/18-day-campaign-calendar-a3.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-day-campaign-calendar-a3.html)
-     - [`18-day-campaign-calendar.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar.html) & [`Final Copy/18-day-campaign-calendar.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-day-campaign-calendar.html)
-     - [`18-day-campaign-calendar-a4.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a4.html) & [`18-day-campaign-calendar-a4-page1.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-day-campaign-calendar-a4-page1.html)
-     - [`18-Day_Campaign_Calendar_Extracted_Text.txt`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_Extracted_Text.txt) & [`Final Copy/18-Day_Campaign_Calendar_Extracted_Text.txt`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_Extracted_Text.txt)
-   - Clearance & styling verified for [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png): lowest text pixel ends at $y = 2808$ px (+142 px above $y = 2950$ px hazard line, +307 px above jeepney roof).
-2. **Re-rendered & Verified Assets:**
-   - [`18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A3.png) & [`Final Copy/18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_A3.png)
-   - [`18-Day_Campaign_Calendar_A4_Page1.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page1.png) & [`18-Day_Campaign_Calendar_A4_Page2.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page2.png)
-   - [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png), `output/1x/02-day-02.png`, `output/2x/02-day-02.png`, `scratch/final_thumbs/02-day-02_thumb.png`
-   - Combined print PDF: [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf)
-   - Interactive Studio: [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html)
-   - Verification crops: `crop_cal_a3_d2_peso_cswdo.png`, `crop_cal_a4_d2_peso_cswdo.png`, `crop_fabmat_d2_peso_cswdo.png`
+1. **Isolated `FABMAT with SDD` Pipeline & Day 1 Activity 1 SDD:**
+   - Created isolated HTML templates in `scratch/final_html_sdd/` (19 files, pointing to `/FABMAT%20with%20SDD/fabmat_template.png`), leaving original [`FABMAT/`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT) and `scratch/final_html/` untouched.
+   - Created [`scratch/sdd_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/sdd_data.json) and [`scratch/render_sdd_posters.py`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/render_sdd_posters.py).
+   - Updated [`scratch/final_html_sdd/01-day-01.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html_sdd/01-day-01.html) with a two-column `.act-header-row` layout: left activity title (`56px` Gotham Bold, `11px #FF6D00` stroke) and right SDD (`38px` Gotham Ultra `MALES: 176 | FEMALES: 44 | TOTAL: 220`, `10px #FF6D00` stroke).
+   - Rendered 300 DPI [`FABMAT with SDD/01-day-01.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT%20with%20SDD/01-day-01.png):
+     - Lowest text pixel: $y = 2746\text{ px}$ (+204 px clearance to $2950\text{ px}$ hazard line, +369 px to jeepney roof), $x_{\max} = 2292\text{ px}$, `0` pure black pixels.
+     - Verification crop: `crop_sdd_01-day-01.png`
+2. **Prior Completed Work:**
+   - Day 2 Activity 1 lead office updated to `PESO & CSWDO` across calendars, [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png), PDF, and studio.
 
 ## Status
 Completed & Verified with High-Resolution Crops
