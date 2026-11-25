@@ -253,9 +253,29 @@
     "id": "10",
     "day_number": 10,
     "filename": "10-day-10.png",
-    "icon_filename": "DAY 9.png",
     "badge": "DAY 10",
     "date_str": "DECEMBER 4, 2026 | FRIDAY",
+    "icon_filename": "DAY 11.png",
+    "layout_type": "hybrid_inperson_online",
+    "in_person": {
+      "lead_office": "GAD Office",
+      "main_activity": "Campaign Learning and Service Readiness Day",
+      "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
+    },
+    "online": {
+      "advocacy_track": "ONLINE ADVOCACY",
+      "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
+    },
+    "partners": "",
+    "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
+  },
+  {
+    "id": "11",
+    "day_number": 11,
+    "filename": "11-day-11.png",
+    "badge": "DAY 11",
+    "date_str": "DECEMBER 5, 2026 | SATURDAY",
+    "icon_filename": "DAY 9.png",
     "layout_type": "standard_activities",
     "activities": [
       {
@@ -271,26 +291,6 @@
     ],
     "partners": "PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan",
     "venue": "Isabela Convention Center, San Fermin, Cauayan City, Isabela"
-  },
-  {
-    "id": "11",
-    "day_number": 11,
-    "filename": "11-day-11.png",
-    "icon_filename": "DAY 11.png",
-    "badge": "DAY 11",
-    "date_str": "DECEMBER 5, 2026 | SATURDAY",
-    "layout_type": "hybrid_inperson_online",
-    "in_person": {
-      "lead_office": "GAD Office",
-      "main_activity": "Campaign Learning and Service Readiness Day",
-      "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
-    },
-    "online": {
-      "advocacy_track": "ONLINE ADVOCACY",
-      "description": "Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters"
-    },
-    "partners": "",
-    "venue": "Bamboo Hall, City Hall, Cauayan City, Isabela"
   },
   {
     "id": "12",
@@ -315,7 +315,7 @@
       {
         "num": 1,
         "lead_office": "GAD Office",
-        "description": "Deepening Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition"
+        "description": "Leveling Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition"
       },
       {
         "num": 2,

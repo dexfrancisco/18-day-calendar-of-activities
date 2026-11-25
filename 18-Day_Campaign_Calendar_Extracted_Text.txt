@@ -134,6 +134,17 @@ Venue: Isabela Convention Center, San Fermin, Cauayan City, Isabela
 --------------------------------------------------------------------------------
 DAY 10 | DEC 4, 2026 | FRI
 --------------------------------------------------------------------------------
+In-Person Activity:
+  Lead Office: GAD Office
+  Main Activity: Campaign Learning and Service Readiness Day
+  Venue: Bamboo Hall, City Hall, Cauayan City, Isabela
+Online Activity:
+  Advocacy Track: ONLINE ADVOCACY
+  Description: Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters
+
+--------------------------------------------------------------------------------
+DAY 11 | DEC 5, 2026 | SAT
+--------------------------------------------------------------------------------
 Activity 1:
   Lead Office: GAD Office & MOVE
   Description: Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility
@@ -142,17 +153,6 @@ Activity 2:
   Description: Safeline 922 Emergency Response Simulation and Referral Drill
 Partners: PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan
 Venue: Isabela Convention Center, San Fermin, Cauayan City, Isabela
-
---------------------------------------------------------------------------------
-DAY 11 | DEC 5, 2026 | SAT
---------------------------------------------------------------------------------
-In-Person Activity:
-  Lead Office: GAD Office
-  Main Activity: Campaign Learning and Service Readiness Day
-  Venue: Bamboo Hall, City Hall, Cauayan City, Isabela
-Online Activity:
-  Advocacy Track: ONLINE ADVOCACY
-  Description: Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters
 
 --------------------------------------------------------------------------------
 DAY 12 | DEC 6, 2026 | SUN
@@ -165,7 +165,7 @@ DAY 13 | DEC 7, 2026 | MON
 --------------------------------------------------------------------------------
 Activity 1:
   Lead Office: GAD Office
-  Description: Deepening Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition
+  Description: Leveling Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition
 Activity 2:
   Lead Office: CPDO / GAD KMS Team
   Description: Data-driven governance, sex-disaggregated data, monitoring dashboards, GERL and accountability tools.

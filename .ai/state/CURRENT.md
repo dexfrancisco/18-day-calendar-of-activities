@@ -1,18 +1,29 @@
 # Current State
 
 ## Current feature
-18-Day Orange Campaign — `FABMAT with SDD` Isolated Poster Pipeline (Day 1 Activity 1 SDD)
+18-Day Orange Campaign — Dec 4 / Dec 5 Data Swap & Day 13 Activity 1 (`Deepening` → `Leveling`)
 
 ## Current task
-1. **Isolated `FABMAT with SDD` Pipeline & Day 1 Activity 1 SDD:**
-   - Created isolated HTML templates in `scratch/final_html_sdd/` (19 files, pointing to `/FABMAT%20with%20SDD/fabmat_template.png`), leaving original [`FABMAT/`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT) and `scratch/final_html/` untouched.
-   - Created [`scratch/sdd_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/sdd_data.json) and [`scratch/render_sdd_posters.py`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/render_sdd_posters.py).
-   - Updated [`scratch/final_html_sdd/01-day-01.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/final_html_sdd/01-day-01.html) with full-width activity layout and a dedicated `PARTICIPANTS:` SDD row directly below Activity 1's `LEAD OFFICE:` (`PARTICIPANTS: MALES: 176 | FEMALES: 44 | TOTAL: 220`, `46px` label / `48px` value, `#FFFFFF` fill, `11px #FF6D00` stroke).
-   - Rendered 300 DPI [`FABMAT with SDD/01-day-01.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT%20with%20SDD/01-day-01.png):
-     - Lowest text pixel: $y = 2890\text{ px}$ (+60 px clearance to $2950\text{ px}$ hazard line, +225 px to jeepney roof), $x_{\max} = 2105\text{ px}$, `0` pure black pixels.
-     - Verification crop: `crop_sdd_01-day-01.png`
-2. **Prior Completed Work:**
-   - Day 2 Activity 1 lead office updated to `PESO & CSWDO` across calendars, [`FABMAT/02-day-02.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/02-day-02.png), PDF, and studio.
+1. **Swapped All Data Between Dec 4 (Day 10 | Fri) and Dec 5 (Day 11 | Sat):**
+   - **Day 10 (`DECEMBER 4, 2026 | FRIDAY`, icon `/icons/DAY 11.png`):**
+     - In-Person Activity: `Campaign Learning and Service Readiness Day` (`LEAD OFFICE: GAD Office`, `VENUE: Bamboo Hall, City Hall, Cauayan City, Isabela`)
+     - Online Advocacy: `Posting of Advocacy Videos, Safe Spaces Pledges Videos and Advocacy Posters`
+     - Poster clearance: $y = 2697\text{ px}$ (+253 px above $2950\text{ px}$ hazard line).
+   - **Day 11 (`DECEMBER 5, 2026 | SATURDAY`, icon `/icons/DAY 9.png`):**
+     - Activity 1: `Men as Allies and Men Opposed to Violence Everywhere (MOVE) Forum on Healthy Masculinity and Shared Responsibility` (`LEAD OFFICE: GAD Office & MOVE`)
+     - Activity 2: `Safeline 922 Emergency Response Simulation and Referral Drill` (`LEAD OFFICE: CDRRMO / Rescue 922 / Safe Line`)
+     - Partners: `PNP, BFP, BJMP, CDRRMO, MDRRMO, All Teams, JCI, Faith Groups, Youth Groups, Academe, DepEd, MASON, ROTARY Club of Cauayan`
+     - Venue: `Isabela Convention Center, San Fermin, Cauayan City, Isabela`
+     - Poster clearance: $y = 2843\text{ px}$ (+107 px above $2950\text{ px}$ hazard line).
+2. **Day 13 Activity 1 Wording Update:**
+   - Changed `Deepening Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition` → `Leveling Session on GFAsT and the GeRL Tool: Province of Isabela – LGUs Edition`.
+   - Poster clearance: $y = 2772\text{ px}$ (+178 px above $2950\text{ px}$ hazard line).
+3. **Updated & Re-rendered Targets:**
+   - Master Calendars: [`18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A3.png), [`Final Copy/18-Day_Campaign_Calendar_A3.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_A3.png), [`18-Day_Campaign_Calendar_A4_Page1.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page1.png), [`18-Day_Campaign_Calendar_A4_Page2.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_A4_Page2.png), and source HTMLs.
+   - Posters (300 DPI): [`FABMAT/10-day-10.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/10-day-10.png), [`FABMAT/11-day-11.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/11-day-11.png), [`FABMAT/13-day-13.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT/13-day-13.png) + synchronized [`FABMAT with SDD/`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT%20with%20SDD) copies (`10-day-10.png`, `11-day-11.png`, `13-day-13.png`).
+   - Data, Text, PDF & Studio: [`scratch/schedule_data.json`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/scratch/schedule_data.json), [`18-Day_Campaign_Calendar_Extracted_Text.txt`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/18-Day_Campaign_Calendar_Extracted_Text.txt), [`Final Copy/18-Day_Campaign_Calendar_Extracted_Text.txt`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/Final%20Copy/18-Day_Campaign_Calendar_Extracted_Text.txt), [`output/18-day-campaign-posters.pdf`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/output/18-day-campaign-posters.pdf), [`editor.html`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/editor.html).
+4. **Prior `FABMAT with SDD` Work:**
+   - Day 1 Activity 1 SDD (`PARTICIPANTS: MALES: 176 | FEMALES: 44 | TOTAL: 220`) in [`FABMAT with SDD/01-day-01.png`](file:///c:/Users/CODEX/Desktop/18%20day%20calendar%20of%20activity/18%20day%20calendar%20of%20activity/FABMAT%20with%20SDD/01-day-01.png).
 
 ## Status
 Completed & Verified with High-Resolution Crops
