@@ -4,6 +4,23 @@
       "males": 176,
       "females": 44,
       "total": 220
+    },
+    "2": {
+      "males": 54,
+      "females": 48,
+      "total": 102
+    }
+  },
+  "02-day-02": {
+    "1": {
+      "males": 8,
+      "females": 98,
+      "total": 106
+    },
+    "2": {
+      "males": 17,
+      "females": 104,
+      "total": 121
     }
   }
 }
