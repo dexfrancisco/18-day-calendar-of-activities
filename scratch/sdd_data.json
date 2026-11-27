@@ -22,5 +22,22 @@
       "females": 104,
       "total": 121
     }
+  },
+  "03-day-03": {
+    "1_2": {
+      "males": 37,
+      "females": 271,
+      "total": 308
+    },
+    "3": {
+      "males": 22,
+      "females": 180,
+      "total": 202
+    },
+    "4": {
+      "males": 8,
+      "females": 22,
+      "total": 30
+    }
   }
 }
